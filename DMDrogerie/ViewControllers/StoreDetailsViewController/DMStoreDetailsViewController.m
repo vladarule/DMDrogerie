@@ -1,0 +1,179 @@
+//
+//  DMStoreDetailsViewController.m
+//  DMDrogerie
+//
+//  Created by Vlada on 2/13/14.
+//  Copyright (c) 2014 Vlada. All rights reserved.
+//
+
+#import "DMStoreDetailsViewController.h"
+#import "DMMapViewController.h"
+
+@interface DMStoreDetailsViewController ()
+
+- (void)setupTitles;
+
+@end
+
+@implementation DMStoreDetailsViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andLocation:(DMLocation *)location{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        self.selectedLocation = location;
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self setupTitles];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)setupTitles{
+    
+    UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(buttonCancelClicked:)];
+    [self.navigationItem setLeftBarButtonItem:leftBarButton];
+    
+    [self.lblAdress setFont:[UIFont boldSystemFontOfSize:14.5]];
+    [self.lblAdress setMinimumScaleFactor:0.4];
+    [self.lblAdress setTextColor:[UIColor whiteColor]];
+    
+    [self.lblCity setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblCity setTextColor:[UIColor yellowColor]];
+    
+    [self.lblChief setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblChief setTextColor:[UIColor whiteColor]];
+    
+    [self.lblChiefValue setFont:[UIFont boldSystemFontOfSize:12.0]];
+    [self.lblChiefValue setTextColor:[UIColor whiteColor]];
+    
+    [self.lblStoreNo setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblStoreNo setTextColor:[UIColor whiteColor]];
+    
+    [self.lblWorkihgHours setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [self.lblWorkihgHours setTextColor:[UIColor whiteColor]];
+    
+    [self.lblWorkingDays setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblWorkingDays setTextColor:[UIColor whiteColor]];
+    
+    [self.lblSaturday setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSaturday setTextColor:[UIColor whiteColor]];
+    
+    [self.lblSunday setFont:[UIFont boldSystemFontOfSize:12.0]];
+    [self.lblSunday setTextColor:[UIColor whiteColor]];
+    
+    [self.lblWorkingDaysValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblWorkingDaysValue setTextColor:[UIColor yellowColor]];
+    
+    [self.lblSaturdayValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSaturdayValue setTextColor:[UIColor yellowColor]];
+    
+    [self.lblSundayValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSundayValue setTextColor:[UIColor yellowColor]];
+    
+    [self.lblAdress setText:self.selectedLocation.street];
+    [self.lblCity setText:self.selectedLocation.city];
+    [self.lblChief setText:NSLocalizedString(@"Poslovodja/Poslovotkinja:", @"")];
+    [self.lblChiefValue setText:self.selectedLocation.chief];
+    [self.lblStoreNo setText:[NSString stringWithFormat:@"Broj prodavnice: %@", self.selectedLocation.prod]];
+    
+    [self.lblWorkihgHours setText:NSLocalizedString(@"RADNO VRIJEME:", @"")];
+    [self.lblWorkingDays setText:NSLocalizedString(@"PON-PET", @"")];
+    [self.lblSaturday setText:NSLocalizedString(@"SUBOTA", @"")];
+    [self.lblSunday setText:NSLocalizedString(@"NEDELJA", @"")];
+    
+    [self.lblWorkingDaysValue setText:self.selectedLocation.workingHours];
+    [self.lblSaturdayValue setText:self.selectedLocation.saturdayHours];
+    
+    [self.lblSundayValue setText:self.selectedLocation.sundayHours];
+    if (self.selectedLocation.sundayHours.length == 0) {
+        [self.lblSundayValue setText:@"Ne radi"];
+    }
+    
+    
+    [self.buttonPhoneNo.titleLabel setFont:[UIFont systemFontOfSize:12.5]];
+    [self.buttonPhoneNo setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonPhoneNo setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    
+    [self.buttonShowOnMap.titleLabel setFont:[UIFont systemFontOfSize:12.5]];
+    [self.buttonShowOnMap setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.buttonShowOnMap setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    
+    [self.buttonPhoneNo setTitle:[NSString stringWithFormat:@"Telefon: %@", self.selectedLocation.phoneNo] forState:UIControlStateNormal];
+    [self.buttonShowOnMap setTitle:@"Prikazi na mapi" forState:UIControlStateNormal];
+    
+    
+}
+
+- (void)buttonCancelClicked:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)buttonPhoneNoClicked:(id)sender {
+    NSData* statsData = [[NSUserDefaults standardUserDefaults] objectForKey:kStatistics];
+    
+    NSMutableArray* statsArr = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:statsData]];
+    for (DMStatistics* stats in statsArr) {
+        if ([stats.objectId isEqualToString:self.selectedLocation.objectId] && [stats.category isEqualToString:@"LOK"]) {
+            stats.brTel = [NSString stringWithFormat:@"%d", stats.brTel.intValue + 1];
+            [statsArr replaceObjectAtIndex:[statsArr indexOfObject:stats] withObject:stats];
+            break;
+        }
+    }
+    
+    NSData *myEncodedStats = [NSKeyedArchiver archivedDataWithRootObject:statsArr];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:myEncodedStats forKey:kStatistics];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (IBAction)buttonShowOnMapClicked:(id)sender {
+    
+    NSData* statsData = [[NSUserDefaults standardUserDefaults] objectForKey:kStatistics];
+    
+    NSMutableArray* statsArr = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:statsData]];
+    for (DMStatistics* stats in statsArr) {
+        if ([stats.objectId isEqualToString:self.selectedLocation.objectId] && [stats.category isEqualToString:@"LOK"]) {
+            stats.brMap = [NSString stringWithFormat:@"%d", stats.brMap.intValue + 1];
+            [statsArr replaceObjectAtIndex:[statsArr indexOfObject:stats] withObject:stats];
+            break;
+        }
+    }
+    
+    NSData *myEncodedStats = [NSKeyedArchiver archivedDataWithRootObject:statsArr];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:myEncodedStats forKey:kStatistics];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    DMMapViewController* mapVC = [[DMMapViewController alloc] initWithNibName:@"DMMapViewController" bundle:[NSBundle mainBundle] andLocation:self.selectedLocation];
+    [self.navigationController pushViewController:mapVC animated:YES];
+    
+}
+
+
+@end
