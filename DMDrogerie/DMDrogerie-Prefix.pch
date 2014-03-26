@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import "DMAppDelegate.h"
     #import "DMStatistics.h"
+    #import "Helper.h"
 #endif

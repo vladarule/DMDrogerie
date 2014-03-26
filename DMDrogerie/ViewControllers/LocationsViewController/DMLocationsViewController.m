@@ -83,6 +83,10 @@
 
 - (void)setupTitles{
     [self setTitle:@"Prodavnice"];
+    
+    
+    [self.lblOnlyOpen setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
+    [self.lblOnlyOpen setTextColor:[UIColor grayColor]];
 }
 
 
@@ -286,21 +290,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"LocationsCellIdentifier";
+	NSString *CellIdentifier = [Helper getStringFromStr:@"LocationsCellIdentifier"];
 	UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (!cell) {
 		cell = [UITableViewController createCellFromXibWithId:CellIdentifier];
 		
         UILabel *lblTitle = (UILabel *)[cell viewWithTag:1];
-        [lblTitle setFont:[UIFont systemFontOfSize:16.0]];
+        [lblTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
         [lblTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
         
         UILabel *lblDescription = (UILabel *)[cell viewWithTag:2];
-        [lblDescription setFont:[UIFont systemFontOfSize:12.0]];
+        [lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
         [lblDescription setTextColor:[UIColor colorWithRed:147.0/255 green:147.0/255 blue:147.0/255 alpha:1.0]];
         
         UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-        [lblDate setFont:[UIFont systemFontOfSize:12.0]];
+        [lblDate setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
         [lblDate setTextColor:[UIColor colorWithRed:147.0/255 green:147.0/255 blue:147.0/255 alpha:1.0]];
         
 	}
@@ -330,7 +334,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 50.0;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        return 50.0;
+    }
+    else{
+        return 80.0;
+    }
 }
 
 #pragma mark - UITableViewDelegate

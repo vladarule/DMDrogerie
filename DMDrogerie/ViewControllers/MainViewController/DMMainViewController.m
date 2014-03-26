@@ -165,24 +165,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"AktuelnostiCellIdentifier";
+    NSString *CellIdentifier = [Helper getStringFromStr:@"AktuelnostiCellIdentifier"];
 	UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (!cell) {
 		cell = [UITableViewController createCellFromXibWithId:CellIdentifier];
 	
         
         UILabel *lblTitle = (UILabel *)[cell viewWithTag:1];
-        [lblTitle setFont:[UIFont systemFontOfSize:14.0]];
+        [lblTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
         [lblTitle setTextColor:[UIColor colorWithRed:248.0/255 green:0.0/255 blue:0.0/255 alpha:1.0]];
         [lblTitle setNumberOfLines:2];
         
         UILabel *lblDescription = (UILabel *)[cell viewWithTag:2];
-        [lblDescription setFont:[UIFont systemFontOfSize:11.5]];
+        [lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
         [lblDescription setTextColor:[UIColor blackColor]];
         [lblDescription setNumberOfLines:5];
         
         UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-        [lblDate setFont:[UIFont systemFontOfSize:9.0]];
+        [lblDate setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:9.0]]];
         [lblDate setTextColor:[UIColor colorWithRed:147.0/255 green:147.0/255 blue:147.0/255 alpha:1.0]];
 	}
 	
@@ -205,7 +205,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 110.0;
+    
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        return 110.0;
+    }
+    else{
+        return 160.0;
+    }
 }
 
 #pragma mark - UITableViewDelegate

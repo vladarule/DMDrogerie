@@ -37,6 +37,9 @@
 		CEA56C9118ABF98300FBD1EE /* DMOfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA56C8F18ABF98300FBD1EE /* DMOfferDetailsViewController.m */; };
 		CEA56C9218ABF98300FBD1EE /* DMOfferDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA56C9018ABF98300FBD1EE /* DMOfferDetailsViewController.xib */; };
 		CEAB27F518AEE8570054412D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAB27F418AEE8570054412D /* CoreLocation.framework */; };
+		CEB89F8818E23912000B6F88 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB89F8718E23912000B6F88 /* GoogleMaps.framework */; };
+		CEB89F8A18E23924000B6F88 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F8918E23923000B6F88 /* GoogleMaps.bundle */; };
+		CEB89F8F18E23B58000B6F88 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB89F8E18E23B58000B6F88 /* Helper.m */; };
 		CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48418D900EE00F090E6 /* pozadina_talas_shopping.png */; };
 		CEB8B48718D900EE00F090E6 /* pozadina_talas_shopping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48518D900EE00F090E6 /* pozadina_talas_shopping@2x.png */; };
 		CEB8B48A18D9034500F090E6 /* btn-obrisi.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48818D9034500F090E6 /* btn-obrisi.png */; };
@@ -148,8 +151,6 @@
 		CEBE04F318D7851500378F88 /* btn-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE04EF18D7851500378F88 /* btn-map@2x.png */; };
 		CEBE04F418D7851500378F88 /* btn-tel.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE04F018D7851500378F88 /* btn-tel.png */; };
 		CEBE04F518D7851500378F88 /* btn-tel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE04F118D7851500378F88 /* btn-tel@2x.png */; };
-		CEBE04F718D7879500378F88 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBE04F618D7879500378F88 /* GoogleMaps.framework */; };
-		CEBE04F918D787B100378F88 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEBE04F818D787B100378F88 /* GoogleMaps.bundle */; };
 		CEBE04FB18D787DC00378F88 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBE04FA18D787DC00378F88 /* AVFoundation.framework */; };
 		CEBE04FD18D787EA00378F88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBE04FC18D787EA00378F88 /* CoreData.framework */; };
 		CEBE04FF18D787FA00378F88 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBE04FE18D787FA00378F88 /* CoreText.framework */; };
@@ -218,6 +219,10 @@
 		CEA56C8F18ABF98300FBD1EE /* DMOfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMOfferDetailsViewController.m; path = OfferDetailsViewController/DMOfferDetailsViewController.m; sourceTree = "<group>"; };
 		CEA56C9018ABF98300FBD1EE /* DMOfferDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMOfferDetailsViewController.xib; path = OfferDetailsViewController/DMOfferDetailsViewController.xib; sourceTree = "<group>"; };
 		CEAB27F418AEE8570054412D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEB89F8718E23912000B6F88 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		CEB89F8918E23923000B6F88 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		CEB89F8D18E23B58000B6F88 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Helper/Helper.h; sourceTree = "<group>"; };
+		CEB89F8E18E23B58000B6F88 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Helper/Helper.m; sourceTree = "<group>"; };
 		CEB8B48418D900EE00F090E6 /* pozadina_talas_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pozadina_talas_shopping.png; sourceTree = "<group>"; };
 		CEB8B48518D900EE00F090E6 /* pozadina_talas_shopping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pozadina_talas_shopping@2x.png"; sourceTree = "<group>"; };
 		CEB8B48818D9034500F090E6 /* btn-obrisi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-obrisi.png"; sourceTree = "<group>"; };
@@ -358,8 +363,6 @@
 		CEBE04EF18D7851500378F88 /* btn-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-map@2x.png"; sourceTree = "<group>"; };
 		CEBE04F018D7851500378F88 /* btn-tel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tel.png"; sourceTree = "<group>"; };
 		CEBE04F118D7851500378F88 /* btn-tel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-tel@2x.png"; sourceTree = "<group>"; };
-		CEBE04F618D7879500378F88 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		CEBE04F818D787B100378F88 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CEBE04FA18D787DC00378F88 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CEBE04FC18D787EA00378F88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CEBE04FE18D787FA00378F88 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -405,7 +408,7 @@
 				CEAB27F518AEE8570054412D /* CoreLocation.framework in Frameworks */,
 				CEBD58E818A67AF50072E091 /* CoreGraphics.framework in Frameworks */,
 				CEBD58EA18A67AF50072E091 /* UIKit.framework in Frameworks */,
-				CEBE04F718D7879500378F88 /* GoogleMaps.framework in Frameworks */,
+				CEB89F8818E23912000B6F88 /* GoogleMaps.framework in Frameworks */,
 				CEBD58E618A67AF50072E091 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +486,22 @@
 			name = OfferDetailsViewController;
 			sourceTree = "<group>";
 		};
+		CEB89F8B18E23A1D000B6F88 /* Resources_iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources_iPad;
+			sourceTree = "<group>";
+		};
+		CEB89F8C18E23B29000B6F88 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CEB89F8D18E23B58000B6F88 /* Helper.h */,
+				CEB89F8E18E23B58000B6F88 /* Helper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		CEB9CFDE18A95F63002F3BDF /* UITableViewController+CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +544,8 @@
 		CEBD58E418A67AF50072E091 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEB89F8918E23923000B6F88 /* GoogleMaps.bundle */,
+				CEB89F8718E23912000B6F88 /* GoogleMaps.framework */,
 				CEBE050E18D78C0000378F88 /* libicucore.dylib */,
 				CEBE050C18D78BEC00378F88 /* libc++.dylib */,
 				CEBE050A18D78BE000378F88 /* libz.dylib */,
@@ -536,8 +557,6 @@
 				CEBE04FE18D787FA00378F88 /* CoreText.framework */,
 				CEBE04FC18D787EA00378F88 /* CoreData.framework */,
 				CEBE04FA18D787DC00378F88 /* AVFoundation.framework */,
-				CEBE04F818D787B100378F88 /* GoogleMaps.bundle */,
-				CEBE04F618D7879500378F88 /* GoogleMaps.framework */,
 				CEAB27F418AEE8570054412D /* CoreLocation.framework */,
 				CEBD58E518A67AF50072E091 /* Foundation.framework */,
 				CEBD58E718A67AF50072E091 /* CoreGraphics.framework */,
@@ -550,12 +569,14 @@
 		CEBD58EB18A67AF50072E091 /* DMDrogerie */ = {
 			isa = PBXGroup;
 			children = (
+				CEB89F8C18E23B29000B6F88 /* Helper */,
 				CEBD58F418A67AF50072E091 /* DMAppDelegate.h */,
 				CEBD58F518A67AF50072E091 /* DMAppDelegate.m */,
 				CEBD591A18A67B270072E091 /* 3rdParty */,
 				CEBD595B18A68BBF0072E091 /* Models */,
 				CEBD595418A67C390072E091 /* ViewControllers */,
 				CEBE04AC18D761E300378F88 /* Resources */,
+				CEB89F8B18E23A1D000B6F88 /* Resources_iPad */,
 				CEBD58FD18A67AF50072E091 /* Images.xcassets */,
 				CEBD58EC18A67AF50072E091 /* Supporting Files */,
 			);
@@ -1025,6 +1046,7 @@
 				CEBE04D118D7642100378F88 /* cart-selected@2x.png in Resources */,
 				CEBE04F418D7851500378F88 /* btn-tel.png in Resources */,
 				CE9D007A18E1FF970094A6F4 /* btn_izbaci.png in Resources */,
+				CEB89F8A18E23924000B6F88 /* GoogleMaps.bundle in Resources */,
 				CE53C69B18A699BF00D04548 /* DMDiscountsViewController.xib in Resources */,
 				CEB8B48F18D90A7B00F090E6 /* btn-plus@2x.png in Resources */,
 				CEBAAE4E18D8D0B100232E50 /* header-novo@2x.png in Resources */,
@@ -1033,7 +1055,6 @@
 				CEBAAE4D18D8D0B100232E50 /* header-novo.png in Resources */,
 				CEBAAE5418D8D0B100232E50 /* novo-rtg@2x.png in Resources */,
 				CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */,
-				CEBE04F918D787B100378F88 /* GoogleMaps.bundle in Resources */,
 				CEBE04E818D77E8B00378F88 /* ranovreme-poz.png in Resources */,
 				CEBAAE5218D8D0B100232E50 /* novo-plavi-rtg-komad@2x.png in Resources */,
 				CE9D008918E207180094A6F4 /* Checked@2x.png in Resources */,
@@ -1080,6 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBD595118A67B4C0072E091 /* UIProgressView+AFNetworking.m in Sources */,
+				CEB89F8F18E23B58000B6F88 /* Helper.m in Sources */,
 				CEBD594F18A67B4C0072E091 /* UIButton+AFNetworking.m in Sources */,
 				CEBD594E18A67B4C0072E091 /* UIAlertView+AFNetworking.m in Sources */,
 				CEB9E7A718DA2C2200C61DC9 /* DMAktuelnostDetaljiViewController.m in Sources */,
@@ -1240,6 +1262,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
+					/Users/user/Documents/DMDrogerie,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
@@ -1259,6 +1282,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
+					/Users/user/Documents/DMDrogerie,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
