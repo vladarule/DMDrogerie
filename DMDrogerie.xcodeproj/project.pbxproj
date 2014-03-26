@@ -40,6 +40,18 @@
 		CEB89F8818E23912000B6F88 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB89F8718E23912000B6F88 /* GoogleMaps.framework */; };
 		CEB89F8A18E23924000B6F88 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F8918E23923000B6F88 /* GoogleMaps.bundle */; };
 		CEB89F8F18E23B58000B6F88 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB89F8E18E23B58000B6F88 /* Helper.m */; };
+		CEB89F9218E2542F000B6F88 /* akcija_head_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9018E2542F000B6F88 /* akcija_head_iPad.png */; };
+		CEB89F9318E2542F000B6F88 /* akcija_head_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9118E2542F000B6F88 /* akcija_head_iPad@2x.png */; };
+		CEB89F9618E2546F000B6F88 /* akcija_footer_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9418E2546E000B6F88 /* akcija_footer_iPad.png */; };
+		CEB89F9718E2546F000B6F88 /* akcija_footer_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9518E2546E000B6F88 /* akcija_footer_iPad@2x.png */; };
+		CEB89F9A18E25526000B6F88 /* popust_krug_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9818E25526000B6F88 /* popust_krug_iPad.png */; };
+		CEB89F9B18E25526000B6F88 /* popust_krug_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9918E25526000B6F88 /* popust_krug_iPad@2x.png */; };
+		CEB89FA018E256B2000B6F88 /* akcija_cenapopust_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9C18E256B1000B6F88 /* akcija_cenapopust_iPad.png */; };
+		CEB89FA118E256B2000B6F88 /* akcija_cenapopust_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9D18E256B2000B6F88 /* akcija_cenapopust_iPad@2x.png */; };
+		CEB89FA218E256B2000B6F88 /* akcija_redovnacena_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9E18E256B2000B6F88 /* akcija_redovnacena_iPad.png */; };
+		CEB89FA318E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89F9F18E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png */; };
+		CEB89FA618E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89FA418E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png */; };
+		CEB89FA718E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB89FA518E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png */; };
 		CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48418D900EE00F090E6 /* pozadina_talas_shopping.png */; };
 		CEB8B48718D900EE00F090E6 /* pozadina_talas_shopping@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48518D900EE00F090E6 /* pozadina_talas_shopping@2x.png */; };
 		CEB8B48A18D9034500F090E6 /* btn-obrisi.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB8B48818D9034500F090E6 /* btn-obrisi.png */; };
@@ -223,6 +235,18 @@
 		CEB89F8918E23923000B6F88 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CEB89F8D18E23B58000B6F88 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Helper/Helper.h; sourceTree = "<group>"; };
 		CEB89F8E18E23B58000B6F88 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Helper/Helper.m; sourceTree = "<group>"; };
+		CEB89F9018E2542F000B6F88 /* akcija_head_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_head_iPad.png; sourceTree = "<group>"; };
+		CEB89F9118E2542F000B6F88 /* akcija_head_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_head_iPad@2x.png"; sourceTree = "<group>"; };
+		CEB89F9418E2546E000B6F88 /* akcija_footer_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_footer_iPad.png; sourceTree = "<group>"; };
+		CEB89F9518E2546E000B6F88 /* akcija_footer_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_footer_iPad@2x.png"; sourceTree = "<group>"; };
+		CEB89F9818E25526000B6F88 /* popust_krug_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popust_krug_iPad.png; sourceTree = "<group>"; };
+		CEB89F9918E25526000B6F88 /* popust_krug_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popust_krug_iPad@2x.png"; sourceTree = "<group>"; };
+		CEB89F9C18E256B1000B6F88 /* akcija_cenapopust_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_cenapopust_iPad.png; sourceTree = "<group>"; };
+		CEB89F9D18E256B2000B6F88 /* akcija_cenapopust_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_cenapopust_iPad@2x.png"; sourceTree = "<group>"; };
+		CEB89F9E18E256B2000B6F88 /* akcija_redovnacena_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_redovnacena_iPad.png; sourceTree = "<group>"; };
+		CEB89F9F18E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_redovnacena_iPad@2x.png"; sourceTree = "<group>"; };
+		CEB89FA418E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dodaj_u_shoppinglistu_iPad.png; sourceTree = "<group>"; };
+		CEB89FA518E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dodaj_u_shoppinglistu_iPad@2x.png"; sourceTree = "<group>"; };
 		CEB8B48418D900EE00F090E6 /* pozadina_talas_shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pozadina_talas_shopping.png; sourceTree = "<group>"; };
 		CEB8B48518D900EE00F090E6 /* pozadina_talas_shopping@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pozadina_talas_shopping@2x.png"; sourceTree = "<group>"; };
 		CEB8B48818D9034500F090E6 /* btn-obrisi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-obrisi.png"; sourceTree = "<group>"; };
@@ -489,6 +513,18 @@
 		CEB89F8B18E23A1D000B6F88 /* Resources_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				CEB89FA418E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png */,
+				CEB89FA518E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png */,
+				CEB89F9C18E256B1000B6F88 /* akcija_cenapopust_iPad.png */,
+				CEB89F9D18E256B2000B6F88 /* akcija_cenapopust_iPad@2x.png */,
+				CEB89F9E18E256B2000B6F88 /* akcija_redovnacena_iPad.png */,
+				CEB89F9F18E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png */,
+				CEB89F9818E25526000B6F88 /* popust_krug_iPad.png */,
+				CEB89F9918E25526000B6F88 /* popust_krug_iPad@2x.png */,
+				CEB89F9418E2546E000B6F88 /* akcija_footer_iPad.png */,
+				CEB89F9518E2546E000B6F88 /* akcija_footer_iPad@2x.png */,
+				CEB89F9018E2542F000B6F88 /* akcija_head_iPad.png */,
+				CEB89F9118E2542F000B6F88 /* akcija_head_iPad@2x.png */,
 			);
 			path = Resources_iPad;
 			sourceTree = "<group>";
@@ -993,10 +1029,15 @@
 				CEBAAE4F18D8D0B100232E50 /* novo-crveni.png in Resources */,
 				CEBE04D618D7642100378F88 /* novo-normal.png in Resources */,
 				CEBE04E718D77E8B00378F88 /* prodavnica-pozadina-adresa@2x.png in Resources */,
+				CEB89FA618E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png in Resources */,
 				CEBE04F218D7851500378F88 /* btn-map.png in Resources */,
+				CEB89F9318E2542F000B6F88 /* akcija_head_iPad@2x.png in Resources */,
 				CEBE04CA18D7642100378F88 /* akcija-selected.png in Resources */,
+				CEB89FA118E256B2000B6F88 /* akcija_cenapopust_iPad@2x.png in Resources */,
+				CEB89F9B18E25526000B6F88 /* popust_krug_iPad@2x.png in Resources */,
 				CEB9E7A818DA2C2200C61DC9 /* DMAktuelnostDetaljiViewController.xib in Resources */,
 				CEBE04F318D7851500378F88 /* btn-map@2x.png in Resources */,
+				CEB89FA218E256B2000B6F88 /* akcija_redovnacena_iPad.png in Resources */,
 				CEBD58F018A67AF50072E091 /* InfoPlist.strings in Resources */,
 				CEBE04D818D7642100378F88 /* novo-selected.png in Resources */,
 				CEBE04EC18D77F9B00378F88 /* dmLogo.png in Resources */,
@@ -1007,6 +1048,7 @@
 				CEBAAE6818D8DA5F00232E50 /* crveni_prav@2x.png in Resources */,
 				CEBE04D018D7642100378F88 /* cart-selected.png in Resources */,
 				CE53C69518A695ED00D04548 /* DMOffersViewController.xib in Resources */,
+				CEB89F9618E2546F000B6F88 /* akcija_footer_iPad.png in Resources */,
 				CEBE04E918D77E8B00378F88 /* ranovreme-poz@2x.png in Resources */,
 				CEBE04E618D77E8B00378F88 /* prodavnica-pozadina-adresa.png in Resources */,
 				CEC00EA718BE9DA50048291D /* DMShoppingListViewController.xib in Resources */,
@@ -1020,6 +1062,7 @@
 				CEBA4B2018E0EE8300B14783 /* saznaj_vise_btn.png in Resources */,
 				CEBE04D318D7642100378F88 /* map-normal@2x.png in Resources */,
 				CE9D007B18E1FF970094A6F4 /* btn_izbaci@2x.png in Resources */,
+				CEB89FA018E256B2000B6F88 /* akcija_cenapopust_iPad.png in Resources */,
 				CEBAAE6318D8D9A600232E50 /* footer_talasi.png in Resources */,
 				CEBAAE4C18D8D0B100232E50 /* footer-novo-prikaz@2x.png in Resources */,
 				CEBD596618A68F680072E091 /* DMLocationsViewController.xib in Resources */,
@@ -1027,6 +1070,7 @@
 				CE9D009718E22C880094A6F4 /* DMMainViewController_iPad.xib in Resources */,
 				CEBE04AF18D761F400378F88 /* tab_background.png in Resources */,
 				CEBE04ED18D77F9B00378F88 /* dmLogo@2x.png in Resources */,
+				CEB89FA718E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png in Resources */,
 				CEBAAE6C18D8DA7A00232E50 /* Ellipse-2@2x.png in Resources */,
 				CEB8B48B18D9034500F090E6 /* btn-obrisi@2x.png in Resources */,
 				CE9D008218E1FF970094A6F4 /* pozadina_promena_korpe.png in Resources */,
@@ -1066,6 +1110,7 @@
 				CEBE04C818D7642100378F88 /* akcija-normal.png in Resources */,
 				CEBE04E018D77DC400378F88 /* store_bkg.png in Resources */,
 				CEBAAE5718D8D0E300232E50 /* Btn.png in Resources */,
+				CEB89F9A18E25526000B6F88 /* popust_krug_iPad.png in Resources */,
 				CEBAAE6B18D8DA7A00232E50 /* Ellipse-2.png in Resources */,
 				CEBAAE7518D8DACE00232E50 /* Back-icon.png in Resources */,
 				CE9D007F18E1FF970094A6F4 /* btn_ok@2x.png in Resources */,
@@ -1077,10 +1122,13 @@
 				CEBA4B1C18E0C30000B14783 /* header_bg.png in Resources */,
 				CE9D007C18E1FF970094A6F4 /* btn_korpa.png in Resources */,
 				CEBAAE6218D8D9A600232E50 /* akcija-okvir-txt@2x.png in Resources */,
+				CEB89F9718E2546F000B6F88 /* akcija_footer_iPad@2x.png in Resources */,
 				CEBE04D718D7642100378F88 /* novo-normal@2x.png in Resources */,
 				CEBAAE6418D8D9A600232E50 /* footer_talasi@2x.png in Resources */,
 				CEBAAE5318D8D0B100232E50 /* novo-rtg.png in Resources */,
 				CE9D008A18E207180094A6F4 /* delet.png in Resources */,
+				CEB89FA318E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png in Resources */,
+				CEB89F9218E2542F000B6F88 /* akcija_head_iPad.png in Resources */,
 				CEBAAE5F18D8D9A600232E50 /* akcija-head.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

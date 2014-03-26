@@ -100,52 +100,63 @@
     [self.lblDiscount setText:discount.discount];
     if (discount.ref.intValue == 0) {
         [self.lblRef setHidden:YES];
+        CGRect rct1 = self.lblRef.frame;
+        CGRect rct2 = rct1;
+        rct2.origin.y = rct1.origin.y + rct1.size.height;
+        [self.lblSaving setFrame:rct1];
+        [self.lblActiveTo setFrame:rct2];
     }
     else{
+        CGRect rct1 = self.lblRef.frame;
+        rct1.origin.y = rct1.origin.y + rct1.size.height;
+        CGRect rct2 = rct1;
+        rct2.origin.y = rct1.origin.y + rct1.size.height;
+        [self.lblSaving setFrame:rct1];
+        [self.lblActiveTo setFrame:rct2];
         [self.lblRef setHidden:NO];
         [self.lblRef setText:discount.ref];
     }
     
     
-    [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count - 1]];
+    [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
     
     [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
     
-    [self.lblTitle setFont:[UIFont boldSystemFontOfSize:18]];
+    [self.lblTitle setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18]]];
     [self.lblTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblSubtitle setFont:[UIFont systemFontOfSize:16]];
+    [self.lblSubtitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSubtitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:15]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:14]];
+    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblBefore setMinimumScaleFactor:0.5];
     [self.lblBefore setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblPrice setFont:[UIFont boldSystemFontOfSize:20]];
+    [self.lblPrice setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:20]]];
     [self.lblPrice setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaving setFont:[UIFont systemFontOfSize:16]];
+    [self.lblSaving setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSaving setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblActiveTo setFont:[UIFont systemFontOfSize:15]];
+    [self.lblActiveTo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblActiveTo setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblRef setFont:[UIFont systemFontOfSize:15]];
+    [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblRef setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblDiscount setFont:[UIFont systemFontOfSize:15]];
+    [self.lblDiscount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDiscount setTextColor:[UIColor redColor]];
     
     
-    [self.lblIndex setFont:[UIFont systemFontOfSize:16]];
+    [self.lblIndex setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblIndex setTextColor:[UIColor colorWithRed:110.0/255 green:133.0/255 blue:200.0/255 alpha:1.0]];
     
-    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
     [self.buttonAddToCart setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
-    [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, 16, 0, 0)];
+    [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20], 0, 0)];
     [self.buttonAddToCart setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
     
 }
