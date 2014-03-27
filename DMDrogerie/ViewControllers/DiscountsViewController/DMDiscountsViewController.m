@@ -52,20 +52,34 @@
     [self.navigationItem setTitleView:btn];
     
     
-    UISwipeGestureRecognizer* gRecognizerSwipedLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
-    [gRecognizerSwipedLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [gRecognizerSwipedLeft setDelegate:self];
+    UISwipeGestureRecognizer* gRecognizerSwipedLeft1 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
+    [gRecognizerSwipedLeft1 setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [gRecognizerSwipedLeft1 setDelegate:self];
     
-    UISwipeGestureRecognizer* gRecognizerSwipedRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
-    [gRecognizerSwipedRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [gRecognizerSwipedRight setDelegate:self];
+    UISwipeGestureRecognizer* gRecognizerSwipedRight1 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
+    [gRecognizerSwipedRight1 setDirection:UISwipeGestureRecognizerDirectionRight];
+    [gRecognizerSwipedRight1 setDelegate:self];
     
-    [self.mainView addGestureRecognizer:gRecognizerSwipedLeft];
-    [self.mainView addGestureRecognizer:gRecognizerSwipedRight];
+    UISwipeGestureRecognizer* gRecognizerSwipedLeft2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
+    [gRecognizerSwipedLeft2 setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [gRecognizerSwipedLeft2 setDelegate:self];
     
+    UISwipeGestureRecognizer* gRecognizerSwipedRight2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
+    [gRecognizerSwipedRight2 setDirection:UISwipeGestureRecognizerDirectionRight];
+    [gRecognizerSwipedRight2 setDelegate:self];
+    
+    [self.mainView addGestureRecognizer:gRecognizerSwipedLeft1];
+    [self.mainView addGestureRecognizer:gRecognizerSwipedRight1];
+    
+    [self.secondView addGestureRecognizer:gRecognizerSwipedLeft2];
+    [self.secondView addGestureRecognizer:gRecognizerSwipedRight2];
+    
+    [self setupTitles];
     
     [self getData];
 
+    [self.secondView setTag:-1];
+    [self.mainView setTag:-1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,41 +110,7 @@
 	[op start];
 }
 
-
-- (void)setupValues{
-    DMDiscount* discount = [self.dataSource objectAtIndex:self.selectedIndex];
-    [self.lblTitle setText:discount.item];
-    [self.lblSubtitle setText:discount.name];
-    [self.lblDescription setText:discount.description];
-//    [self.lblDescription setHidden:YES];
-    [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
-    [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-    [self.lblSaving setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
-    [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
-    [self.lblDiscount setText:discount.discount];
-    if (discount.ref.intValue == 0) {
-        [self.lblRef setHidden:YES];
-        CGRect rct1 = self.lblRef.frame;
-        CGRect rct2 = rct1;
-        rct2.origin.y = rct1.origin.y + rct1.size.height;
-        [self.lblSaving setFrame:rct1];
-        [self.lblActiveTo setFrame:rct2];
-    }
-    else{
-        CGRect rct1 = self.lblRef.frame;
-        rct1.origin.y = rct1.origin.y + rct1.size.height;
-        CGRect rct2 = rct1;
-        rct2.origin.y = rct1.origin.y + rct1.size.height;
-        [self.lblSaving setFrame:rct1];
-        [self.lblActiveTo setFrame:rct2];
-        [self.lblRef setHidden:NO];
-        [self.lblRef setText:discount.ref];
-    }
-    
-    
-    [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
-    
-    [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
+- (void)setupTitles{
     
     [self.lblTitle setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18]]];
     [self.lblTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
@@ -167,10 +147,132 @@
     [self.lblIndex setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblIndex setTextColor:[UIColor colorWithRed:110.0/255 green:133.0/255 blue:200.0/255 alpha:1.0]];
     
+    
+    [self.lblTitle2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18]]];
+    [self.lblTitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    
+    [self.lblSubtitle2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblSubtitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    
+    [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDescription2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
+    
+    [self.lblBefore2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.lblBefore2 setMinimumScaleFactor:0.5];
+    [self.lblBefore2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    
+    [self.lblPrice2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:20]]];
+    [self.lblPrice2 setTextColor:[UIColor whiteColor]];
+    
+    [self.lblKm2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblKm2 setTextColor:[UIColor whiteColor]];
+    
+    [self.lblSaving2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblSaving2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    
+    [self.lblActiveTo2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblActiveTo2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
+    
+    [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblRef2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
+    
+    [self.lblDiscount2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDiscount2 setTextColor:[UIColor redColor]];
+    
+    
+    [self.lblIndex2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblIndex2 setTextColor:[UIColor colorWithRed:110.0/255 green:133.0/255 blue:200.0/255 alpha:1.0]];
+    
+    
     [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
     [self.buttonAddToCart setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
     [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20], 0, 0)];
     [self.buttonAddToCart setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
+    
+    [self.buttonAddToCart2.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.buttonAddToCart2 setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
+    [self.buttonAddToCart2 setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20], 0, 0)];
+    [self.buttonAddToCart2 setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
+    
+    
+    
+}
+
+- (void)setupValues{
+    DMDiscount* discount = [self.dataSource objectAtIndex:self.selectedIndex];
+    if (self.mainView.tag < 0) {
+        [self.lblTitle setText:discount.item];
+        [self.lblSubtitle setText:discount.name];
+        [self.lblDescription setText:discount.description];
+        //    [self.lblDescription setHidden:YES];
+        [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
+        [self.lblSaving setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
+        [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
+        [self.lblDiscount setText:discount.discount];
+        if (discount.ref.intValue == 0) {
+            [self.lblRef setHidden:YES];
+            CGRect rct1 = self.lblRef.frame;
+            CGRect rct2 = rct1;
+            rct2.origin.y = rct1.origin.y + rct1.size.height;
+            [self.lblSaving setFrame:rct1];
+            [self.lblActiveTo setFrame:rct2];
+        }
+        else{
+            CGRect rct1 = self.lblRef.frame;
+            rct1.origin.y = rct1.origin.y + rct1.size.height;
+            CGRect rct2 = rct1;
+            rct2.origin.y = rct1.origin.y + rct1.size.height;
+            [self.lblSaving setFrame:rct1];
+            [self.lblActiveTo setFrame:rct2];
+            [self.lblRef setHidden:NO];
+            [self.lblRef setText:discount.ref];
+        }
+        
+        
+        [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
+        
+        [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
+    }
+    else{
+        [self.lblTitle2 setText:discount.item];
+        [self.lblSubtitle2 setText:discount.name];
+        [self.lblDescription2 setText:discount.description];
+        //    [self.lblDescription setHidden:YES];
+        [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        [self.lblPrice2 setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
+        [self.lblSaving2 setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
+        [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
+        [self.lblDiscount2 setText:discount.discount];
+        if (discount.ref.intValue == 0) {
+            [self.lblRef2 setHidden:YES];
+            CGRect rct1 = self.lblRef2.frame;
+            CGRect rct2 = rct1;
+            rct2.origin.y = rct1.origin.y + rct1.size.height;
+            [self.lblSaving2 setFrame:rct1];
+            [self.lblActiveTo2 setFrame:rct2];
+        }
+        else{
+            CGRect rct1 = self.lblRef2.frame;
+            rct1.origin.y = rct1.origin.y + rct1.size.height;
+            CGRect rct2 = rct1;
+            rct2.origin.y = rct1.origin.y + rct1.size.height;
+            [self.lblSaving2 setFrame:rct1];
+            [self.lblActiveTo2 setFrame:rct2];
+            [self.lblRef2 setHidden:NO];
+            [self.lblRef2 setText:discount.ref];
+        }
+        
+        
+        [self.lblIndex2 setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
+        
+        [self.imgView2 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
+    }
+    
+    
+    
+    
+    
     
 }
 
@@ -191,6 +293,34 @@
     if (self.selectedIndex > 0) {
         self.selectedIndex--;
         [self setupValues];
+        if (self.mainView.tag < 0) {
+            self.mainView.tag = 0;
+            self.secondView.tag = -1;
+            CGRect mainRct = CGRectMake(- self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+            [self.mainView setFrame:mainRct];
+            CGRect secondRct = self.secondView.frame;
+            secondRct.origin.x = secondRct.origin.x + secondRct.size.width;
+            mainRct.origin.x = 0;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.mainView setFrame:mainRct];
+                [self.secondView setFrame:secondRct];
+            }];
+        }
+        else{
+            self.secondView.tag = 0;
+            self.mainView.tag = -1;
+            CGRect mainRct = self.mainView.frame;
+            CGRect secondRct = CGRectMake(- self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
+            [self.secondView setFrame:secondRct];
+            mainRct.origin.x = mainRct.origin.x + mainRct.size.width;
+            secondRct.origin.x = 0;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.mainView setFrame:mainRct];
+                [self.secondView setFrame:secondRct];
+            }];
+        }
     }
     
 }
@@ -200,6 +330,34 @@
     if (self.selectedIndex < self.dataSource.count - 1) {
         self.selectedIndex++;
         [self setupValues];
+        if (self.mainView.tag < 0) {
+            self.mainView.tag = 0;
+            self.secondView.tag = -1;
+            CGRect mainRct = CGRectMake(self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+            [self.mainView setFrame:mainRct];
+            CGRect secondRct = self.secondView.frame;
+            secondRct.origin.x = secondRct.origin.x - secondRct.size.width;
+            mainRct.origin.x = 0;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.mainView setFrame:mainRct];
+                [self.secondView setFrame:secondRct];
+            }];
+        }
+        else{
+            self.secondView.tag = 0;
+            self.mainView.tag = -1;
+            CGRect mainRct = self.mainView.frame;
+            CGRect secondRct = CGRectMake(self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
+            [self.secondView setFrame:secondRct];
+            mainRct.origin.x = mainRct.origin.x - mainRct.size.width;
+            secondRct.origin.x = 0;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self.mainView setFrame:mainRct];
+                [self.secondView setFrame:secondRct];
+            }];
+        }
     }
     
 }
@@ -328,6 +486,7 @@
     self.dataSource = [NSArray arrayWithArray:self.arrDiscounts];
     self.selectedIndex = 0;
     [self setupValues];
+    [self.mainView setTag:0];
 }
 
 @end

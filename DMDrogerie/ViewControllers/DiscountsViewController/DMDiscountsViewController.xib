@@ -6,20 +6,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMDiscountsViewController">
             <connections>
-                <outlet property="buttonAddToCart" destination="V1B-vw-SAZ" id="Vyx-vE-z2G"/>
+                <outlet property="buttonAddToCart" destination="V1B-vw-SAZ" id="fLi-kE-9JO"/>
+                <outlet property="buttonAddToCart2" destination="17m-s7-UEN" id="fwB-Jn-AOO"/>
                 <outlet property="imgView" destination="gUN-5g-jJr" id="04e-Rt-8Js"/>
+                <outlet property="imgView2" destination="T6M-KF-67b" id="CCY-1D-XrA"/>
                 <outlet property="lblActiveTo" destination="xNX-bj-dFU" id="s1A-DE-qM3"/>
+                <outlet property="lblActiveTo2" destination="aZs-o7-pIZ" id="xMm-7f-40u"/>
                 <outlet property="lblBefore" destination="uHm-1w-m1Z" id="Y0W-Tn-W4p"/>
+                <outlet property="lblBefore2" destination="mS0-JI-bkG" id="Sfh-1f-MYh"/>
                 <outlet property="lblDescription" destination="Pr1-FB-DDg" id="Unq-XT-DA3"/>
+                <outlet property="lblDescription2" destination="CTl-CL-obw" id="hOV-15-yru"/>
                 <outlet property="lblDiscount" destination="EqI-NF-p2w" id="g4Z-mD-4GY"/>
+                <outlet property="lblDiscount2" destination="tsE-ds-o5n" id="IoI-er-cva"/>
                 <outlet property="lblIndex" destination="J94-1h-cEI" id="PtQ-w9-9LL"/>
+                <outlet property="lblIndex2" destination="BHb-70-sop" id="V16-Y2-mNa"/>
                 <outlet property="lblKM" destination="Ju1-nN-WZ0" id="phw-CN-far"/>
+                <outlet property="lblKm2" destination="rKB-ev-bcH" id="Iyo-xn-C9A"/>
                 <outlet property="lblPrice" destination="1cT-6H-JWd" id="2y2-7M-jL3"/>
+                <outlet property="lblPrice2" destination="C0x-GC-slb" id="TPk-2z-9fH"/>
                 <outlet property="lblRef" destination="lAs-2O-F8h" id="LtM-R7-d9d"/>
+                <outlet property="lblRef2" destination="Okm-d7-IPf" id="dMa-4s-Iuf"/>
                 <outlet property="lblSaving" destination="Kzd-lx-JjZ" id="8I2-6j-sRl"/>
+                <outlet property="lblSaving2" destination="1DL-Lx-mNM" id="lQs-fD-6CG"/>
                 <outlet property="lblSubtitle" destination="oSK-hr-LsC" id="s5V-bF-HaP"/>
+                <outlet property="lblSubtitle2" destination="twQ-Jn-ap5" id="X9y-7T-leC"/>
                 <outlet property="lblTitle" destination="LNk-q4-fyx" id="llO-Vn-AJN"/>
+                <outlet property="lblTitle2" destination="gMp-M8-bfX" id="0f2-yj-bwl"/>
                 <outlet property="mainView" destination="Jp8-ca-xOE" id="XhB-sh-Jxa"/>
+                <outlet property="secondView" destination="HIB-6f-iND" id="rhR-XJ-Tsf"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -149,6 +163,136 @@
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EqI-NF-p2w">
+                            <rect key="frame" x="252" y="77" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="HIB-6f-iND">
+                    <rect key="frame" x="320" y="0.0" width="320" height="455"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="akcija-head.png" id="Url-SP-mih">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer_talasi.png" id="vC4-91-BDu">
+                            <rect key="frame" x="0.0" y="406" width="320" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="T6M-KF-67b">
+                            <rect key="frame" x="176" y="74" width="124" height="183"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse-2.png" id="q6Y-PQ-5Gq">
+                            <rect key="frame" x="247" y="61" width="53" height="53"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crveni_prav.png" id="5HB-pQ-7zZ">
+                            <rect key="frame" x="0.0" y="158" width="127" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plavi_prav.png" id="4SO-qF-XLI">
+                            <rect key="frame" x="0.0" y="113" width="123" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gMp-M8-bfX">
+                            <rect key="frame" x="17" y="33" width="183" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CTl-CL-obw">
+                            <rect key="frame" x="17" y="74" width="166" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mS0-JI-bkG">
+                            <rect key="frame" x="9" y="115" width="109" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C0x-GC-slb">
+                            <rect key="frame" x="5" y="163" width="87" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rKB-ev-bcH">
+                            <rect key="frame" x="97" y="164" width="35" height="27"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usteda:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1DL-Lx-mNM">
+                            <rect key="frame" x="9" y="228" width="165" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ref" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Okm-d7-IPf">
+                            <rect key="frame" x="9" y="200" width="165" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vazi do:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aZs-o7-pIZ">
+                            <rect key="frame" x="9" y="254" width="165" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QQR-C0-NMx">
+                            <rect key="frame" x="17" y="427" width="64" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <state key="normal" image="Back-icon.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonPreviousClicked:" destination="-1" eventType="touchUpInside" id="PP8-of-iPe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N9S-Bg-Sve">
+                            <rect key="frame" x="235" y="427" width="65" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <state key="normal" image="Forw-icon.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonNextClicked:" destination="-1" eventType="touchUpInside" id="2cX-cA-Lha"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BHb-70-sop">
+                            <rect key="frame" x="94" y="427" width="133" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="twQ-Jn-ap5">
+                            <rect key="frame" x="17" y="55" width="157" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17m-s7-UEN">
+                            <rect key="frame" x="126" y="365" width="174" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <state key="normal" title="Dodaj" backgroundImage="Btn.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonAddToCartClicked:" destination="-1" eventType="touchUpInside" id="W2M-Qz-hTV"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsE-ds-o5n">
                             <rect key="frame" x="252" y="77" width="42" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
