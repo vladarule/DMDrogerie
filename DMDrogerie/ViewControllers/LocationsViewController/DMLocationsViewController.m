@@ -58,8 +58,15 @@
     
     [self setupTitles];
     
-    [self getData];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (self.dataSource.count == 0) {
+        [self getData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,6 +104,12 @@
 	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 		NSLog(@"Error");
+        if (error.code == -1009) {
+            NSLog(@"No internet");
+        }
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obaveštenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
 	}];
 	
 	[op start];

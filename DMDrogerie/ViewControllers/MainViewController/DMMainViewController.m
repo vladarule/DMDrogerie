@@ -49,7 +49,7 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [self getData];
+//    [self getData];
     
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
     [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
@@ -58,6 +58,14 @@
     [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (self.dataSource.count == 0) {
+        [self getData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,6 +96,9 @@
         if (error.code == -1009) {
             NSLog(@"No internet");
         }
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obaveštenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
 	}];
 	
 	[op start];

@@ -179,7 +179,8 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     
-    [self.navigationItem.backBarButtonItem setTitle:@""];
+    self.navigationItem.backBarButtonItem.title = @"";
+    [self setTitle:@""];
     DMMapViewController* mapVC = [[DMMapViewController alloc] initWithNibName:@"DMMapViewController" bundle:[NSBundle mainBundle] andLocation:self.selectedLocation];
     [self.navigationController pushViewController:mapVC animated:YES];
     

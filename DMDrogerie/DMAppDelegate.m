@@ -200,9 +200,8 @@
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
         else{
-            NSLog(@"Error");
+            NSLog(@"Error saving");
         }
-		NSLog(@"Succes");
 	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 		NSLog(@"%@", error.localizedDescription);

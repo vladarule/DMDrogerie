@@ -111,6 +111,9 @@
 }
 
 - (IBAction)buttonLinkClicked:(id)sender {
+    self.navigationItem.backBarButtonItem.title = @"";
+    [self setTitle:@""];
+    
     DMWebViewController* webVC = [[DMWebViewController alloc] initWithNibName:@"DMWebViewController" bundle:[NSBundle mainBundle] andAktuelnost:self.aktuelnost];
     [self.navigationController pushViewController:webVC animated:YES];
     
