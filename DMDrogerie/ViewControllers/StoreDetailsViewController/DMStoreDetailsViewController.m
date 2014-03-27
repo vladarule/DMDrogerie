@@ -43,6 +43,14 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
+    [btn setTitle:@"  PRODAVNICA" forState:UIControlStateDisabled];
+    [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn setEnabled:NO];
+    [self.navigationItem setTitleView:btn];
+    
     [self setupTitles];
     
 }
@@ -55,7 +63,7 @@
 
 - (void)setupTitles{
     
-    UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(buttonCancelClicked:)];
+    UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrow_down.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(buttonCancelClicked:)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
     
     [self.lblAdress setFont:[UIFont boldSystemFontOfSize:14.5]];
@@ -170,6 +178,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedStats forKey:kStatistics];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    
+    [self.navigationItem.backBarButtonItem setTitle:@""];
     DMMapViewController* mapVC = [[DMMapViewController alloc] initWithNibName:@"DMMapViewController" bundle:[NSBundle mainBundle] andLocation:self.selectedLocation];
     [self.navigationController pushViewController:mapVC animated:YES];
     

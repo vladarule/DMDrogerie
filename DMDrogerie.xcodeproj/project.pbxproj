@@ -176,6 +176,18 @@
 		CEBE050F18D78C0000378F88 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBE050E18D78C0000378F88 /* libicucore.dylib */; };
 		CEBE051418D78D0400378F88 /* DMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBE051218D78D0400378F88 /* DMMapViewController.m */; };
 		CEBE051518D78D0400378F88 /* DMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBE051318D78D0400378F88 /* DMMapViewController.xib */; };
+		CEBE2A5518E4A3BB005EA4D9 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A4B18E4A3BB005EA4D9 /* arrow_down.png */; };
+		CEBE2A5618E4A3BB005EA4D9 /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A4C18E4A3BB005EA4D9 /* arrow_down@2x.png */; };
+		CEBE2A5718E4A3BB005EA4D9 /* bkg_broj_komada.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A4D18E4A3BB005EA4D9 /* bkg_broj_komada.png */; };
+		CEBE2A5818E4A3BB005EA4D9 /* bkg_broj_komada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A4E18E4A3BB005EA4D9 /* bkg_broj_komada@2x.png */; };
+		CEBE2A5918E4A3BB005EA4D9 /* bkg_cena_po_komadu.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A4F18E4A3BB005EA4D9 /* bkg_cena_po_komadu.png */; };
+		CEBE2A5A18E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5018E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png */; };
+		CEBE2A5B18E4A3BB005EA4D9 /* bkg_naziv_promena.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5118E4A3BB005EA4D9 /* bkg_naziv_promena.png */; };
+		CEBE2A5C18E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5218E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png */; };
+		CEBE2A5D18E4A3BB005EA4D9 /* btn_close_list.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5318E4A3BB005EA4D9 /* btn_close_list.png */; };
+		CEBE2A5E18E4A3BB005EA4D9 /* btn_close_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5418E4A3BB005EA4D9 /* btn_close_list@2x.png */; };
+		CEBE2A6118E4A79F005EA4D9 /* dmLogo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A5F18E4A79F005EA4D9 /* dmLogo_header.png */; };
+		CEBE2A6218E4A79F005EA4D9 /* dmLogo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE2A6018E4A79F005EA4D9 /* dmLogo_header@2x.png */; };
 		CEC00EA618BE9DA50048291D /* DMShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC00EA418BE9DA50048291D /* DMShoppingListViewController.m */; };
 		CEC00EA718BE9DA50048291D /* DMShoppingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC00EA518BE9DA50048291D /* DMShoppingListViewController.xib */; };
 		CED7476A18DF67CC0010C751 /* DMStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7476918DF67CC0010C751 /* DMStatistics.m */; };
@@ -401,6 +413,18 @@
 		CEBE051118D78D0400378F88 /* DMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMapViewController.h; path = MapViewController/DMMapViewController.h; sourceTree = "<group>"; };
 		CEBE051218D78D0400378F88 /* DMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMapViewController.m; path = MapViewController/DMMapViewController.m; sourceTree = "<group>"; };
 		CEBE051318D78D0400378F88 /* DMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMMapViewController.xib; path = MapViewController/DMMapViewController.xib; sourceTree = "<group>"; };
+		CEBE2A4B18E4A3BB005EA4D9 /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
+		CEBE2A4C18E4A3BB005EA4D9 /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
+		CEBE2A4D18E4A3BB005EA4D9 /* bkg_broj_komada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_broj_komada.png; sourceTree = "<group>"; };
+		CEBE2A4E18E4A3BB005EA4D9 /* bkg_broj_komada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_broj_komada@2x.png"; sourceTree = "<group>"; };
+		CEBE2A4F18E4A3BB005EA4D9 /* bkg_cena_po_komadu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_cena_po_komadu.png; sourceTree = "<group>"; };
+		CEBE2A5018E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_cena_po_komadu@2x.png"; sourceTree = "<group>"; };
+		CEBE2A5118E4A3BB005EA4D9 /* bkg_naziv_promena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkg_naziv_promena.png; sourceTree = "<group>"; };
+		CEBE2A5218E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bkg_naziv_promena@2x.png"; sourceTree = "<group>"; };
+		CEBE2A5318E4A3BB005EA4D9 /* btn_close_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_list.png; sourceTree = "<group>"; };
+		CEBE2A5418E4A3BB005EA4D9 /* btn_close_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_list@2x.png"; sourceTree = "<group>"; };
+		CEBE2A5F18E4A79F005EA4D9 /* dmLogo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dmLogo_header.png; sourceTree = "<group>"; };
+		CEBE2A6018E4A79F005EA4D9 /* dmLogo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dmLogo_header@2x.png"; sourceTree = "<group>"; };
 		CEC00EA318BE9DA50048291D /* DMShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMShoppingListViewController.h; path = ShoppingListViewController/DMShoppingListViewController.h; sourceTree = "<group>"; };
 		CEC00EA418BE9DA50048291D /* DMShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMShoppingListViewController.m; path = ShoppingListViewController/DMShoppingListViewController.m; sourceTree = "<group>"; };
 		CEC00EA518BE9DA50048291D /* DMShoppingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMShoppingListViewController.xib; path = ShoppingListViewController/DMShoppingListViewController.xib; sourceTree = "<group>"; };
@@ -789,6 +813,16 @@
 		CEBE04AC18D761E300378F88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEBE2A4B18E4A3BB005EA4D9 /* arrow_down.png */,
+				CEBE2A4C18E4A3BB005EA4D9 /* arrow_down@2x.png */,
+				CEBE2A4D18E4A3BB005EA4D9 /* bkg_broj_komada.png */,
+				CEBE2A4E18E4A3BB005EA4D9 /* bkg_broj_komada@2x.png */,
+				CEBE2A4F18E4A3BB005EA4D9 /* bkg_cena_po_komadu.png */,
+				CEBE2A5018E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png */,
+				CEBE2A5118E4A3BB005EA4D9 /* bkg_naziv_promena.png */,
+				CEBE2A5218E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png */,
+				CEBE2A5318E4A3BB005EA4D9 /* btn_close_list.png */,
+				CEBE2A5418E4A3BB005EA4D9 /* btn_close_list@2x.png */,
 				CE9D008418E207180094A6F4 /* Checked.png */,
 				CE9D008518E207180094A6F4 /* Checked@2x.png */,
 				CE9D008618E207180094A6F4 /* delet.png */,
@@ -805,6 +839,8 @@
 				CE9D007918E1FF970094A6F4 /* pozadina_promena_korpe@2x.png */,
 				CEBA4B1E18E0EE8300B14783 /* saznaj_vise_btn.png */,
 				CEBA4B1F18E0EE8300B14783 /* saznaj_vise_btn@2x.png */,
+				CEBE2A5F18E4A79F005EA4D9 /* dmLogo_header.png */,
+				CEBE2A6018E4A79F005EA4D9 /* dmLogo_header@2x.png */,
 				CEB8B48C18D90A7B00F090E6 /* btn-plus.png */,
 				CEB8B48D18D90A7B00F090E6 /* btn-plus@2x.png */,
 				CEB8B48818D9034500F090E6 /* btn-obrisi.png */,
@@ -1025,6 +1061,7 @@
 				CEBE04E118D77DC400378F88 /* store_bkg@2x.png in Resources */,
 				CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */,
 				CEBE051518D78D0400378F88 /* DMMapViewController.xib in Resources */,
+				CEBE2A5E18E4A3BB005EA4D9 /* btn_close_list@2x.png in Resources */,
 				CEBAAE6718D8DA5F00232E50 /* crveni_prav.png in Resources */,
 				CEBAAE4F18D8D0B100232E50 /* novo-crveni.png in Resources */,
 				CEBE04D618D7642100378F88 /* novo-normal.png in Resources */,
@@ -1038,9 +1075,12 @@
 				CEB9E7A818DA2C2200C61DC9 /* DMAktuelnostDetaljiViewController.xib in Resources */,
 				CEBE04F318D7851500378F88 /* btn-map@2x.png in Resources */,
 				CEB89FA218E256B2000B6F88 /* akcija_redovnacena_iPad.png in Resources */,
+				CEBE2A6218E4A79F005EA4D9 /* dmLogo_header@2x.png in Resources */,
+				CEBE2A5518E4A3BB005EA4D9 /* arrow_down.png in Resources */,
 				CEBD58F018A67AF50072E091 /* InfoPlist.strings in Resources */,
 				CEBE04D818D7642100378F88 /* novo-selected.png in Resources */,
 				CEBE04EC18D77F9B00378F88 /* dmLogo.png in Resources */,
+				CEBE2A5618E4A3BB005EA4D9 /* arrow_down@2x.png in Resources */,
 				CE9D008818E207180094A6F4 /* Checked.png in Resources */,
 				CEBE04D918D7642100378F88 /* novo-selected@2x.png in Resources */,
 				CEBAAE7018D8DA8E00232E50 /* plavi_prav@2x.png in Resources */,
@@ -1050,15 +1090,18 @@
 				CE53C69518A695ED00D04548 /* DMOffersViewController.xib in Resources */,
 				CEB89F9618E2546F000B6F88 /* akcija_footer_iPad.png in Resources */,
 				CEBE04E918D77E8B00378F88 /* ranovreme-poz@2x.png in Resources */,
+				CEBE2A5C18E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png in Resources */,
 				CEBE04E618D77E8B00378F88 /* prodavnica-pozadina-adresa.png in Resources */,
 				CEC00EA718BE9DA50048291D /* DMShoppingListViewController.xib in Resources */,
 				CEBAAE7818D8DACE00232E50 /* Forw-icon@2x.png in Resources */,
 				CEB8B48A18D9034500F090E6 /* btn-obrisi.png in Resources */,
 				CEBA4B1D18E0C30000B14783 /* header_bg@2x.png in Resources */,
+				CEBE2A6118E4A79F005EA4D9 /* dmLogo_header.png in Resources */,
 				CE9D009918E22CD90094A6F4 /* DMDiscountsViewController_iPad.xib in Resources */,
 				CE9D008B18E207180094A6F4 /* delet@2x.png in Resources */,
 				CEBE04CD18D7642100378F88 /* aktuelno-normal@2x.png in Resources */,
 				CEBE04F518D7851500378F88 /* btn-tel@2x.png in Resources */,
+				CEBE2A5A18E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png in Resources */,
 				CEBA4B2018E0EE8300B14783 /* saznaj_vise_btn.png in Resources */,
 				CEBE04D318D7642100378F88 /* map-normal@2x.png in Resources */,
 				CE9D007B18E1FF970094A6F4 /* btn_izbaci@2x.png in Resources */,
@@ -1068,6 +1111,7 @@
 				CEBD596618A68F680072E091 /* DMLocationsViewController.xib in Resources */,
 				CEBE04B018D761F400378F88 /* tab_background@2x.png in Resources */,
 				CE9D009718E22C880094A6F4 /* DMMainViewController_iPad.xib in Resources */,
+				CEBE2A5818E4A3BB005EA4D9 /* bkg_broj_komada@2x.png in Resources */,
 				CEBE04AF18D761F400378F88 /* tab_background.png in Resources */,
 				CEBE04ED18D77F9B00378F88 /* dmLogo@2x.png in Resources */,
 				CEB89FA718E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png in Resources */,
@@ -1101,6 +1145,7 @@
 				CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */,
 				CEBE04E818D77E8B00378F88 /* ranovreme-poz.png in Resources */,
 				CEBAAE5218D8D0B100232E50 /* novo-plavi-rtg-komad@2x.png in Resources */,
+				CEBE2A5D18E4A3BB005EA4D9 /* btn_close_list.png in Resources */,
 				CE9D008918E207180094A6F4 /* Checked@2x.png in Resources */,
 				CE9D007D18E1FF970094A6F4 /* btn_korpa@2x.png in Resources */,
 				CEBAAE6018D8D9A600232E50 /* akcija-head@2x.png in Resources */,
@@ -1123,10 +1168,13 @@
 				CE9D007C18E1FF970094A6F4 /* btn_korpa.png in Resources */,
 				CEBAAE6218D8D9A600232E50 /* akcija-okvir-txt@2x.png in Resources */,
 				CEB89F9718E2546F000B6F88 /* akcija_footer_iPad@2x.png in Resources */,
+				CEBE2A5918E4A3BB005EA4D9 /* bkg_cena_po_komadu.png in Resources */,
 				CEBE04D718D7642100378F88 /* novo-normal@2x.png in Resources */,
 				CEBAAE6418D8D9A600232E50 /* footer_talasi@2x.png in Resources */,
+				CEBE2A5718E4A3BB005EA4D9 /* bkg_broj_komada.png in Resources */,
 				CEBAAE5318D8D0B100232E50 /* novo-rtg.png in Resources */,
 				CE9D008A18E207180094A6F4 /* delet.png in Resources */,
+				CEBE2A5B18E4A3BB005EA4D9 /* bkg_naziv_promena.png in Resources */,
 				CEB89FA318E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png in Resources */,
 				CEB89F9218E2542F000B6F88 /* akcija_head_iPad.png in Resources */,
 				CEBAAE5F18D8D9A600232E50 /* akcija-head.png in Resources */,

@@ -13,6 +13,7 @@
                 <outlet property="lblDescription" destination="Pr1-FB-DDg" id="Unq-XT-DA3"/>
                 <outlet property="lblDiscount" destination="EqI-NF-p2w" id="g4Z-mD-4GY"/>
                 <outlet property="lblIndex" destination="J94-1h-cEI" id="PtQ-w9-9LL"/>
+                <outlet property="lblKM" destination="Ju1-nN-WZ0" id="phw-CN-far"/>
                 <outlet property="lblPrice" destination="1cT-6H-JWd" id="2y2-7M-jL3"/>
                 <outlet property="lblRef" destination="lAs-2O-F8h" id="LtM-R7-d9d"/>
                 <outlet property="lblSaving" destination="Kzd-lx-JjZ" id="8I2-6j-sRl"/>
@@ -75,8 +76,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1cT-6H-JWd">
-                            <rect key="frame" x="5" y="163" width="114" height="26"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1cT-6H-JWd">
+                            <rect key="frame" x="5" y="163" width="87" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ju1-nN-WZ0">
+                            <rect key="frame" x="97" y="164" width="35" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>

@@ -49,10 +49,28 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self getData];
+    
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
+    [btn setTitle:@"  VIJESTI I AKTUELNOSTI" forState:UIControlStateDisabled];
+    [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn setEnabled:NO];
+    [self.navigationItem setTitleView:btn];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getData{
+    
     NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/AktuelnostiData/aktuelnosti.xml" parameters:nil error:nil];
     
-    
-	AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
+    AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
     
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -67,16 +85,12 @@
 	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
 		NSLog(@"Error");
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        if (error.code == -1009) {
+            NSLog(@"No internet");
+        }
 	}];
 	
 	[op start];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -146,7 +160,21 @@
     
     
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    self.dataSource = [NSArray arrayWithArray:self.arrAktuelnosti];
+    
+
+    
+    self.dataSource = [self.arrAktuelnosti sortedArrayUsingComparator:^NSComparisonResult(DMAktuelnost* obj1, DMAktuelnost* obj2){
+        NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+        [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
+        
+        NSDate* dt1 = [formateer dateFromString:obj1.time];
+        NSDate* dt2 = [formateer dateFromString:obj2.time];
+        
+        NSComparisonResult res = [dt2 compare:dt1];
+        
+        return res;
+    }];
+    
     [self.tableView reloadData];
 }
 
@@ -196,7 +224,7 @@
 	[lblDescription setText:akt.description];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-	[lblDate setText:akt.activeTo];
+	[lblDate setText:akt.time];
     
     UIImageView* imgView = (UIImageView * )[cell viewWithTag:4];
     [imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, akt.imageSmall]]];

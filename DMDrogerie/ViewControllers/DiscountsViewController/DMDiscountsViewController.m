@@ -43,6 +43,14 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
+    [btn setTitle:@"  AKCIJA" forState:UIControlStateDisabled];
+    [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn setEnabled:NO];
+    [self.navigationItem setTitleView:btn];
+    
     
     UISwipeGestureRecognizer* gRecognizerSwipedLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
     [gRecognizerSwipedLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
@@ -56,8 +64,17 @@
     [self.mainView addGestureRecognizer:gRecognizerSwipedRight];
     
     
-    
-    
+    [self getData];
+
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getData{
     NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/PopustiData/popusti.xml" parameters:nil error:nil];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -77,13 +94,6 @@
 	}];
 	
 	[op start];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -91,10 +101,10 @@
     DMDiscount* discount = [self.dataSource objectAtIndex:self.selectedIndex];
     [self.lblTitle setText:discount.item];
     [self.lblSubtitle setText:discount.name];
-    [self.lblDescription setText:discount.quantity];
+    [self.lblDescription setText:discount.description];
 //    [self.lblDescription setHidden:YES];
-    [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@", discount.oldPrice]];
-    [self.lblPrice setText:[NSString stringWithFormat:@"%@ KM", discount.nwPrice]];
+    [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+    [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
     [self.lblSaving setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
     [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
     [self.lblDiscount setText:discount.discount];
@@ -131,12 +141,15 @@
     [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
     [self.lblBefore setMinimumScaleFactor:0.5];
     [self.lblBefore setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
     [self.lblPrice setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:20]]];
     [self.lblPrice setTextColor:[UIColor whiteColor]];
+    
+    [self.lblKM setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblKM setTextColor:[UIColor whiteColor]];
     
     [self.lblSaving setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSaving setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];

@@ -48,11 +48,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/PonudeData/ponude.xml" parameters:nil error:nil];
+    
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
+    [btn setTitle:@"  NOVO" forState:UIControlStateDisabled];
+    [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn setEnabled:NO];
+    [self.navigationItem setTitleView:btn];
+    
+    [self getData];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)getData{
+    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/PonudeData/ponude.xml" parameters:nil error:nil];
     
 	AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
     
@@ -72,15 +93,7 @@
 	}];
 	
 	[op start];
-    
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - AFXMLRequestOperationDelegate
 

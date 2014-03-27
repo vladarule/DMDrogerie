@@ -76,6 +76,13 @@
     
     [self setupTitles];
     
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
+    [btn setTitle:@"  SHOPPING LISTA" forState:UIControlStateDisabled];
+    [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn setEnabled:NO];
+    [self.navigationItem setTitleView:btn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,12 +166,12 @@
 	numberToolbar.items = [NSArray arrayWithObjects:
                            //							   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
                            [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                           [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           [[UIBarButtonItem alloc] initWithTitle:@"Kraj" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
                            nil];
     
     [self.textFieldItemName setPlaceholder:@"Naziv proizvoda"];
     
-    [self.textFieldItemPrice setPlaceholder:@"Cijena komad"];
+    [self.textFieldItemPrice setPlaceholder:@"Cijena po komadu"];
     [self.textFieldItemPrice setTextAlignment:NSTextAlignmentRight];
     [self.textFieldItemPrice setKeyboardType:UIKeyboardTypeDecimalPad];
     [self.textFieldItemPrice setInputAccessoryView:numberToolbar];
@@ -220,14 +227,8 @@
 
 - (IBAction)btnDeleteAllClicked:(id)sender {
     
-    self.dataSource = [NSArray array];
-    [self.tableView reloadData];
-    [self setupMiddleView];
-
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.dataSource];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Brisanje kompletne shopping liste" message:@"Da li ste sigurni?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Da", @"Ne", nil];
+    [alert show];
     
 }
 
@@ -325,7 +326,7 @@
 - (IBAction)btnAddNewItemClicked:(id)sender {
     
     if (self.textFieldItemName.text.length == 0 || self.textFieldItemPrice.text.length == 0 || self.textFieldItemCount.text.intValue == 0) {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Molimo vas unesite sve podatke" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Niste popunili sva polja!" message:@"Molim popunite sva polja i kliknite na dugme \"Dodaj\"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -348,6 +349,14 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.textFieldItemCount resignFirstResponder];
+    [self.textFieldItemPrice resignFirstResponder];
+    [self.textFieldItemName resignFirstResponder];
+    
+    [self.textFieldItemName setText:@""];
+    [self.textFieldItemPrice setText:@""];
+    [self.textFieldItemCount setText:@""];
     
 }
 
@@ -404,14 +413,66 @@
     
     id obj = [self.dataSource objectAtIndex:self.itemIndex];
     
+    NSData* statsData = [[NSUserDefaults standardUserDefaults] objectForKey:kStatistics];
+    
+    NSMutableArray* statsArr = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:statsData]];
+    
+    
+    
+    
     if ([obj isKindOfClass:[DMOffer class]]) {
         DMOffer* offer = (DMOffer *)obj;
         offer.inCart = [NSNumber numberWithBool:![offer.inCart boolValue]];
+        
+        if ([offer.inCart boolValue]) {
+            NSDate* date = [NSDate date];
+            
+            NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+            [formateer setDateFormat:@"dd.MM.yyyy."];
+            NSString* strDate = [formateer stringFromDate:date];
+            DMStatistics* stat = [[DMStatistics alloc] initWithDictionary:@{@"category": @"SHOP",
+                                                                            @"date": strDate,
+                                                                            @"objectId": offer.objectId}];
+            stat.productCategory = @"PON";
+            stat.kor = @"1";
+            
+            [statsArr addObject:stat];
+        }
+        else{
+            for (DMStatistics* stat in statsArr) {
+                if ([stat.objectId isEqualToString:offer.objectId] && [stat.category isEqualToString:@"SHOP"]) {
+                    [statsArr removeObject:stat];
+                    break;
+                }
+            }
+        }
         
     }
     else if ([obj isKindOfClass:[DMDiscount class]]) {
         DMDiscount* discount = (DMDiscount *)obj;
         discount.inCart = [NSNumber numberWithBool:![discount.inCart boolValue]];
+        if ([discount.inCart boolValue]) {
+            NSDate* date = [NSDate date];
+            
+            NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+            [formateer setDateFormat:@"dd.MM.yyyy."];
+            NSString* strDate = [formateer stringFromDate:date];
+            DMStatistics* stat = [[DMStatistics alloc] initWithDictionary:@{@"category": @"SHOP",
+                                                                            @"date": strDate,
+                                                                            @"objectId": discount.objectId}];
+            stat.productCategory = @"POP";
+            stat.kor = @"1";
+            
+            [statsArr addObject:stat];
+        }
+        else{
+            for (DMStatistics* stat in statsArr) {
+                if ([stat.objectId isEqualToString:discount.objectId] && [stat.category isEqualToString:@"SHOP"]) {
+                    [statsArr removeObject:stat];
+                    break;
+                }
+            }
+        }
     }
     else if ([obj isKindOfClass:[DMCustomItem class]]) {
         DMCustomItem* item = (DMCustomItem *)obj;
@@ -424,6 +485,10 @@
     [self hideEditedItemView];
     
     NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.dataSource];
+    
+    NSData *myEncodedStats = [NSKeyedArchiver archivedDataWithRootObject:statsArr];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:myEncodedStats forKey:kStatistics];
     
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -444,25 +509,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifier = @"ShoppingListCellIdentifier";
+	NSString *CellIdentifier = [Helper getStringFromStr:@"ShoppingListCellIdentifier"];
 	UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (!cell) {
 		cell = [UITableViewController createCellFromXibWithId:CellIdentifier];
 		
         UILabel *lblTitle = (UILabel *)[cell viewWithTag:1];
-        [lblTitle setFont:[UIFont boldSystemFontOfSize:17.0]];
+        [lblTitle setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:17.0]]];
         [lblTitle setTextColor:[UIColor colorWithRed:248.0/255 green:1.0/255 blue:0.0/255 alpha:1.0]];
         
         UILabel *lblCount = (UILabel *)[cell viewWithTag:2];
-        [lblCount setFont:[UIFont systemFontOfSize:13.5]];
+        [lblCount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
         [lblCount setTextColor:[UIColor blackColor]];
         
         UILabel *lblPrice = (UILabel *)[cell viewWithTag:3];
-        [lblPrice setFont:[UIFont systemFontOfSize:13.5]];
+        [lblPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
         [lblPrice setTextColor:[UIColor blackColor]];
         
         UILabel *lblTotalPrice = (UILabel *)[cell viewWithTag:4];
-        [lblTotalPrice setFont:[UIFont systemFontOfSize:13.5]];
+        [lblTotalPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
         [lblTotalPrice setTextColor:[UIColor blackColor]];
         
         
@@ -550,7 +615,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 100.0;
+	if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        return 100.0;
+    }
+    else{
+        return 160.0;
+    }
 }
 
 #pragma mark - UITableViewDelegate
@@ -587,6 +657,27 @@
     [self.textFieldItemCount resignFirstResponder];
     [self.textFieldItemPrice resignFirstResponder];
     [self.textFieldEditedItemCount resignFirstResponder];
+}
+
+#pragma mark -UIalertVIew delegates
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:{
+            self.dataSource = [NSArray array];
+            [self.tableView reloadData];
+            [self setupMiddleView];
+            
+            NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.dataSource];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

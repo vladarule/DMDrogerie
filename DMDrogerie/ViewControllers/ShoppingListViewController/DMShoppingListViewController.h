@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DMShoppingListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface DMShoppingListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @end
