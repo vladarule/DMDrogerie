@@ -124,42 +124,42 @@
 - (void)setupTitles{
     
     
-    [self.lblEditedItemTitle setFont:[UIFont systemFontOfSize:17.0]];
+    [self.lblEditedItemTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:17.0]]];
     [self.lblEditedItemTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.textFieldEditedItemCount setFont:[UIFont systemFontOfSize:17.0]];
+    [self.textFieldEditedItemCount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:17.0]]];
     [self.textFieldEditedItemCount setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblEditedItemPrice setFont:[UIFont systemFontOfSize:17.0]];
+    [self.lblEditedItemPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:17.0]]];
     [self.lblEditedItemPrice setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblEditItem setFont:[UIFont boldSystemFontOfSize:18.0]];
+    [self.lblEditItem setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18.0]]];
     [self.lblEditItem setTextColor:[UIColor whiteColor]];
     
-    [self.lblEditItemCount setFont:[UIFont systemFontOfSize:16.0]];
+    [self.lblEditItemCount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblEditItemCount setTextColor:[UIColor whiteColor]];
     
-    [self.lblEditItemPrice setFont:[UIFont systemFontOfSize:16.0]];
+    [self.lblEditItemPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblEditItemPrice setTextColor:[UIColor whiteColor]];
     
     
-    [self.lblTotalPrice setFont:[UIFont systemFontOfSize:16.0]];
+    [self.lblTotalPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
     [self.lblTotalPrice setTextColor:[UIColor whiteColor]];
     
-    [self.lblCartPrice setFont:[UIFont systemFontOfSize:16.0]];
+    [self.lblCartPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
     [self.lblCartPrice setTextColor:[UIColor whiteColor]];
     
     [self.btnDeleteAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.btnDeleteAll.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
-    [self.btnDeleteAll setTitleEdgeInsets:UIEdgeInsetsMake(0, 16, 0, 0)];
+    [self.btnDeleteAll.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
+    [self.btnDeleteAll setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20.0], 0, 0)];
     
     [self.lblKm setTextColor:[UIColor whiteColor]];
-    [self.lblKm setFont:[UIFont boldSystemFontOfSize:16.0]];
+    [self.lblKm setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
     
     
-    [self.textFieldItemCount setFont:[UIFont systemFontOfSize:14.0]];
-    [self.textFieldItemPrice setFont:[UIFont systemFontOfSize:14.0]];
-    [self.textFieldItemName setFont:[UIFont systemFontOfSize:14.0]];
+    [self.textFieldItemCount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
+    [self.textFieldItemPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
+    [self.textFieldItemName setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     
     UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
 	numberToolbar.barStyle = UIBarStyleBlackTranslucent;
@@ -276,10 +276,10 @@
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", offer.numberOfItems]];
         [self.lblEditedItemPrice setText:offer.price];
         if ([offer.inCart boolValue]) {
-            [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_izbaci.png"] forState:UIControlStateNormal];
+            [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [Helper getStringFromStr:@"btn_izbaci"]]] forState:UIControlStateNormal];
         }
         else{
-            [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_ubaci.png"] forState:UIControlStateNormal];
+            [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [Helper getStringFromStr:@"btn_ubaci"]]] forState:UIControlStateNormal];
         }
     }
     else if ([obj isKindOfClass:[DMDiscount class]]) {
@@ -678,6 +678,26 @@
         default:
             break;
     }
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        return YES;
+    }
+    
+    if (textField == self.textFieldEditedItemCount || textField == self.textFieldItemCount || textField == self.textFieldItemPrice) {
+        NSString *validRegEx =@"^[0-9]*$"; //change this regular expression as your requirement
+        NSPredicate *regExPredicate =[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validRegEx];
+        BOOL myStringMatchesRegEx = [regExPredicate evaluateWithObject:string];
+        if (myStringMatchesRegEx)
+            return YES;
+        else
+            return NO;
+    }
+    else{
+        return YES;
+    }
+    
 }
 
 

@@ -73,14 +73,14 @@
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
 
     
-    [self.lblTitle setFont:[UIFont boldSystemFontOfSize:17]];
+    [self.lblTitle setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:17]]];
     [self.lblTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:15]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:13]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     [self.lblDescription setMinimumScaleFactor:0.2];
     
@@ -92,9 +92,9 @@
     
     [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, self.aktuelnost.imageBig]]];
     
-    [self.btnLink.titleLabel setFont:[UIFont systemFontOfSize:12.5]];
+    [self.btnLink.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.5]]];
     [self.btnLink setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
-    [self.btnLink setTitleEdgeInsets:UIEdgeInsetsMake(0, 18, 0, 0)];
+    [self.btnLink setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:18], 0, 0)];
     
     
     if ([self.aktuelnost.link isEqualToString:@"0"]) {

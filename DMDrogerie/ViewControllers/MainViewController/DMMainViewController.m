@@ -292,7 +292,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kStatistics];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    DMAktuelnostDetaljiViewController* aktVC = [[DMAktuelnostDetaljiViewController alloc] initWithNibName:@"DMAktuelnostDetaljiViewController" bundle:[NSBundle mainBundle] andAktuelnost:aktuelnost];
+    DMAktuelnostDetaljiViewController* aktVC = [[DMAktuelnostDetaljiViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMAktuelnostDetaljiViewController"] bundle:[NSBundle mainBundle] andAktuelnost:aktuelnost];
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:aktVC];
     
     [self.navigationController presentViewController:navCon animated:YES completion:nil];

@@ -55,7 +55,7 @@ GMSMapView *mapView_;
                                                             longitude:self.selectedLocation.longitude.floatValue
                                                                  zoom:6];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-//    mapView_.myLocationEnabled = YES;
+    mapView_.myLocationEnabled = YES;
     self.view = mapView_;
     
     // Creates a marker in the center of the map.
@@ -63,6 +63,7 @@ GMSMapView *mapView_;
     marker.position = CLLocationCoordinate2DMake(self.selectedLocation.latitude.floatValue, self.selectedLocation.longitude.floatValue);
     marker.title = self.selectedLocation.street;
     marker.snippet = self.selectedLocation.workingHours;
+    marker.icon = [UIImage imageNamed:@"zastavica.png"];
     marker.map = mapView_;
 }
 

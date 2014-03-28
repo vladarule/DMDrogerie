@@ -16,7 +16,7 @@
         return size;
     }
     else{
-        return size * 1.7;
+        return size * 1.6;
     }    
 }
 

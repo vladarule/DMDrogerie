@@ -277,7 +277,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kStatistics];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    DMOfferDetailsViewController* offerDetVC = [[DMOfferDetailsViewController alloc] initWithNibName:@"DMOfferDetailsViewController" bundle:[NSBundle mainBundle] andSelectedOffer:selOffer];
+    DMOfferDetailsViewController* offerDetVC = [[DMOfferDetailsViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMOfferDetailsViewController"] bundle:[NSBundle mainBundle] andSelectedOffer:selOffer];
     
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:offerDetVC];
     
