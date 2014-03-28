@@ -222,6 +222,19 @@
 		CEC1348318E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1347F18E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png */; };
 		CEC1348418E54905005FB230 /* saznaj_vise_btn_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348018E54905005FB230 /* saznaj_vise_btn_iPad.png */; };
 		CEC1348518E54905005FB230 /* saznaj_vise_btn_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348118E54905005FB230 /* saznaj_vise_btn_iPad@2x.png */; };
+		CEC1348A18E54C97005FB230 /* info_prodavnica_bkg_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348618E54C97005FB230 /* info_prodavnica_bkg_iPad.png */; };
+		CEC1348B18E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348718E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png */; };
+		CEC1348C18E54C97005FB230 /* mapa_btn_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348818E54C97005FB230 /* mapa_btn_iPad.png */; };
+		CEC1348D18E54C97005FB230 /* mapa_btn_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348918E54C97005FB230 /* mapa_btn_iPad@2x.png */; };
+		CEC1349218E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348E18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png */; };
+		CEC1349318E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1348F18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png */; };
+		CEC1349418E54CD3005FB230 /* radno_vreme_bkg_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349018E54CD3005FB230 /* radno_vreme_bkg_iPad.png */; };
+		CEC1349518E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349118E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png */; };
+		CEC1349718E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349618E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib */; };
+		CEC1349A18E54DC6005FB230 /* dmLogo_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349818E54DC6005FB230 /* dmLogo_iPad.png */; };
+		CEC1349B18E54DC6005FB230 /* dmLogo_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349918E54DC6005FB230 /* dmLogo_iPad@2x.png */; };
+		CEC1349E18E55034005FB230 /* telefon_btn_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */; };
+		CEC1349F18E55034005FB230 /* telefon_btn_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */; };
 		CED7476A18DF67CC0010C751 /* DMStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7476918DF67CC0010C751 /* DMStatistics.m */; };
 		CEDBA02518DCC74100BF3A71 /* DMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA02318DCC74100BF3A71 /* DMWebViewController.m */; };
 		CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA02418DCC74100BF3A71 /* DMWebViewController.xib */; };
@@ -492,6 +505,19 @@
 		CEC1347F18E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pozadina_aktuelno_prikaz_iPad@2x.png"; sourceTree = "<group>"; };
 		CEC1348018E54905005FB230 /* saznaj_vise_btn_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saznaj_vise_btn_iPad.png; sourceTree = "<group>"; };
 		CEC1348118E54905005FB230 /* saznaj_vise_btn_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saznaj_vise_btn_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1348618E54C97005FB230 /* info_prodavnica_bkg_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info_prodavnica_bkg_iPad.png; sourceTree = "<group>"; };
+		CEC1348718E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_prodavnica_bkg_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1348818E54C97005FB230 /* mapa_btn_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa_btn_iPad.png; sourceTree = "<group>"; };
+		CEC1348918E54C97005FB230 /* mapa_btn_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa_btn_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1348E18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pozadina_prodavnica_prikaz_iPad.png; sourceTree = "<group>"; };
+		CEC1348F18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pozadina_prodavnica_prikaz_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1349018E54CD3005FB230 /* radno_vreme_bkg_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radno_vreme_bkg_iPad.png; sourceTree = "<group>"; };
+		CEC1349118E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radno_vreme_bkg_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1349618E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStoreDetailsViewController_iPad.xib; sourceTree = "<group>"; };
+		CEC1349818E54DC6005FB230 /* dmLogo_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dmLogo_iPad.png; sourceTree = "<group>"; };
+		CEC1349918E54DC6005FB230 /* dmLogo_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dmLogo_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telefon_btn_iPad.png; sourceTree = "<group>"; };
+		CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telefon_btn_iPad@2x.png"; sourceTree = "<group>"; };
 		CED7476818DF67CC0010C751 /* DMStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMStatistics.h; path = Statistics/DMStatistics.h; sourceTree = "<group>"; };
 		CED7476918DF67CC0010C751 /* DMStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMStatistics.m; path = Statistics/DMStatistics.m; sourceTree = "<group>"; };
 		CEDBA02218DCC74100BF3A71 /* DMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMWebViewController.h; path = WebViewController/DMWebViewController.h; sourceTree = "<group>"; };
@@ -584,6 +610,7 @@
 				CE9F787F18AD42B600E11A78 /* DMStoreDetailsViewController.h */,
 				CE9F788018AD42B600E11A78 /* DMStoreDetailsViewController.m */,
 				CE9F788118AD42B600E11A78 /* DMStoreDetailsViewController.xib */,
+				CEC1349618E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib */,
 			);
 			name = StoreDetailsViewController;
 			sourceTree = "<group>";
@@ -602,6 +629,18 @@
 		CEB89F8B18E23A1D000B6F88 /* Resources_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */,
+				CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */,
+				CEC1349818E54DC6005FB230 /* dmLogo_iPad.png */,
+				CEC1349918E54DC6005FB230 /* dmLogo_iPad@2x.png */,
+				CEC1348E18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png */,
+				CEC1348F18E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png */,
+				CEC1349018E54CD3005FB230 /* radno_vreme_bkg_iPad.png */,
+				CEC1349118E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png */,
+				CEC1348618E54C97005FB230 /* info_prodavnica_bkg_iPad.png */,
+				CEC1348718E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png */,
+				CEC1348818E54C97005FB230 /* mapa_btn_iPad.png */,
+				CEC1348918E54C97005FB230 /* mapa_btn_iPad@2x.png */,
 				CEC1347E18E54905005FB230 /* pozadina_aktuelno_prikaz_iPad.png */,
 				CEC1347F18E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png */,
 				CEC1348018E54905005FB230 /* saznaj_vise_btn_iPad.png */,
@@ -1148,6 +1187,7 @@
 				CE9F788318AD42B600E11A78 /* DMStoreDetailsViewController.xib in Resources */,
 				CE9D008318E1FF970094A6F4 /* pozadina_promena_korpe@2x.png in Resources */,
 				CEB9CFE218A95F63002F3BDF /* CellDesign.xib in Resources */,
+				CEC1349A18E54DC6005FB230 /* dmLogo_iPad.png in Resources */,
 				CEBD58FE18A67AF50072E091 /* Images.xcassets in Resources */,
 				CEA56C9218ABF98300FBD1EE /* DMOfferDetailsViewController.xib in Resources */,
 				CEB8B48E18D90A7B00F090E6 /* btn-plus.png in Resources */,
@@ -1158,6 +1198,7 @@
 				CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */,
 				CEBE051518D78D0400378F88 /* DMMapViewController.xib in Resources */,
 				CEBE2A5E18E4A3BB005EA4D9 /* btn_close_list@2x.png in Resources */,
+				CEC1348D18E54C97005FB230 /* mapa_btn_iPad@2x.png in Resources */,
 				CEBAAE6718D8DA5F00232E50 /* crveni_prav.png in Resources */,
 				CEBAAE4F18D8D0B100232E50 /* novo-crveni.png in Resources */,
 				CEBE04D618D7642100378F88 /* novo-normal.png in Resources */,
@@ -1181,6 +1222,7 @@
 				CEBE2A5618E4A3BB005EA4D9 /* arrow_down@2x.png in Resources */,
 				CE9D008818E207180094A6F4 /* Checked.png in Resources */,
 				CEBE04D918D7642100378F88 /* novo-selected@2x.png in Resources */,
+				CEC1349B18E54DC6005FB230 /* dmLogo_iPad@2x.png in Resources */,
 				CEBAAE7018D8DA8E00232E50 /* plavi_prav@2x.png in Resources */,
 				CE9D008018E1FF970094A6F4 /* btn_ubaci.png in Resources */,
 				CEBAAE6818D8DA5F00232E50 /* crveni_prav@2x.png in Resources */,
@@ -1190,18 +1232,23 @@
 				CEBE04E918D77E8B00378F88 /* ranovreme-poz@2x.png in Resources */,
 				CEBE2A5C18E4A3BB005EA4D9 /* bkg_naziv_promena@2x.png in Resources */,
 				CEBE537E18E4EF86009D9B5C /* footer_shopping_bkg_iPad@2x.png in Resources */,
+				CEC1349E18E55034005FB230 /* telefon_btn_iPad.png in Resources */,
 				CEBE04E618D77E8B00378F88 /* prodavnica-pozadina-adresa.png in Resources */,
 				CEC00EA718BE9DA50048291D /* DMShoppingListViewController.xib in Resources */,
 				CEBAAE7818D8DACE00232E50 /* Forw-icon@2x.png in Resources */,
 				CEBE537818E4E41D009D9B5C /* zastavica@2x.png in Resources */,
+				CEC1348B18E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png in Resources */,
 				CEBF814E18E4F9FD00C7180F /* cena_po_komadu_bkg_iPad.png in Resources */,
 				CEB8B48A18D9034500F090E6 /* btn-obrisi.png in Resources */,
 				CEBF815D18E4FBBC00C7180F /* btn_korpa_iPad@2x.png in Resources */,
 				CEBA4B1D18E0C30000B14783 /* header_bg@2x.png in Resources */,
+				CEC1349218E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png in Resources */,
 				CEBE2A6118E4A79F005EA4D9 /* dmLogo_header.png in Resources */,
 				CE9D009918E22CD90094A6F4 /* DMDiscountsViewController_iPad.xib in Resources */,
+				CEC1348A18E54C97005FB230 /* info_prodavnica_bkg_iPad.png in Resources */,
 				CE9D008B18E207180094A6F4 /* delet@2x.png in Resources */,
 				CEC1347B18E544AD005FB230 /* novo_komad_bkg_iPad@2x.png in Resources */,
+				CEC1349318E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png in Resources */,
 				CEBE04CD18D7642100378F88 /* aktuelno-normal@2x.png in Resources */,
 				CEBE04F518D7851500378F88 /* btn-tel@2x.png in Resources */,
 				CEBE2A5A18E4A3BB005EA4D9 /* bkg_cena_po_komadu@2x.png in Resources */,
@@ -1210,8 +1257,10 @@
 				CE9D007B18E1FF970094A6F4 /* btn_izbaci@2x.png in Resources */,
 				CEB89FA018E256B2000B6F88 /* akcija_cenapopust_iPad.png in Resources */,
 				CEBAAE6318D8D9A600232E50 /* footer_talasi.png in Resources */,
+				CEC1349F18E55034005FB230 /* telefon_btn_iPad@2x.png in Resources */,
 				CEBAAE4C18D8D0B100232E50 /* footer-novo-prikaz@2x.png in Resources */,
 				CEBD596618A68F680072E091 /* DMLocationsViewController.xib in Resources */,
+				CEC1349718E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib in Resources */,
 				CEBE04B018D761F400378F88 /* tab_background@2x.png in Resources */,
 				CE9D009718E22C880094A6F4 /* DMMainViewController_iPad.xib in Resources */,
 				CEBE2A5818E4A3BB005EA4D9 /* bkg_broj_komada@2x.png in Resources */,
@@ -1254,6 +1303,7 @@
 				CEBAAE5418D8D0B100232E50 /* novo-rtg@2x.png in Resources */,
 				CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */,
 				CEC1348218E54905005FB230 /* pozadina_aktuelno_prikaz_iPad.png in Resources */,
+				CEC1348C18E54C97005FB230 /* mapa_btn_iPad.png in Resources */,
 				CEBE04E818D77E8B00378F88 /* ranovreme-poz.png in Resources */,
 				CEC1348318E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png in Resources */,
 				CEBF815118E4F9FD00C7180F /* naziv_proizvoda_bkg_iPad@2x.png in Resources */,
@@ -1264,6 +1314,7 @@
 				CEBF816018E4FBBC00C7180F /* btn_ubaci_iPad.png in Resources */,
 				CE9D008918E207180094A6F4 /* Checked@2x.png in Resources */,
 				CE9D007D18E1FF970094A6F4 /* btn_korpa@2x.png in Resources */,
+				CEC1349418E54CD3005FB230 /* radno_vreme_bkg_iPad.png in Resources */,
 				CEBAAE6018D8D9A600232E50 /* akcija-head@2x.png in Resources */,
 				CEBE04D218D7642100378F88 /* map-normal.png in Resources */,
 				CE9D008118E1FF970094A6F4 /* btn_ubaci@2x.png in Resources */,
@@ -1294,6 +1345,7 @@
 				CEBE04D718D7642100378F88 /* novo-normal@2x.png in Resources */,
 				CEBAAE6418D8D9A600232E50 /* footer_talasi@2x.png in Resources */,
 				CEBF815B18E4FBBC00C7180F /* btn_izbaci_iPad@2x.png in Resources */,
+				CEC1349518E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png in Resources */,
 				CEBE2A5718E4A3BB005EA4D9 /* bkg_broj_komada.png in Resources */,
 				CEBAAE5318D8D0B100232E50 /* novo-rtg.png in Resources */,
 				CEBE538118E4F085009D9B5C /* obrisi_btn_iPad.png in Resources */,

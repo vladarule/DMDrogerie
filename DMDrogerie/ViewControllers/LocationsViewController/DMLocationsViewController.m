@@ -412,7 +412,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kStatistics];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    DMStoreDetailsViewController* storeDetailsVC = [[DMStoreDetailsViewController alloc] initWithNibName:@"DMStoreDetailsViewController" bundle:[NSBundle mainBundle] andLocation:loc];
+    DMStoreDetailsViewController* storeDetailsVC = [[DMStoreDetailsViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMStoreDetailsViewController"] bundle:[NSBundle mainBundle] andLocation:loc];
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:storeDetailsVC];
     [self presentViewController:navCon animated:YES completion:nil];
 }

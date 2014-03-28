@@ -66,41 +66,41 @@
     UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrow_down.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(buttonCancelClicked:)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
     
-    [self.lblAdress setFont:[UIFont boldSystemFontOfSize:14.5]];
+    [self.lblAdress setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14.5]]];
     [self.lblAdress setMinimumScaleFactor:0.4];
     [self.lblAdress setTextColor:[UIColor whiteColor]];
     
-    [self.lblCity setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblCity setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblCity setTextColor:[UIColor yellowColor]];
     
-    [self.lblChief setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblChief setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblChief setTextColor:[UIColor whiteColor]];
     
-    [self.lblChiefValue setFont:[UIFont boldSystemFontOfSize:12.0]];
+    [self.lblChiefValue setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblChiefValue setTextColor:[UIColor whiteColor]];
     
-    [self.lblStoreNo setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblStoreNo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblStoreNo setTextColor:[UIColor whiteColor]];
     
-    [self.lblWorkihgHours setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [self.lblWorkihgHours setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblWorkihgHours setTextColor:[UIColor whiteColor]];
     
-    [self.lblWorkingDays setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblWorkingDays setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblWorkingDays setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaturday setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSaturday setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblSaturday setTextColor:[UIColor whiteColor]];
     
-    [self.lblSunday setFont:[UIFont boldSystemFontOfSize:12.0]];
+    [self.lblSunday setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblSunday setTextColor:[UIColor whiteColor]];
     
-    [self.lblWorkingDaysValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblWorkingDaysValue setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblWorkingDaysValue setTextColor:[UIColor yellowColor]];
     
-    [self.lblSaturdayValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSaturdayValue setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblSaturdayValue setTextColor:[UIColor yellowColor]];
     
-    [self.lblSundayValue setFont:[UIFont systemFontOfSize:12.0]];
+    [self.lblSundayValue setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblSundayValue setTextColor:[UIColor yellowColor]];
     
     [self.lblAdress setText:self.selectedLocation.street];
@@ -123,16 +123,16 @@
     }
     
     
-    [self.buttonPhoneNo.titleLabel setFont:[UIFont systemFontOfSize:12.5]];
+    [self.buttonPhoneNo.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.5]]];
     [self.buttonPhoneNo setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.buttonPhoneNo setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    [self.buttonPhoneNo setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:5.0], 0, 0)];
     
-    [self.buttonShowOnMap.titleLabel setFont:[UIFont systemFontOfSize:12.5]];
+    [self.buttonShowOnMap.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.5]]];
     [self.buttonShowOnMap setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.buttonShowOnMap setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    [self.buttonShowOnMap setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:5.0], 0, 0)];
     
     [self.buttonPhoneNo setTitle:[NSString stringWithFormat:@"Telefon: %@", self.selectedLocation.phoneNo] forState:UIControlStateNormal];
-    [self.buttonShowOnMap setTitle:@"Prikazi na mapi" forState:UIControlStateNormal];
+    [self.buttonShowOnMap setTitle:@"Prikaži na mapi" forState:UIControlStateNormal];
     
     
 }
