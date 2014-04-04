@@ -236,6 +236,14 @@
 		CEC1349E18E55034005FB230 /* telefon_btn_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */; };
 		CEC1349F18E55034005FB230 /* telefon_btn_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */; };
 		CED7476A18DF67CC0010C751 /* DMStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7476918DF67CC0010C751 /* DMStatistics.m */; };
+		CEDAE4BB18EF1E5200F1A29D /* akcija_head_bkg_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B318EF1E5200F1A29D /* akcija_head_bkg_iPad.png */; };
+		CEDAE4BC18EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B418EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png */; };
+		CEDAE4BD18EF1E5200F1A29D /* brojkomada_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B518EF1E5200F1A29D /* brojkomada_iPad.png */; };
+		CEDAE4BE18EF1E5200F1A29D /* brojkomada_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B618EF1E5200F1A29D /* brojkomada_iPad@2x.png */; };
+		CEDAE4BF18EF1E5200F1A29D /* cenakomad_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B718EF1E5200F1A29D /* cenakomad_iPad.png */; };
+		CEDAE4C018EF1E5200F1A29D /* cenakomad_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B818EF1E5200F1A29D /* cenakomad_iPad@2x.png */; };
+		CEDAE4C118EF1E5200F1A29D /* naziv_proizvoda_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B918EF1E5200F1A29D /* naziv_proizvoda_iPad.png */; };
+		CEDAE4C218EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4BA18EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png */; };
 		CEDBA02518DCC74100BF3A71 /* DMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA02318DCC74100BF3A71 /* DMWebViewController.m */; };
 		CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA02418DCC74100BF3A71 /* DMWebViewController.xib */; };
 		CEE0AA2818BFDDA400EA178E /* DMCustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0AA2718BFDDA400EA178E /* DMCustomItem.m */; };
@@ -520,6 +528,14 @@
 		CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telefon_btn_iPad@2x.png"; sourceTree = "<group>"; };
 		CED7476818DF67CC0010C751 /* DMStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMStatistics.h; path = Statistics/DMStatistics.h; sourceTree = "<group>"; };
 		CED7476918DF67CC0010C751 /* DMStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMStatistics.m; path = Statistics/DMStatistics.m; sourceTree = "<group>"; };
+		CEDAE4B318EF1E5200F1A29D /* akcija_head_bkg_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_head_bkg_iPad.png; sourceTree = "<group>"; };
+		CEDAE4B418EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_head_bkg_iPad@2x.png"; sourceTree = "<group>"; };
+		CEDAE4B518EF1E5200F1A29D /* brojkomada_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brojkomada_iPad.png; sourceTree = "<group>"; };
+		CEDAE4B618EF1E5200F1A29D /* brojkomada_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brojkomada_iPad@2x.png"; sourceTree = "<group>"; };
+		CEDAE4B718EF1E5200F1A29D /* cenakomad_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cenakomad_iPad.png; sourceTree = "<group>"; };
+		CEDAE4B818EF1E5200F1A29D /* cenakomad_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenakomad_iPad@2x.png"; sourceTree = "<group>"; };
+		CEDAE4B918EF1E5200F1A29D /* naziv_proizvoda_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naziv_proizvoda_iPad.png; sourceTree = "<group>"; };
+		CEDAE4BA18EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "naziv_proizvoda_iPad@2x.png"; sourceTree = "<group>"; };
 		CEDBA02218DCC74100BF3A71 /* DMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMWebViewController.h; path = WebViewController/DMWebViewController.h; sourceTree = "<group>"; };
 		CEDBA02318DCC74100BF3A71 /* DMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWebViewController.m; path = WebViewController/DMWebViewController.m; sourceTree = "<group>"; };
 		CEDBA02418DCC74100BF3A71 /* DMWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMWebViewController.xib; path = WebViewController/DMWebViewController.xib; sourceTree = "<group>"; };
@@ -629,6 +645,14 @@
 		CEB89F8B18E23A1D000B6F88 /* Resources_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				CEDAE4B318EF1E5200F1A29D /* akcija_head_bkg_iPad.png */,
+				CEDAE4B418EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png */,
+				CEDAE4B518EF1E5200F1A29D /* brojkomada_iPad.png */,
+				CEDAE4B618EF1E5200F1A29D /* brojkomada_iPad@2x.png */,
+				CEDAE4B718EF1E5200F1A29D /* cenakomad_iPad.png */,
+				CEDAE4B818EF1E5200F1A29D /* cenakomad_iPad@2x.png */,
+				CEDAE4B918EF1E5200F1A29D /* naziv_proizvoda_iPad.png */,
+				CEDAE4BA18EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png */,
 				CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */,
 				CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */,
 				CEC1349818E54DC6005FB230 /* dmLogo_iPad.png */,
@@ -1190,16 +1214,19 @@
 				CEC1349A18E54DC6005FB230 /* dmLogo_iPad.png in Resources */,
 				CEBD58FE18A67AF50072E091 /* Images.xcassets in Resources */,
 				CEA56C9218ABF98300FBD1EE /* DMOfferDetailsViewController.xib in Resources */,
+				CEDAE4C018EF1E5200F1A29D /* cenakomad_iPad@2x.png in Resources */,
 				CEB8B48E18D90A7B00F090E6 /* btn-plus.png in Resources */,
 				CEBE04D518D7642100378F88 /* map-selected@2x.png in Resources */,
 				CE9D007E18E1FF970094A6F4 /* btn_ok.png in Resources */,
 				CE9D008F18E22BC80094A6F4 /* DMLocationsViewController_iPad.xib in Resources */,
 				CEBE04E118D77DC400378F88 /* store_bkg@2x.png in Resources */,
 				CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */,
+				CEDAE4BC18EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png in Resources */,
 				CEBE051518D78D0400378F88 /* DMMapViewController.xib in Resources */,
 				CEBE2A5E18E4A3BB005EA4D9 /* btn_close_list@2x.png in Resources */,
 				CEC1348D18E54C97005FB230 /* mapa_btn_iPad@2x.png in Resources */,
 				CEBAAE6718D8DA5F00232E50 /* crveni_prav.png in Resources */,
+				CEDAE4C218EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png in Resources */,
 				CEBAAE4F18D8D0B100232E50 /* novo-crveni.png in Resources */,
 				CEBE04D618D7642100378F88 /* novo-normal.png in Resources */,
 				CEBE04E718D77E8B00378F88 /* prodavnica-pozadina-adresa@2x.png in Resources */,
@@ -1213,6 +1240,7 @@
 				CEBE04F318D7851500378F88 /* btn-map@2x.png in Resources */,
 				CEBF814F18E4F9FD00C7180F /* cena_po_komadu_bkg_iPad@2x.png in Resources */,
 				CEBF816118E4FBBC00C7180F /* btn_ubaci_iPad@2x.png in Resources */,
+				CEDAE4BE18EF1E5200F1A29D /* brojkomada_iPad@2x.png in Resources */,
 				CEB89FA218E256B2000B6F88 /* akcija_redovnacena_iPad.png in Resources */,
 				CEBE2A6218E4A79F005EA4D9 /* dmLogo_header@2x.png in Resources */,
 				CEBE2A5518E4A3BB005EA4D9 /* arrow_down.png in Resources */,
@@ -1269,6 +1297,7 @@
 				CEB89FA718E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad@2x.png in Resources */,
 				CEBAAE6C18D8DA7A00232E50 /* Ellipse-2@2x.png in Resources */,
 				CEB8B48B18D9034500F090E6 /* btn-obrisi@2x.png in Resources */,
+				CEDAE4BF18EF1E5200F1A29D /* cenakomad_iPad.png in Resources */,
 				CE9D008218E1FF970094A6F4 /* pozadina_promena_korpe.png in Resources */,
 				CEC1347318E542F0005FB230 /* DMOfferDetailsViewController_iPad.xib in Resources */,
 				CEBAAE5818D8D0E300232E50 /* Btn@2x.png in Resources */,
@@ -1301,6 +1330,7 @@
 				CEC1348418E54905005FB230 /* saznaj_vise_btn_iPad.png in Resources */,
 				CEBAAE4D18D8D0B100232E50 /* header-novo.png in Resources */,
 				CEBAAE5418D8D0B100232E50 /* novo-rtg@2x.png in Resources */,
+				CEDAE4BB18EF1E5200F1A29D /* akcija_head_bkg_iPad.png in Resources */,
 				CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */,
 				CEC1348218E54905005FB230 /* pozadina_aktuelno_prikaz_iPad.png in Resources */,
 				CEC1348C18E54C97005FB230 /* mapa_btn_iPad.png in Resources */,
@@ -1355,6 +1385,8 @@
 				CEBE2A5B18E4A3BB005EA4D9 /* bkg_naziv_promena.png in Resources */,
 				CEBF815018E4F9FD00C7180F /* naziv_proizvoda_bkg_iPad.png in Resources */,
 				CEC1347D18E547C0005FB230 /* DMAktuelnostDetaljiViewController_iPad.xib in Resources */,
+				CEDAE4C118EF1E5200F1A29D /* naziv_proizvoda_iPad.png in Resources */,
+				CEDAE4BD18EF1E5200F1A29D /* brojkomada_iPad.png in Resources */,
 				CEB89FA318E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png in Resources */,
 				CEB89F9218E2542F000B6F88 /* akcija_head_iPad.png in Resources */,
 				CEBAAE5F18D8D9A600232E50 /* akcija-head.png in Resources */,
@@ -1490,6 +1522,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "3987C926-AF84-4AE0-BCA6-F658C820ECB9";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1523,6 +1556,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "3987C926-AF84-4AE0-BCA6-F658C820ECB9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1612,6 +1646,80 @@
 			};
 			name = Release;
 		};
+		CEDAE4B018EF0C9200F1A29D /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "3987C926-AF84-4AE0-BCA6-F658C820ECB9";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		CEDAE4B118EF0C9200F1A29D /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
+					/Users/user/Documents/DMDrogerie,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
+				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		CEDAE4B218EF0C9200F1A29D /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DMDrogerie.app/DMDrogerie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
+				INFOPLIST_FILE = "DMDrogerieTests/DMDrogerieTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1620,6 +1728,7 @@
 			buildConfigurations = (
 				CEBD591218A67AF60072E091 /* Debug */,
 				CEBD591318A67AF60072E091 /* Release */,
+				CEDAE4B018EF0C9200F1A29D /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1629,6 +1738,7 @@
 			buildConfigurations = (
 				CEBD591518A67AF60072E091 /* Debug */,
 				CEBD591618A67AF60072E091 /* Release */,
+				CEDAE4B118EF0C9200F1A29D /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1638,6 +1748,7 @@
 			buildConfigurations = (
 				CEBD591818A67AF60072E091 /* Debug */,
 				CEBD591918A67AF60072E091 /* Release */,
+				CEDAE4B218EF0C9200F1A29D /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

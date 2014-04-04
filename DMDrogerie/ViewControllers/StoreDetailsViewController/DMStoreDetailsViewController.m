@@ -157,7 +157,8 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedStats forKey:kStatistics];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
+   
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", self.selectedLocation.phoneNo]]];
 }
 
 - (IBAction)buttonShowOnMapClicked:(id)sender {

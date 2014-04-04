@@ -219,7 +219,7 @@
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
         [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        [self.lblSaving setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
+        [self.lblSaving setText:[NSString stringWithFormat:@"Uštedite: %@", discount.saving]];
         [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount setText:discount.discount];
         if (discount.ref.intValue == 0) {
@@ -304,35 +304,40 @@
     
     if (self.selectedIndex > 0) {
         self.selectedIndex--;
-        [self setupValues];
-        if (self.mainView.tag < 0) {
-            self.mainView.tag = 0;
-            self.secondView.tag = -1;
-            CGRect mainRct = CGRectMake(- self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+    }
+    else{
+        self.selectedIndex = self.dataSource.count - 1;
+    }
+    
+    
+    [self setupValues];
+    if (self.mainView.tag < 0) {
+        self.mainView.tag = 0;
+        self.secondView.tag = -1;
+        CGRect mainRct = CGRectMake(- self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+        [self.mainView setFrame:mainRct];
+        CGRect secondRct = self.secondView.frame;
+        secondRct.origin.x = secondRct.origin.x + secondRct.size.width;
+        mainRct.origin.x = 0;
+        
+        [UIView animateWithDuration:0.3 animations:^{
             [self.mainView setFrame:mainRct];
-            CGRect secondRct = self.secondView.frame;
-            secondRct.origin.x = secondRct.origin.x + secondRct.size.width;
-            mainRct.origin.x = 0;
-            
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.mainView setFrame:mainRct];
-                [self.secondView setFrame:secondRct];
-            }];
-        }
-        else{
-            self.secondView.tag = 0;
-            self.mainView.tag = -1;
-            CGRect mainRct = self.mainView.frame;
-            CGRect secondRct = CGRectMake(- self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
             [self.secondView setFrame:secondRct];
-            mainRct.origin.x = mainRct.origin.x + mainRct.size.width;
-            secondRct.origin.x = 0;
-            
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.mainView setFrame:mainRct];
-                [self.secondView setFrame:secondRct];
-            }];
-        }
+        }];
+    }
+    else{
+        self.secondView.tag = 0;
+        self.mainView.tag = -1;
+        CGRect mainRct = self.mainView.frame;
+        CGRect secondRct = CGRectMake(- self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
+        [self.secondView setFrame:secondRct];
+        mainRct.origin.x = mainRct.origin.x + mainRct.size.width;
+        secondRct.origin.x = 0;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.mainView setFrame:mainRct];
+            [self.secondView setFrame:secondRct];
+        }];
     }
     
 }
@@ -341,35 +346,39 @@
     
     if (self.selectedIndex < self.dataSource.count - 1) {
         self.selectedIndex++;
-        [self setupValues];
-        if (self.mainView.tag < 0) {
-            self.mainView.tag = 0;
-            self.secondView.tag = -1;
-            CGRect mainRct = CGRectMake(self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+    }
+    else{
+        self.selectedIndex = 0;
+    }
+    
+    [self setupValues];
+    if (self.mainView.tag < 0) {
+        self.mainView.tag = 0;
+        self.secondView.tag = -1;
+        CGRect mainRct = CGRectMake(self.mainView.frame.size.width, 0, self.mainView.frame.size.width, self.mainView.frame.size.height);
+        [self.mainView setFrame:mainRct];
+        CGRect secondRct = self.secondView.frame;
+        secondRct.origin.x = secondRct.origin.x - secondRct.size.width;
+        mainRct.origin.x = 0;
+        
+        [UIView animateWithDuration:0.3 animations:^{
             [self.mainView setFrame:mainRct];
-            CGRect secondRct = self.secondView.frame;
-            secondRct.origin.x = secondRct.origin.x - secondRct.size.width;
-            mainRct.origin.x = 0;
-            
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.mainView setFrame:mainRct];
-                [self.secondView setFrame:secondRct];
-            }];
-        }
-        else{
-            self.secondView.tag = 0;
-            self.mainView.tag = -1;
-            CGRect mainRct = self.mainView.frame;
-            CGRect secondRct = CGRectMake(self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
             [self.secondView setFrame:secondRct];
-            mainRct.origin.x = mainRct.origin.x - mainRct.size.width;
-            secondRct.origin.x = 0;
-            
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.mainView setFrame:mainRct];
-                [self.secondView setFrame:secondRct];
-            }];
-        }
+        }];
+    }
+    else{
+        self.secondView.tag = 0;
+        self.mainView.tag = -1;
+        CGRect mainRct = self.mainView.frame;
+        CGRect secondRct = CGRectMake(self.secondView.frame.size.width, 0, self.secondView.frame.size.width, self.secondView.frame.size.height);
+        [self.secondView setFrame:secondRct];
+        mainRct.origin.x = mainRct.origin.x - mainRct.size.width;
+        secondRct.origin.x = 0;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.mainView setFrame:mainRct];
+            [self.secondView setFrame:secondRct];
+        }];
     }
     
 }

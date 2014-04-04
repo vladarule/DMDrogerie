@@ -26,7 +26,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    [GMSServices provideAPIKey:@"AIzaSyDPQ1aFzVv1GnO7xYXo38D34CHiHPJyfuw"];
+    [GMSServices provideAPIKey:@"AIzaSyCwhrfqej8SOSroRbgzj57rRPLuN0FNCuA"];
     
     self.window.backgroundColor = [UIColor whiteColor];
     

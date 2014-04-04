@@ -350,7 +350,7 @@
 	[lblDescription setText:location.city];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-	[lblDate setText:[NSString stringWithFormat:@"Udaljenost: %@", location.distance]];
+	[lblDate setText:[NSString stringWithFormat:@"Udaljenost: %@ km", location.distance]];
 	
     UIImageView* imgView = (UIImageView *)[cell viewWithTag:10];
     

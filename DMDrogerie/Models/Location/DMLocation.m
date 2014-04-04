@@ -35,8 +35,12 @@
         
         CLLocationDistance distance = [location distanceFromLocation:currentLocation];
         
-        
-        self.distance = [NSString stringWithFormat:@"%f", distance/1000];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//        [formatter setMaximumIntegerDigits:2];
+        [formatter setMaximumFractionDigits:2];
+        [formatter setRoundingMode: NSNumberFormatterRoundUp];
+        self.distance = [formatter stringFromNumber:[NSNumber numberWithFloat:distance/1000]];
         
 	}
 	return self;

@@ -56,15 +56,13 @@ GMSMapView *mapView_;
                                                                  zoom:6];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
+    
     self.view = mapView_;
     
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(self.selectedLocation.latitude.floatValue, self.selectedLocation.longitude.floatValue);
-    marker.title = self.selectedLocation.street;
-    marker.snippet = self.selectedLocation.workingHours;
-    marker.icon = [UIImage imageNamed:@"zastavica.png"];
-    marker.map = mapView_;
+    
+    [self performSelector:@selector(setupMap) withObject:nil afterDelay:3.0];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,5 +70,25 @@ GMSMapView *mapView_;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)setupMap{
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(self.selectedLocation.latitude.floatValue, self.selectedLocation.longitude.floatValue);
+    marker.title = self.selectedLocation.street;
+    marker.snippet = self.selectedLocation.workingHours;
+    marker.icon = [UIImage imageNamed:@"zastavica.png"];
+    marker.map = mapView_;
+    
+    GMSCoordinateBounds* bound = [[GMSCoordinateBounds alloc] initWithCoordinate:marker.position coordinate:mapView_.myLocation.coordinate];
+    
+    
+    
+    
+    GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bound
+                                             withPadding:50.0f];
+    [mapView_ moveCamera:update];
+}
+
 
 @end
