@@ -130,7 +130,7 @@
     [self.lblSubtitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSubtitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
@@ -143,13 +143,13 @@
     [self.lblKM setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblKM setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaving setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblSaving setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblSaving setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblActiveTo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblActiveTo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblActiveTo setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblRef setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDiscount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
@@ -166,7 +166,7 @@
     [self.lblSubtitle2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSubtitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblDescription2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblBefore2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
@@ -179,13 +179,13 @@
     [self.lblKm2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblKm2 setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaving2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
+    [self.lblSaving2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblSaving2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblActiveTo2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblActiveTo2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblActiveTo2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblRef2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDiscount2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
@@ -253,7 +253,7 @@
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
         [self.lblPrice2 setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        [self.lblSaving2 setText:[NSString stringWithFormat:@"Ustedite: %@", discount.saving]];
+        [self.lblSaving2 setText:[NSString stringWithFormat:@"Uštedite: %@", discount.saving]];
         [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount2 setText:discount.discount];
         if (discount.ref.intValue == 0) {

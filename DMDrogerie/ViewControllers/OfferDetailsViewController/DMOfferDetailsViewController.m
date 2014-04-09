@@ -75,7 +75,7 @@
     [self.lblItems setFont:[UIFont systemFontOfSize:14]];
     [self.lblItems setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:13]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:11.5]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     [self.lblDescription setMinimumScaleFactor:0.2];
     
@@ -86,7 +86,7 @@
     
     
     [self.lblName setText:self.selectedOffer.title];
-    [self.lblPrice setText:self.selectedOffer.price];
+    [self.lblPrice setText:[NSString stringWithFormat:@"%@ KM", self.selectedOffer.price]];
     [self.lblItems setText:self.selectedOffer.quantity];
     [self.lblDescription setText:self.selectedOffer.detailDescription];
     
