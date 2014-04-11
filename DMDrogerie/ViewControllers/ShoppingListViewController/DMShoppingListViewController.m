@@ -7,6 +7,7 @@
 //
 
 #import "DMShoppingListViewController.h"
+#import "MBProgressHUD.h"
 
 #import "UITableViewController+CustomCells.h"
 
@@ -276,7 +277,7 @@
         
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@", offer.title]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", offer.numberOfItems]];
-        [self.lblEditedItemPrice setText:offer.price];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", offer.price]];
         if ([offer.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [Helper getStringFromStr:@"btn_izbaci"]]] forState:UIControlStateNormal];
         }
@@ -288,7 +289,7 @@
         DMDiscount* discount = (DMDiscount *)obj;
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@ - %@", discount.item, discount.name]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", discount.numberOfItems]];
-        [self.lblEditedItemPrice setText:discount.nwPrice];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", discount.nwPrice]];
         
         if ([discount.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_izbaci.png"] forState:UIControlStateNormal];
@@ -301,7 +302,7 @@
         DMCustomItem* item = (DMCustomItem *)obj;
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@", item.name]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", item.numberOfItems]];
-        [self.lblEditedItemPrice setText:item.price];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", item.price]];
         
         if ([item.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_izbaci.png"] forState:UIControlStateNormal];
@@ -390,6 +391,18 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"";
+    hud.detailsLabelText = @"Proizvod zamijenjen";
+    hud.margin = 10.f;
+    hud.yOffset = 120.f;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    [hud hide:YES afterDelay:3];
+    
 }
 
 - (IBAction)btnDeleteEditedItemClicked:(id)sender {
@@ -409,6 +422,18 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"";
+    hud.detailsLabelText = @"Proizvod obrisan";
+    hud.margin = 10.f;
+    hud.yOffset = 120.f;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    [hud hide:YES afterDelay:3];
 }
 
 - (IBAction)btnAddRemoveFromCartClicked:(id)sender {
@@ -427,6 +452,8 @@
         offer.inCart = [NSNumber numberWithBool:![offer.inCart boolValue]];
         
         if ([offer.inCart boolValue]) {
+            [self showToastWithString:@"Proizvod ubačen u korpu"];
+            
             NSDate* date = [NSDate date];
             
             NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
@@ -441,6 +468,7 @@
             [statsArr addObject:stat];
         }
         else{
+            [self showToastWithString:@"Proizvod izbačen iz korpe"];
             for (DMStatistics* stat in statsArr) {
                 if ([stat.objectId isEqualToString:offer.objectId] && [stat.category isEqualToString:@"SHOP"]) {
                     [statsArr removeObject:stat];
@@ -454,6 +482,8 @@
         DMDiscount* discount = (DMDiscount *)obj;
         discount.inCart = [NSNumber numberWithBool:![discount.inCart boolValue]];
         if ([discount.inCart boolValue]) {
+            
+            [self showToastWithString:@"Proizvod ubačen u korpu"];
             NSDate* date = [NSDate date];
             
             NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
@@ -468,6 +498,7 @@
             [statsArr addObject:stat];
         }
         else{
+            [self showToastWithString:@"Proizvod izbačen iz korpe"];
             for (DMStatistics* stat in statsArr) {
                 if ([stat.objectId isEqualToString:discount.objectId] && [stat.category isEqualToString:@"SHOP"]) {
                     [statsArr removeObject:stat];
@@ -479,6 +510,12 @@
     else if ([obj isKindOfClass:[DMCustomItem class]]) {
         DMCustomItem* item = (DMCustomItem *)obj;
         item.inCart = [NSNumber numberWithBool:![item.inCart boolValue]];
+        if ([item.inCart boolValue]) {
+            [self showToastWithString:@"Proizvod ubačen u korpu"];
+        }
+        else{
+            [self showToastWithString:@"Proizvod izbačen iz korpe"];
+        }
     }
     
     [self.tableView reloadData];
@@ -495,6 +532,21 @@
     [[NSUserDefaults standardUserDefaults] setObject:myEncodedObject forKey:kSavedItems];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+- (void)showToastWithString:(NSString *)str{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"";
+    hud.detailsLabelText = str;
+    hud.margin = 10.f;
+    hud.yOffset = 130.f;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    [hud hide:YES afterDelay:3];
+}
+
 
 - (IBAction)btnCloseEditedItemClicked:(id)sender {
     [self hideEditedItemView];

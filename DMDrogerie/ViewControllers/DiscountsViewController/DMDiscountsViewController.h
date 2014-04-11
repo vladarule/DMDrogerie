@@ -37,7 +37,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblActiveTo2;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblIndex;
-@property (weak, nonatomic) IBOutlet UILabel *lblIndex2;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDiscount;
 @property (weak, nonatomic) IBOutlet UILabel *lblDiscount2;

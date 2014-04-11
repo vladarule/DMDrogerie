@@ -130,7 +130,7 @@
     [self.lblSubtitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSubtitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
@@ -166,7 +166,7 @@
     [self.lblSubtitle2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblSubtitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblBefore2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
@@ -188,12 +188,9 @@
     [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblRef2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblDiscount2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDiscount2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDiscount2 setTextColor:[UIColor redColor]];
-    
-    
-    [self.lblIndex2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
-    [self.lblIndex2 setTextColor:[UIColor colorWithRed:110.0/255 green:133.0/255 blue:200.0/255 alpha:1.0]];
+
     
     
     [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
@@ -215,11 +212,15 @@
     if (self.mainView.tag < 0) {
         [self.lblTitle setText:discount.item];
         [self.lblSubtitle setText:discount.name];
-        [self.lblDescription setText:discount.description];
+        [self.lblDescription setText:[NSString stringWithFormat:@"%@\n%@", discount.description, discount.quantity]];
+        CGRect descRect = self.lblDescription.frame;
+        descRect.size.width = 165;
+        [self.lblDescription setFrame:descRect];
+        [self.lblDescription sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
         [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        [self.lblSaving setText:[NSString stringWithFormat:@"Uštedite: %@", discount.saving]];
+        [self.lblSaving setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
         [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount setText:discount.discount];
         if (discount.ref.intValue == 0) {
@@ -249,11 +250,15 @@
     else{
         [self.lblTitle2 setText:discount.item];
         [self.lblSubtitle2 setText:discount.name];
-        [self.lblDescription2 setText:discount.description];
+        [self.lblDescription2 setText:[NSString stringWithFormat:@"%@\n%@", discount.description, discount.quantity]];
+        CGRect descRect = self.lblDescription2.frame;
+        descRect.size.width = 165;
+        [self.lblDescription2 setFrame:descRect];
+        [self.lblDescription2 sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
         [self.lblPrice2 setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        [self.lblSaving2 setText:[NSString stringWithFormat:@"Uštedite: %@", discount.saving]];
+        [self.lblSaving2 setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
         [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount2 setText:discount.discount];
         if (discount.ref.intValue == 0) {
@@ -276,7 +281,7 @@
         }
         
         
-        [self.lblIndex2 setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
+        [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
         
         [self.imgView2 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
     }
@@ -434,6 +439,18 @@
     
     
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"";
+    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ - %@ dodan u shopping listu", discount.item, discount.name];
+    hud.margin = 10.f;
+    hud.yOffset = 120.f;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    [hud hide:YES afterDelay:3];
 }
 
 

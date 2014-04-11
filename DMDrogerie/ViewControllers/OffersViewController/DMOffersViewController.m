@@ -174,7 +174,18 @@
 -(void) parserDidEndDocument:(NSXMLParser *)parser {
     
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    self.dataSource = [NSArray arrayWithArray:self.arrOffers];
+    self.dataSource = [self.arrOffers sortedArrayUsingComparator:^NSComparisonResult(DMOffer* obj1, DMOffer* obj2){
+        NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+        [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
+        
+        NSDate* dt1 = [formateer dateFromString:obj1.time];
+        NSDate* dt2 = [formateer dateFromString:obj2.time];
+        
+        NSComparisonResult res = [dt2 compare:dt1];
+        
+        return res;
+    }];
+    
     [self.tableView reloadData];
 }
 
@@ -219,7 +230,7 @@
 	[lblDescription setText:offer.description];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-	[lblDate setText:offer.activeTo];
+	[lblDate setText:offer.time];
     
     
     UIImageView* imgView = (UIImageView *)[cell viewWithTag:4];

@@ -8,6 +8,7 @@
 
 #import "DMOfferDetailsViewController.h"
 #import "UIKit+AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface DMOfferDetailsViewController ()
 
@@ -130,7 +131,17 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Configure for text only and offset down
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"";
+    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ dodan u shopping listu", self.selectedOffer.title];
+    hud.margin = 10.f;
+    hud.yOffset = 120.f;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    [hud hide:YES afterDelay:3];
 }
 
 
