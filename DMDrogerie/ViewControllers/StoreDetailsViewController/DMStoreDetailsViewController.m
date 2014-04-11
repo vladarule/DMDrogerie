@@ -112,7 +112,7 @@
     [self.lblWorkihgHours setText:NSLocalizedString(@"RADNO VRIJEME:", @"")];
     [self.lblWorkingDays setText:NSLocalizedString(@"PON-PET", @"")];
     [self.lblSaturday setText:NSLocalizedString(@"SUBOTA", @"")];
-    [self.lblSunday setText:NSLocalizedString(@"NEDELJA", @"")];
+    [self.lblSunday setText:NSLocalizedString(@"NEDJELJA", @"")];
     
     [self.lblWorkingDaysValue setText:self.selectedLocation.workingHours];
     [self.lblSaturdayValue setText:self.selectedLocation.saturdayHours];

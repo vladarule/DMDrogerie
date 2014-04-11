@@ -81,7 +81,7 @@
     
     [self.lblOnlyOpen setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblOnlyOpen setTextColor:[UIColor grayColor]];
-    [self.lblOnlyOpen setText:@"Samo otvorene prodavnice"];
+    [self.lblOnlyOpen setText:@"Sve prodavnice"];
 }
 
 - (void)getData{
@@ -118,7 +118,7 @@
 - (IBAction)switchValueChanged:(id)sender {
     [self setupDataSource];
     
-    if ([sender isOn]) {
+    if (![sender isOn]) {
         [self.lblOnlyOpen setText:@"Samo otvorene prodavnice"];
     }
     else{
@@ -127,7 +127,7 @@
 }
 
 - (void)setupDataSource{
-    if (self.switchOnlyOpen.isOn) {
+    if (!self.switchOnlyOpen.isOn) {
         NSMutableArray* arr = [NSMutableArray array];
         for (DMLocation* location in self.allLocations) {
             
