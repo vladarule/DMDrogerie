@@ -398,7 +398,7 @@
     hud.labelText = @"";
     hud.detailsLabelText = @"Proizvod zamijenjen";
     hud.margin = 10.f;
-    hud.yOffset = 120.f;
+    hud.yOffset = 130.f;
     hud.removeFromSuperViewOnHide = YES;
     
     [hud hide:YES afterDelay:3];
@@ -430,7 +430,7 @@
     hud.labelText = @"";
     hud.detailsLabelText = @"Proizvod obrisan";
     hud.margin = 10.f;
-    hud.yOffset = 120.f;
+    hud.yOffset = 130.f;
     hud.removeFromSuperViewOnHide = YES;
     
     [hud hide:YES afterDelay:3];

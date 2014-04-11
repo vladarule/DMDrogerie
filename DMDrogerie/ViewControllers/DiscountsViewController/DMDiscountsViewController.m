@@ -133,7 +133,7 @@
     [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.lblBefore setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblBefore setMinimumScaleFactor:0.5];
     [self.lblBefore setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
@@ -152,7 +152,7 @@
     [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
     [self.lblRef setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblDiscount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblDiscount setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblDiscount setTextColor:[UIColor redColor]];
     
     
@@ -169,7 +169,7 @@
     [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblBefore2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.lblBefore2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblBefore2 setMinimumScaleFactor:0.5];
     [self.lblBefore2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
