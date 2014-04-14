@@ -144,10 +144,12 @@
     [self.lblEditItemPrice setTextColor:[UIColor whiteColor]];
     
     
-    [self.lblTotalPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
+    [self.lblTotalPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15.0]]];
+    [self.lblTotalPrice setMinimumScaleFactor:0.6];
     [self.lblTotalPrice setTextColor:[UIColor whiteColor]];
     
-    [self.lblCartPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
+    [self.lblCartPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15.0]]];
+    [self.lblCartPrice setMinimumScaleFactor:0.6];
     [self.lblCartPrice setTextColor:[UIColor whiteColor]];
     
     [self.btnDeleteAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -223,8 +225,15 @@
         }
     }
     
-    [self.lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [NSNumber numberWithFloat:totalPrice]]];
-    [self.lblCartPrice setText:[NSString stringWithFormat:@"Cijena u korpi: %@ KM", [NSNumber numberWithFloat:cartPrice]]];
+    NSNumberFormatter* numForm = [[NSNumberFormatter alloc] init];
+    [numForm setPositiveFormat:@"0.##"];
+    [numForm setMinimumFractionDigits:2];
+    
+    NSString* strTotalPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
+    NSString* strCartPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:cartPrice]];
+    
+    [self.lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strTotalPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+    [self.lblCartPrice setText:[NSString stringWithFormat:@"Cijena u korpi: %@ KM", [strCartPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
     
 }
 
@@ -601,6 +610,10 @@
     
     UIImageView *imgVIew = (UIImageView *)[cell viewWithTag:10];
     
+    NSNumberFormatter* numForm = [[NSNumberFormatter alloc] init];
+    [numForm setPositiveFormat:@"0.##"];
+    [numForm setMinimumFractionDigits:2];
+    
     if ([obj isKindOfClass:[DMOffer class]]) {
         DMOffer* offer = (DMOffer *)obj;
         
@@ -613,7 +626,10 @@
         float totalPrice = offer.numberOfItems.intValue * price;
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [NSNumber numberWithFloat:totalPrice]]];
+        NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
+        
+        
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([offer.inCart boolValue]) {
             [imgVIew setHidden:NO];
@@ -634,7 +650,10 @@
         float totalPrice = discount.numberOfItems.intValue * price;
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [NSNumber numberWithFloat:totalPrice]]];
+        NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
+        
+        
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([discount.inCart boolValue]) {
             [imgVIew setHidden:NO];
@@ -654,7 +673,10 @@
         float totalPrice = item.numberOfItems.intValue * price;
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [NSNumber numberWithFloat:totalPrice]]];
+        NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
+        
+        
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([item.inCart boolValue]) {
             [imgVIew setHidden:NO];
