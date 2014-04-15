@@ -140,7 +140,7 @@
                     NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
                     NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
                     int hour = [comps hour];
-                    if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+                    if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                         [arr addObject:location];
                     }
                 }
@@ -151,7 +151,7 @@
                     NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
                     NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
                     int hour = [comps hour];
-                    if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+                    if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                         [arr addObject:location];
                     }
                 }
@@ -162,7 +162,7 @@
                     NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
                     NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
                     int hour = [comps hour];
-                    if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+                    if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                         [arr addObject:location];
                     }
                 }
@@ -191,7 +191,7 @@
             NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
             NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
             int hour = [comps hour];
-            if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+            if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                 isOpen = YES;
             }
         }
@@ -202,7 +202,7 @@
             NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
             NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
             int hour = [comps hour];
-            if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+            if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                 isOpen = YES;
             }
         }
@@ -213,7 +213,7 @@
             NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
             NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
             int hour = [comps hour];
-            if (hour > (startHour.intValue + 1) && hour < endHour.intValue) {
+            if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                 isOpen = YES;
             }
         }
@@ -350,7 +350,7 @@
 	[lblDescription setText:location.city];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
-	[lblDate setText:[NSString stringWithFormat:@"Udaljenost: %@ km", location.distance]];
+	[lblDate setText:[NSString stringWithFormat:@"Udaljenost: %@ km", [location.distance stringByReplacingOccurrencesOfString:@"." withString:@","]]];
 	
     UIImageView* imgView = (UIImageView *)[cell viewWithTag:10];
     

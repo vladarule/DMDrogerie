@@ -619,7 +619,7 @@
         
         [lblTitle setText:[NSString stringWithFormat:@"%@", offer.title]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", offer.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", offer.price]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [offer.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [offer.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];
@@ -643,7 +643,7 @@
         DMDiscount* discount = (DMDiscount *)obj;
         [lblTitle setText:[NSString stringWithFormat:@"%@ - %@", discount.item, discount.name]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", discount.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", discount.nwPrice]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [discount.nwPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];
@@ -666,7 +666,7 @@
         DMCustomItem* item = (DMCustomItem *)obj;
         [lblTitle setText:[NSString stringWithFormat:@"%@", item.name]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", item.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", item.price]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [item.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [item.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];

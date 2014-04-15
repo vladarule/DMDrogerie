@@ -105,7 +105,7 @@
     
     [self.lblAdress setText:self.selectedLocation.street];
     [self.lblCity setText:self.selectedLocation.city];
-    [self.lblChief setText:NSLocalizedString(@"Poslovodja/Poslovotkinja:", @"")];
+    [self.lblChief setText:NSLocalizedString(@"Poslovođa/Poslovotkinja:", @"")];
     [self.lblChiefValue setText:self.selectedLocation.chief];
     [self.lblStoreNo setText:[NSString stringWithFormat:@"Broj prodavnice: %@", self.selectedLocation.prod]];
     
