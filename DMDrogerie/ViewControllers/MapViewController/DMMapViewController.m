@@ -76,7 +76,7 @@ GMSMapView *mapView_;
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(self.selectedLocation.latitude.floatValue, self.selectedLocation.longitude.floatValue);
     marker.title = self.selectedLocation.street;
-    marker.snippet = self.selectedLocation.workingHours;
+    marker.snippet = self.selectedLocation.city;
     marker.icon = [UIImage imageNamed:@"zastavica.png"];
     marker.map = mapView_;
     

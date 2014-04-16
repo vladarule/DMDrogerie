@@ -10,6 +10,10 @@
                 <outlet property="buttonAddToCart2" destination="17m-s7-UEN" id="fwB-Jn-AOO"/>
                 <outlet property="imgView" destination="gUN-5g-jJr" id="04e-Rt-8Js"/>
                 <outlet property="imgView2" destination="T6M-KF-67b" id="CCY-1D-XrA"/>
+                <outlet property="imgViewBlue" destination="eHL-Oe-4Fe" id="srY-At-dcf"/>
+                <outlet property="imgViewBlue2" destination="4SO-qF-XLI" id="7dh-kh-P8v"/>
+                <outlet property="imgViewRed" destination="LeE-qX-9Jx" id="Mjd-qi-0fL"/>
+                <outlet property="imgViewRed2" destination="5HB-pQ-7zZ" id="aa3-Ol-AnY"/>
                 <outlet property="lblActiveTo" destination="xNX-bj-dFU" id="s1A-DE-qM3"/>
                 <outlet property="lblActiveTo2" destination="aZs-o7-pIZ" id="xMm-7f-40u"/>
                 <outlet property="lblBefore" destination="uHm-1w-m1Z" id="Y0W-Tn-W4p"/>
@@ -73,7 +77,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pr1-FB-DDg">
-                            <rect key="frame" x="17" y="74" width="166" height="54"/>
+                            <rect key="frame" x="17" y="70" width="166" height="54"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -98,19 +102,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usteda:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kzd-lx-JjZ">
-                            <rect key="frame" x="9" y="248" width="165" height="21"/>
+                            <rect key="frame" x="9" y="243" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ref" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lAs-2O-F8h">
-                            <rect key="frame" x="9" y="220" width="165" height="21"/>
+                            <rect key="frame" x="9" y="223" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vazi do:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xNX-bj-dFU">
-                            <rect key="frame" x="9" y="274" width="165" height="21"/>
+                            <rect key="frame" x="9" y="263" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -131,8 +135,8 @@
                                 <action selector="buttonAddToCartClicked:" destination="-1" eventType="touchUpInside" id="MIO-qZ-LiT"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EqI-NF-p2w">
-                            <rect key="frame" x="252" y="96" width="42" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EqI-NF-p2w">
+                            <rect key="frame" x="241" y="74" width="65" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -173,7 +177,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CTl-CL-obw">
-                            <rect key="frame" x="17" y="74" width="166" height="54"/>
+                            <rect key="frame" x="17" y="70" width="166" height="54"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -198,19 +202,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usteda:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1DL-Lx-mNM">
-                            <rect key="frame" x="9" y="248" width="165" height="21"/>
+                            <rect key="frame" x="9" y="243" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ref" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Okm-d7-IPf">
-                            <rect key="frame" x="9" y="220" width="165" height="21"/>
+                            <rect key="frame" x="9" y="223" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vazi do:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aZs-o7-pIZ">
-                            <rect key="frame" x="9" y="274" width="165" height="21"/>
+                            <rect key="frame" x="9" y="263" width="165" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -231,8 +235,8 @@
                                 <action selector="buttonAddToCartClicked:" destination="-1" eventType="touchUpInside" id="W2M-Qz-hTV"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsE-ds-o5n">
-                            <rect key="frame" x="252" y="96" width="42" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tsE-ds-o5n">
+                            <rect key="frame" x="241" y="74" width="65" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

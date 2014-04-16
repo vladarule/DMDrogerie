@@ -49,7 +49,7 @@
     [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
     [btn setTitle:@"  NOVO" forState:UIControlStateDisabled];
     [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
-    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
@@ -67,22 +67,22 @@
     UIBarButtonItem* leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrow_down.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(buttonCancelClicked:)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
     
-    [self.lblName setFont:[UIFont boldSystemFontOfSize:19]];
+    [self.lblName setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:19.0]]];
     [self.lblName setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblPrice setFont:[UIFont boldSystemFontOfSize:16]];
+    [self.lblPrice setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
     [self.lblPrice setTextColor:[UIColor whiteColor]];
     
-    [self.lblItems setFont:[UIFont systemFontOfSize:14]];
+    [self.lblItems setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblItems setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblDescription setFont:[UIFont systemFontOfSize:11.5]];
+    [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     [self.lblDescription setMinimumScaleFactor:0.2];
     
-    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.buttonAddToCart setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
-    [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, 16, 0, 0)];
+    [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:18.0], 0, 0)];
     [self.buttonAddToCart setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
     
     

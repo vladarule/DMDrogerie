@@ -55,6 +55,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblKM;
 @property (weak, nonatomic) IBOutlet UILabel *lblKm2;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewRed;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewBlue;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewRed2;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewBlue2;
 
 
 @property (nonatomic, strong)NSArray* dataSource;

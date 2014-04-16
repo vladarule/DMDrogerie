@@ -153,8 +153,8 @@
     [self.lblCartPrice setTextColor:[UIColor whiteColor]];
     
     [self.btnDeleteAll setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.btnDeleteAll.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15.0]]];
-    [self.btnDeleteAll setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:22.0], 0, 0)];
+    [self.btnDeleteAll.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.5]]];
+    [self.btnDeleteAll setTitleEdgeInsets:UIEdgeInsetsMake(2, [Helper getFontSizeFromSz:23.0], 0, 0)];
     
     [self.lblKm setTextColor:[UIColor whiteColor]];
     [self.lblKm setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
@@ -175,7 +175,7 @@
     [self.textFieldItemName setPlaceholder:@"Naziv proizvoda"];
     
     [self.textFieldItemPrice setPlaceholder:@"Cijena komad"];
-    [self.textFieldItemPrice setTextAlignment:NSTextAlignmentRight];
+//    [self.textFieldItemPrice setTextAlignment:NSTextAlignmentRight];
     [self.textFieldItemPrice setKeyboardType:UIKeyboardTypeDecimalPad];
     [self.textFieldItemPrice setInputAccessoryView:numberToolbar];
     

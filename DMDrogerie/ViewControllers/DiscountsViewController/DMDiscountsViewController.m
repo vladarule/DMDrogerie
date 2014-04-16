@@ -127,8 +127,8 @@
     [self.lblTitle setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18]]];
     [self.lblTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblSubtitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
-    [self.lblSubtitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    [self.lblSubtitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
+    [self.lblSubtitle setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDescription setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
@@ -143,13 +143,13 @@
     [self.lblKM setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblKM setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaving setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblSaving setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblSaving setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblActiveTo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblActiveTo setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblActiveTo setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblRef setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblRef setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDiscount setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
@@ -163,8 +163,8 @@
     [self.lblTitle2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:18]]];
     [self.lblTitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblSubtitle2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:16]]];
-    [self.lblSubtitle2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
+    [self.lblSubtitle2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
+    [self.lblSubtitle2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDescription2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:13.5]]];
     [self.lblDescription2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
@@ -179,13 +179,13 @@
     [self.lblKm2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16]]];
     [self.lblKm2 setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaving2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:15]]];
+    [self.lblSaving2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
     [self.lblSaving2 setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
     
-    [self.lblActiveTo2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblActiveTo2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblActiveTo2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
-    [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14]]];
+    [self.lblRef2 setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
     [self.lblRef2 setTextColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0]];
     
     [self.lblDiscount2 setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:15]]];
@@ -219,8 +219,29 @@
         [self.lblDescription sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        if (discount.oldPrice.intValue == 0) {
+            [self.lblBefore setHidden:YES];
+            [self.imgViewBlue setHidden:YES];
+        }
+        else{
+            [self.lblBefore setHidden:NO];
+            [self.imgViewBlue setHidden:NO];
+        }
+        
         [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
+        if (discount.nwPrice.intValue == 0) {
+            [self.lblPrice setHidden:YES];
+            [self.imgViewRed setHidden:YES];
+            [self.lblKM setHidden:YES];
+        }
+        else{
+            [self.lblPrice setHidden:NO];
+            [self.imgViewRed setHidden:NO];
+            [self.lblKM setHidden:NO];
+        }
+        
         [self.lblSaving setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
+        
         [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount setText:discount.discount];
         if (discount.ref.intValue == 0) {
@@ -243,6 +264,19 @@
         }
         
         
+        if (discount.saving.intValue == 0) {
+            [self.lblSaving setHidden:YES];
+            
+            [self.lblActiveTo setFrame:self.lblSaving.frame];
+        }
+        else{
+            [self.lblSaving setHidden:NO];
+            CGRect rc = self.lblSaving.frame;
+            rc.origin.y = rc.origin.y + rc.size.height;
+            [self.lblActiveTo setFrame:rc];
+        }
+        
+        
         [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
         
         [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
@@ -257,8 +291,31 @@
         [self.lblDescription2 sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        if (discount.oldPrice.intValue == 0) {
+            [self.lblBefore2 setHidden:YES];
+            [self.imgViewBlue2 setHidden:YES];
+        }
+        else{
+            [self.lblBefore2 setHidden:NO];
+            [self.imgViewBlue2 setHidden:NO];
+        }
+        
         [self.lblPrice2 setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
+        if (discount.nwPrice.intValue == 0) {
+            [self.lblPrice2 setHidden:YES];
+            [self.imgViewRed2 setHidden:YES];
+            [self.lblKm2 setHidden:YES];
+        }
+        else{
+            [self.lblPrice2 setHidden:NO];
+            [self.imgViewRed2 setHidden:NO];
+            [self.lblKm2 setHidden:NO];
+        }
+        
+        
         [self.lblSaving2 setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
+        
+        
         [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount2 setText:discount.discount];
         if (discount.ref.intValue == 0) {
@@ -280,6 +337,18 @@
             [self.lblRef2 setText:discount.ref];
         }
         
+        
+        if (discount.saving.intValue == 0) {
+            [self.lblSaving2 setHidden:YES];
+            
+            [self.lblActiveTo2 setFrame:self.lblSaving2.frame];
+        }
+        else{
+            [self.lblSaving2 setHidden:NO];
+            CGRect rc = self.lblSaving2.frame;
+            rc.origin.y = rc.origin.y + rc.size.height;
+            [self.lblActiveTo2 setFrame:rc];
+        }
         
         [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
         

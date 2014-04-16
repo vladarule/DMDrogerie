@@ -174,7 +174,7 @@
         [arr addObject:dict];
     }
     
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"http://appsteam.vtsnis.edu.rs/dmbih/upload_stats.php" parameters:nil error:nil];
+    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"http://dmbih.com/upload_stats_i.php" parameters:nil error:nil];
     
     [req setHTTPMethod:@"POST"];
     

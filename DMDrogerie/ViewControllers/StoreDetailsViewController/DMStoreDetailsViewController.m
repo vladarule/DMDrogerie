@@ -85,13 +85,13 @@
     [self.lblWorkihgHours setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblWorkihgHours setTextColor:[UIColor whiteColor]];
     
-    [self.lblWorkingDays setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
+    [self.lblWorkingDays setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:13.0]]];
     [self.lblWorkingDays setTextColor:[UIColor whiteColor]];
     
-    [self.lblSaturday setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
+    [self.lblSaturday setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:13.0]]];
     [self.lblSaturday setTextColor:[UIColor whiteColor]];
     
-    [self.lblSunday setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
+    [self.lblSunday setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:13.0]]];
     [self.lblSunday setTextColor:[UIColor whiteColor]];
     
     [self.lblWorkingDaysValue setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
