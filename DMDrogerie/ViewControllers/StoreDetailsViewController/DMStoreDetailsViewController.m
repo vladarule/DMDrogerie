@@ -114,8 +114,16 @@
     [self.lblSaturday setText:NSLocalizedString(@"SUBOTA", @"")];
     [self.lblSunday setText:NSLocalizedString(@"NEDJELJA", @"")];
     
+    
     [self.lblWorkingDaysValue setText:self.selectedLocation.workingHours];
+    if (self.selectedLocation.workingHours.length == 0) {
+        [self.lblWorkingDaysValue setText:@"Ne radi"];
+    }
+    
     [self.lblSaturdayValue setText:self.selectedLocation.saturdayHours];
+    if (self.selectedLocation.saturdayHours.length == 0) {
+        [self.lblSaturdayValue setText:@"Ne radi"];
+    }
     
     [self.lblSundayValue setText:self.selectedLocation.sundayHours];
     if (self.selectedLocation.sundayHours.length == 0) {
