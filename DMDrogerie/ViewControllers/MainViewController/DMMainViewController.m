@@ -97,7 +97,7 @@
             NSLog(@"No internet");
         }
         
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obaveštenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obavještenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
 	}];
 	

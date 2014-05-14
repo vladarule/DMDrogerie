@@ -1595,8 +1595,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Slavimir Stosovic (R9RD7A9N3Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Slavimir Stosovic (R9RD7A9N3Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kokakiki LLC (4B2DBT2SM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kokakiki LLC (4B2DBT2SM6)";
 				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1608,7 +1608,7 @@
 				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A3EBFDD1-C18A-430D-951C-EB98C56B160E";
+				PROVISIONING_PROFILE = "7DB15086-D9DD-4EE4-B418-1E677F4652A8";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1695,8 +1695,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Slavimir Stosovic (R9RD7A9N3Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Slavimir Stosovic (R9RD7A9N3Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kokakiki LLC (4B2DBT2SM6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kokakiki LLC (4B2DBT2SM6)";
 				CURRENT_PROJECT_VERSION = 5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1708,7 +1708,7 @@
 				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A3EBFDD1-C18A-430D-951C-EB98C56B160E";
+				PROVISIONING_PROFILE = "7DB15086-D9DD-4EE4-B418-1E677F4652A8";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
