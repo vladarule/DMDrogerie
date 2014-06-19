@@ -219,7 +219,7 @@
         [self.lblDescription sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
-        if (discount.oldPrice.intValue == 0) {
+        if ([discount.oldPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblBefore setHidden:YES];
             [self.imgViewBlue setHidden:YES];
         }
@@ -229,7 +229,7 @@
         }
         
         [self.lblPrice setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        if (discount.nwPrice.intValue == 0) {
+        if ([discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblPrice setHidden:YES];
             [self.imgViewRed setHidden:YES];
             [self.lblKM setHidden:YES];
@@ -244,7 +244,7 @@
         
         [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount setText:discount.discount];
-        if (discount.ref.intValue == 0) {
+        if ([discount.ref stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblRef setHidden:YES];
             CGRect rct1 = self.lblRef.frame;
             CGRect rct2 = rct1;
@@ -264,7 +264,7 @@
         }
         
         
-        if (discount.saving.intValue == 0) {
+        if ([[discount.saving stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue] == 0) {
             [self.lblSaving setHidden:YES];
             
             [self.lblActiveTo setFrame:self.lblSaving.frame];
@@ -291,7 +291,7 @@
         [self.lblDescription2 sizeToFit];
         //    [self.lblDescription setHidden:YES];
         [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
-        if (discount.oldPrice.intValue == 0) {
+        if ([discount.oldPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblBefore2 setHidden:YES];
             [self.imgViewBlue2 setHidden:YES];
         }
@@ -301,7 +301,7 @@
         }
         
         [self.lblPrice2 setText:[NSString stringWithFormat:@"%@", discount.nwPrice]];
-        if (discount.nwPrice.intValue == 0) {
+        if ([discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblPrice2 setHidden:YES];
             [self.imgViewRed2 setHidden:YES];
             [self.lblKm2 setHidden:YES];
@@ -318,7 +318,7 @@
         
         [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
         [self.lblDiscount2 setText:discount.discount];
-        if (discount.ref.intValue == 0) {
+        if ([discount.ref stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblRef2 setHidden:YES];
             CGRect rct1 = self.lblRef2.frame;
             CGRect rct2 = rct1;
@@ -338,7 +338,7 @@
         }
         
         
-        if (discount.saving.intValue == 0) {
+        if ([discount.saving stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblSaving2 setHidden:YES];
             
             [self.lblActiveTo2 setFrame:self.lblSaving2.frame];
