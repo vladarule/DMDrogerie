@@ -90,10 +90,16 @@
     DMShoppingListViewController* shoppingListVC = [[DMShoppingListViewController alloc] initWithNibName:shoppingName bundle:[NSBundle mainBundle]];
     UINavigationController* navCon5 = [[UINavigationController alloc] initWithRootViewController:shoppingListVC];
     
+//    /////////// New tabs //////////////////////////
+    DMMainViewController* mainVC2 = [[DMMainViewController alloc] initWithNibName:mainName bundle:[NSBundle mainBundle]];
+    UINavigationController* navCon6 = [[UINavigationController alloc] initWithRootViewController:mainVC2];
+    
+    DMLocationsViewController* locationsVC2 = [[DMLocationsViewController alloc] initWithNibName:locationsName bundle:[NSBundle mainBundle]];
+    UINavigationController* navCon7 = [[UINavigationController alloc] initWithRootViewController:locationsVC2];
     
     
     UITabBarController* tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:navCon1, navCon2, navCon3, navCon4, navCon5, nil]];
+    [tabBarController setViewControllers:[NSArray arrayWithObjects:navCon1, navCon2, navCon3, navCon4, navCon5, navCon6, navCon7,nil]];
     
     NSShadow *shadowT = [[NSShadow alloc] init];
     shadowT.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
@@ -120,11 +126,17 @@
 	UITabBarItem* itemLocations = [[tabBarController.tabBar items] objectAtIndex:3];
     UITabBarItem* itemShopping = [[tabBarController.tabBar items] objectAtIndex:4];
     
+//    UITabBarItem* itemShopping2 = [[tabBarController.tabBar items] objectAtIndex:5];
+//    UITabBarItem* itemShopping3 = [[tabBarController.tabBar items] objectAtIndex:6];
+    
     [itemMain setTitle:NSLocalizedString(@"Aktuelno", @"")];
     [itemDiscounts setTitle:NSLocalizedString(@"Akcija", @"")];
     [itemOffers setTitle:NSLocalizedString(@"Novo", @"")];
     [itemLocations setTitle:NSLocalizedString(@"Prodavnice", @"")];
     [itemShopping setTitle:NSLocalizedString(@"Shopping", @"")];
+    
+//    [itemShopping2 setTitle:NSLocalizedString(@"Shopping", @"")];
+//    [itemShopping3 setTitle:NSLocalizedString(@"Shopping", @"")];
     
     
     [itemMain setImage:[[UIImage imageNamed:@"aktuelno-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -142,6 +154,13 @@
     [itemShopping setImage:[[UIImage imageNamed:@"cart-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [itemShopping setSelectedImage:[[UIImage imageNamed:@"cart-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
+    
+    
+//    [itemShopping2 setImage:[[UIImage imageNamed:@"aktuelno-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [itemShopping2 setSelectedImage:[[UIImage imageNamed:@"actuelno-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    
+//    [itemShopping3 setImage:[[UIImage imageNamed:@"akcija-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [itemShopping3 setSelectedImage:[[UIImage imageNamed:@"akcija-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
 	[self.window setRootViewController:tabBarController];
     
