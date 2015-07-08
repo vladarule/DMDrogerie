@@ -64,4 +64,6 @@
 @property (nonatomic, strong)NSArray* dataSource;
 @property (nonatomic, assign)int selectedIndex;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray *)arr;
+
 @end

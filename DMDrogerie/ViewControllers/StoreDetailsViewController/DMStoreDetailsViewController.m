@@ -11,6 +11,9 @@
 
 @interface DMStoreDetailsViewController ()
 
+
+@property (weak, nonatomic) IBOutlet UILabel *lblNrd;
+
 - (void)setupTitles;
 
 @end
@@ -103,6 +106,9 @@
     [self.lblSundayValue setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
     [self.lblSundayValue setTextColor:[UIColor yellowColor]];
     
+    [self.lblNrd setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
+    [self.lblNrd setTextColor:[UIColor yellowColor]];
+    
     [self.lblAdress setText:self.selectedLocation.street];
     [self.lblCity setText:self.selectedLocation.city];
     [self.lblChief setText:NSLocalizedString(@"Poslovođa/Poslovotkinja:", @"")];
@@ -112,7 +118,7 @@
     [self.lblWorkihgHours setText:NSLocalizedString(@"RADNO VRIJEME:", @"")];
     [self.lblWorkingDays setText:NSLocalizedString(@"PON-PET", @"")];
     [self.lblSaturday setText:NSLocalizedString(@"SUBOTA", @"")];
-    [self.lblSunday setText:NSLocalizedString(@"NEDJELJA", @"")];
+    [self.lblSunday setText:NSLocalizedString(@"NEDELJA", @"")];
     
     
     [self.lblWorkingDaysValue setText:self.selectedLocation.workingHours];
@@ -130,6 +136,12 @@
         [self.lblSundayValue setText:@"Ne radi"];
     }
     
+    if (self.selectedLocation.nrd.length == 0) {
+        [self.lblNrd setText:@""];
+    }
+    else{
+        [self.lblNrd setText:self.selectedLocation.nrd];
+    }
     
     [self.buttonPhoneNo.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.5]]];
     [self.buttonPhoneNo setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

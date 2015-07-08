@@ -12,7 +12,10 @@
 
 @interface DMOfferDetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgDm;
+
 - (void)setupTitles;
+
 
 @end
 
@@ -53,6 +56,10 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
+    UIBarButtonItem* btnShare = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nail_share.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(btnShareClicked)];
+    
+    [self.navigationItem setRightBarButtonItem:btnShare];
+    
     [self setupTitles];
 }
 
@@ -87,11 +94,41 @@
     
     
     [self.lblName setText:self.selectedOffer.title];
-    [self.lblPrice setText:[NSString stringWithFormat:@"%@ KM", self.selectedOffer.price]];
+    [self.lblPrice setText:[NSString stringWithFormat:@"%@", self.selectedOffer.price]];
     [self.lblItems setText:self.selectedOffer.quantity];
     [self.lblDescription setText:self.selectedOffer.detailDescription];
     
     [self.imgViewOffer setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, self.selectedOffer.imageBig]]];
+    
+    if ([self.selectedOffer.isNew boolValue]) {
+        [self.imgDm setHidden:NO];
+    }
+    else{
+        [self.imgDm setHidden:YES];
+    }
+}
+
+- (void)btnShareClicked{
+    NSURL* URL = [NSURL URLWithString:self.selectedOffer.link];
+    
+    
+    
+    
+    
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[@"DM BIH", URL] applicationActivities:nil];
+    [activityVC setValue:NSLocalizedString(@"DM BiH", @"") forKey:@"subject"];
+    
+    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        
+    
+    }];
+    
+    
+    
+    NSArray* exclude = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToFlickr, UIActivityTypePostToTencentWeibo, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeSaveToCameraRoll];
+    [activityVC setExcludedActivityTypes:exclude];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 - (void)buttonCancelClicked:(id)sender{
@@ -136,7 +173,7 @@
     // Configure for text only and offset down
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"";
-    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ dodan u shopping listu", self.selectedOffer.title];
+    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ dodat u shopping listu", self.selectedOffer.title];
     hud.margin = 10.f;
     hud.yOffset = 120.f;
     hud.removeFromSuperViewOnHide = YES;

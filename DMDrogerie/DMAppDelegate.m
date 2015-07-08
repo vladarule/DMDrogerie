@@ -7,13 +7,12 @@
 //
 
 #import "DMAppDelegate.h"
-#import "DMMainViewController.h"
-#import "DMLocationsViewController.h"
-#import "DMOffersViewController.h"
-#import "DMDiscountsViewController.h"
-#import "DMShoppingListViewController.h"
+#import "DMStartViewController.h"
 #import "AFNetworking.h"
 #import "DMStatistics.h"
+
+#import "DMRequestManager.h"
+
 #import <GoogleMaps/GoogleMaps.h>
 
 @implementation DMAppDelegate
@@ -26,7 +25,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
     [GMSServices provideAPIKey:@"AIzaSyAVx7cKcWIkDNDmR6avgpJDNgxr-4mrzCM"];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:
+     @{@"deviceTokenKey": @"0"}];
     
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -42,7 +47,7 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"header_bg.png"] forBarMetrics:UIBarMetricsDefault];
 //	[[UINavigationBar appearance] setTitleVerticalPositionAdjustment:2.0 forBarMetrics:UIBarMetricsDefault];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
     shadow.shadowOffset = CGSizeMake(0, 1);
@@ -55,114 +60,16 @@
       NSFontAttributeName,
       nil]];
     
-    NSString* mainName;
-    NSString* locationsName;
-    NSString* offersName;
-    NSString* discountName;
-    NSString* shoppingName;
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-        mainName = @"DMMainViewController";
-        locationsName = @"DMLocationsViewController";
-        offersName = @"DMOffersViewController";
-        discountName = @"DMDiscountsViewController";
-        shoppingName = @"DMShoppingListViewController";
-    }
-    else{
-        mainName = @"DMMainViewController_iPad";
-        locationsName = @"DMLocationsViewController_iPad";
-        offersName = @"DMOffersViewController_iPad";
-        discountName = @"DMDiscountsViewController_iPad";
-        shoppingName = @"DMShoppingListViewController_iPad";
-    }
-    
-	DMMainViewController* mainVC = [[DMMainViewController alloc] initWithNibName:mainName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon1 = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    
-    DMLocationsViewController* locationsVC = [[DMLocationsViewController alloc] initWithNibName:locationsName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon4 = [[UINavigationController alloc] initWithRootViewController:locationsVC];
-    
-    DMOffersViewController* offersVC = [[DMOffersViewController alloc] initWithNibName:offersName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon3 = [[UINavigationController alloc] initWithRootViewController:offersVC];
-    
-    DMDiscountsViewController* discountVC = [[DMDiscountsViewController alloc] initWithNibName:discountName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon2 = [[UINavigationController alloc] initWithRootViewController:discountVC];
-    
-    DMShoppingListViewController* shoppingListVC = [[DMShoppingListViewController alloc] initWithNibName:shoppingName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon5 = [[UINavigationController alloc] initWithRootViewController:shoppingListVC];
-    
-//    /////////// New tabs //////////////////////////
-    DMMainViewController* mainVC2 = [[DMMainViewController alloc] initWithNibName:mainName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon6 = [[UINavigationController alloc] initWithRootViewController:mainVC2];
-    
-    DMLocationsViewController* locationsVC2 = [[DMLocationsViewController alloc] initWithNibName:locationsName bundle:[NSBundle mainBundle]];
-    UINavigationController* navCon7 = [[UINavigationController alloc] initWithRootViewController:locationsVC2];
     
     
-    UITabBarController* tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:[NSArray arrayWithObjects:navCon1, navCon2, navCon3, navCon4, navCon5, navCon6, navCon7,nil]];
+    DMStartViewController* startVC = [[DMStartViewController alloc] init];
     
-    NSShadow *shadowT = [[NSShadow alloc] init];
-    shadowT.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
-    shadowT.shadowOffset = CGSizeMake(0, 1);
-    NSDictionary* atrributesNormal = @{NSForegroundColorAttributeName: [UIColor colorWithRed:151.0/255.0 green:151.0/255.0 blue:151.0/255.0 alpha:1.0],
-                                       NSFontAttributeName: [UIFont systemFontOfSize:12.5],
-                                       NSShadowAttributeName: shadowT
-                                       };
-    
-    NSDictionary* atrributesSelected = @{NSForegroundColorAttributeName: [UIColor colorWithRed:250.0/255.0 green:250.0/255.0 blue:250.0/255.0 alpha:1.0],
-                                         NSFontAttributeName: [UIFont systemFontOfSize:11.0],
-                                         NSShadowAttributeName: shadowT};
-    [[UITabBarItem appearance] setTitleTextAttributes:atrributesNormal forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:atrributesSelected forState:UIControlStateSelected];
-    
-    [[tabBarController tabBar] setBackgroundImage:[UIImage imageNamed:@"tab_background.png"]];
-    //	[[tabBarController tabBar] setSelectionIndicatorImage:[UIImage imageNamed:@"tab_selected_button.png"]];
-	[[tabBarController tabBar] setTintColor:[UIColor clearColor]];
-	[[tabBarController tabBar] setBackgroundColor:[UIColor clearColor]];
-    
-	UITabBarItem* itemMain = [[tabBarController.tabBar items] objectAtIndex:0];
-	UITabBarItem* itemDiscounts = [[tabBarController.tabBar items] objectAtIndex:1];
-	UITabBarItem* itemOffers = [[tabBarController.tabBar items] objectAtIndex:2];
-	UITabBarItem* itemLocations = [[tabBarController.tabBar items] objectAtIndex:3];
-    UITabBarItem* itemShopping = [[tabBarController.tabBar items] objectAtIndex:4];
-    
-//    UITabBarItem* itemShopping2 = [[tabBarController.tabBar items] objectAtIndex:5];
-//    UITabBarItem* itemShopping3 = [[tabBarController.tabBar items] objectAtIndex:6];
-    
-    [itemMain setTitle:NSLocalizedString(@"Aktuelno", @"")];
-    [itemDiscounts setTitle:NSLocalizedString(@"Akcija", @"")];
-    [itemOffers setTitle:NSLocalizedString(@"Novo", @"")];
-    [itemLocations setTitle:NSLocalizedString(@"Prodavnice", @"")];
-    [itemShopping setTitle:NSLocalizedString(@"Shopping", @"")];
-    
-//    [itemShopping2 setTitle:NSLocalizedString(@"Shopping", @"")];
-//    [itemShopping3 setTitle:NSLocalizedString(@"Shopping", @"")];
-    
-    
-    [itemMain setImage:[[UIImage imageNamed:@"aktuelno-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemMain setSelectedImage:[[UIImage imageNamed:@"actuelno-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [itemDiscounts setImage:[[UIImage imageNamed:@"akcija-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemDiscounts setSelectedImage:[[UIImage imageNamed:@"akcija-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [itemOffers setImage:[[UIImage imageNamed:@"novo-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemOffers setSelectedImage:[[UIImage imageNamed:@"novo-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [itemLocations setImage:[[UIImage imageNamed:@"map-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemLocations setSelectedImage:[[UIImage imageNamed:@"map-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [itemShopping setImage:[[UIImage imageNamed:@"cart-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemShopping setSelectedImage:[[UIImage imageNamed:@"cart-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     
     
-//    [itemShopping2 setImage:[[UIImage imageNamed:@"aktuelno-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [itemShopping2 setSelectedImage:[[UIImage imageNamed:@"actuelno-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    
-//    [itemShopping3 setImage:[[UIImage imageNamed:@"akcija-normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [itemShopping3 setSelectedImage:[[UIImage imageNamed:@"akcija-selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-	[self.window setRootViewController:tabBarController];
+	[self.window setRootViewController:startVC];
     
     
     [self sendStats];
@@ -170,6 +77,35 @@
 	
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"My token is: %@", deviceToken);
+    
+    NSString *oldToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceTokenKey"];
+    
+    NSString *newToken = [deviceToken description];
+    newToken = [newToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    newToken = [newToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSLog(@"My token is: %@", newToken);
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:newToken forKey:@"deviceTokenKey"];
+    
+    if (![newToken isEqualToString:oldToken]){
+        [[DMRequestManager sharedManager] postDeviceToken:newToken withResponse:^(BOOL success, id response, NSError *error) {
+//            NSString* str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+            NSLog(@"s");
+        }];
+    }
+
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)sendStats{
@@ -203,7 +139,7 @@
 
     
     [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [req setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
+    [req setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[data length]] forHTTPHeaderField:@"Content-Length"];
     [req setHTTPBody:data];
 	
     
@@ -250,6 +186,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -265,7 +203,6 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    NSLog(@"Broj lokacija %d", locations.count);
     CLLocation* loc = [locations firstObject];
     
     self.currentLocation = loc;

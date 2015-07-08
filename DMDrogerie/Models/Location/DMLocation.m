@@ -14,18 +14,24 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict{
 	if (self = [super init]) {
-        self.objectId = [dict objectForKey:@"idLok"];
+        self.objectId = [dict objectForKey:@"id"];
         self.street = [dict objectForKey:@"ulica"];
         self.city = [dict objectForKey:@"grad"];
-        self.phoneNo = [dict objectForKey:@"brtel"];
-        self.workingHours = [dict objectForKey:@"radvr"];
-        self.latitude = [dict objectForKey:@"lati"];
-        self.longitude = [dict objectForKey:@"longi"];
-        self.saturdayHours = [dict objectForKey:@"radS"];
-        self.sundayHours = [dict objectForKey:@"radN"];
+        self.phoneNo = [dict objectForKey:@"br_tel"];
+        self.workingHours = [dict objectForKey:@"radVr"];
+        self.latitude = [dict objectForKey:@"latituda"];
+        self.longitude = [dict objectForKey:@"longituda"];
+        self.saturdayHours = [dict objectForKey:@"radVrSub"];
+        self.sundayHours = [dict objectForKey:@"radVrNed"];
         self.chief = [dict objectForKey:@"posl"];
-        self.prod = [dict objectForKey:@"prod"];
+        self.prod = [dict objectForKey:@"brProd"];
         
+        self.nrd = [dict objectForKey:@"nrd"];
+        self.nsrv = [dict objectForKey:@"nsrv"];
+        
+        if (self.nsrv.length > 0) {
+            self.workingHours = self.nsrv;
+        }
         
         
         

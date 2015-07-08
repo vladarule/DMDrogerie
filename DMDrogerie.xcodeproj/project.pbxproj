@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE156F451B1462C7008B1B68 /* DMHairImgShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */; };
+		CE156F461B1462C7008B1B68 /* DMHairImgShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */; };
+		CE1A00F11AB4668300790462 /* DMPromotionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1A00EF1AB4668300790462 /* DMPromotionDetailsViewController.m */; };
+		CE1A00F21AB4668300790462 /* DMPromotionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A00F01AB4668300790462 /* DMPromotionDetailsViewController.xib */; };
+		CE1EDD361A9FBBE40038CFA4 /* DMRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDD351A9FBBE40038CFA4 /* DMRequestManager.m */; };
+		CE2693841AF72FE300363F99 /* DMSelectModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2693821AF72FE300363F99 /* DMSelectModelViewController.m */; };
+		CE2693851AF72FE300363F99 /* DMSelectModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2693831AF72FE300363F99 /* DMSelectModelViewController.xib */; };
 		CE53C68F18A6950000D04548 /* DMOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C68E18A6950000D04548 /* DMOffer.m */; };
 		CE53C69418A695ED00D04548 /* DMOffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE53C69218A695ED00D04548 /* DMOffersViewController.m */; };
 		CE53C69518A695ED00D04548 /* DMOffersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE53C69318A695ED00D04548 /* DMOffersViewController.xib */; };
@@ -235,7 +242,26 @@
 		CEC1349B18E54DC6005FB230 /* dmLogo_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349918E54DC6005FB230 /* dmLogo_iPad@2x.png */; };
 		CEC1349E18E55034005FB230 /* telefon_btn_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */; };
 		CEC1349F18E55034005FB230 /* telefon_btn_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */; };
+		CEC14CEB1B0AF6610015224A /* DMHairHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC14CE91B0AF6610015224A /* DMHairHelpViewController.m */; };
+		CEC14CEC1B0AF6610015224A /* DMHairHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC14CEA1B0AF6610015224A /* DMHairHelpViewController.xib */; };
+		CEC14CEE1B0AF7930015224A /* help_image_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC14CED1B0AF7930015224A /* help_image_1.png */; };
+		CEC14CF21B0AFDB80015224A /* help_image_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC14CEF1B0AFDB80015224A /* help_image_2.png */; };
+		CEC14CF31B0AFDB80015224A /* help_image_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC14CF01B0AFDB80015224A /* help_image_3.png */; };
+		CEC14CF41B0AFDB80015224A /* help_image_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC14CF11B0AFDB80015224A /* help_image_4.png */; };
+		CECEAF601AB7213A002EAFB5 /* DMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECEAF5E1AB7213A002EAFB5 /* DMAboutViewController.m */; };
+		CECEAF611AB7213A002EAFB5 /* DMAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECEAF5F1AB7213A002EAFB5 /* DMAboutViewController.xib */; };
+		CECEAF661AB72166002EAFB5 /* DMNailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECEAF641AB72166002EAFB5 /* DMNailsViewController.m */; };
+		CECEAF671AB72166002EAFB5 /* DMNailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECEAF651AB72166002EAFB5 /* DMNailsViewController.xib */; };
+		CED4A88B1AF7D9E600A654F1 /* DMCompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED4A8891AF7D9E600A654F1 /* DMCompareViewController.m */; };
+		CED4A88C1AF7D9E600A654F1 /* DMCompareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED4A88A1AF7D9E600A654F1 /* DMCompareViewController.xib */; };
+		CED5BA261AB8E3A50079D710 /* DMNailColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CED5BA251AB8E3A50079D710 /* DMNailColor.m */; };
+		CED71DD21AE5686E0084EC8B /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = CED71DD01AE5686E0084EC8B /* arrow_right.png */; };
+		CED71DD31AE5686E0084EC8B /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED71DD11AE5686E0084EC8B /* arrow_right@2x.png */; };
 		CED7476A18DF67CC0010C751 /* DMStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7476918DF67CC0010C751 /* DMStatistics.m */; };
+		CED7D2941A9BB5F300B65486 /* DMPromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D2921A9BB5F300B65486 /* DMPromotionsViewController.m */; };
+		CED7D2951A9BB5F300B65486 /* DMPromotionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED7D2931A9BB5F300B65486 /* DMPromotionsViewController.xib */; };
+		CED93D791AEBA802001B3468 /* DMHairColorManufacturer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED93D781AEBA802001B3468 /* DMHairColorManufacturer.m */; };
+		CED93D7D1AEBAA9A001B3468 /* DMHairColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CED93D7C1AEBAA9A001B3468 /* DMHairColor.m */; };
 		CEDAE4BB18EF1E5200F1A29D /* akcija_head_bkg_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B318EF1E5200F1A29D /* akcija_head_bkg_iPad.png */; };
 		CEDAE4BC18EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B418EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png */; };
 		CEDAE4BD18EF1E5200F1A29D /* brojkomada_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4B518EF1E5200F1A29D /* brojkomada_iPad.png */; };
@@ -246,7 +272,21 @@
 		CEDAE4C218EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDAE4BA18EF1E5200F1A29D /* naziv_proizvoda_iPad@2x.png */; };
 		CEDBA02518DCC74100BF3A71 /* DMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDBA02318DCC74100BF3A71 /* DMWebViewController.m */; };
 		CEDBA02618DCC74100BF3A71 /* DMWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA02418DCC74100BF3A71 /* DMWebViewController.xib */; };
+		CEE016721ADC299800EABFF9 /* maska.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE016701ADC299800EABFF9 /* maska.png */; };
+		CEE016731ADC299800EABFF9 /* model.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEE016711ADC299800EABFF9 /* model.jpg */; };
+		CEE05BBF1AD3141A005F3A8B /* DMChooseImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE05BBD1AD3141A005F3A8B /* DMChooseImageViewController.m */; };
+		CEE05BC01AD3141A005F3A8B /* DMChooseImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE05BBE1AD3141A005F3A8B /* DMChooseImageViewController.xib */; };
 		CEE0AA2818BFDDA400EA178E /* DMCustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0AA2718BFDDA400EA178E /* DMCustomItem.m */; };
+		CEE659CD1AAC93B700BED597 /* DMPromotion.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE659CC1AAC93B700BED597 /* DMPromotion.m */; };
+		CEEC5A811AC9E26900811519 /* DMModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEC5A801AC9E26900811519 /* DMModelController.m */; };
+		CEEF72821AD7F41200C9999A /* DMDrawMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF72801AD7F41200C9999A /* DMDrawMaskViewController.m */; };
+		CEEF72831AD7F41200C9999A /* DMDrawMaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEF72811AD7F41200C9999A /* DMDrawMaskViewController.xib */; };
+		CEF3A1CA1A921D9300297821 /* DMStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF3A1C81A921D9300297821 /* DMStartViewController.m */; };
+		CEF3A1CB1A921D9300297821 /* DMStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF3A1C91A921D9300297821 /* DMStartViewController.xib */; };
+		CEFD71DE1ABE14FE007C9EBF /* DMNailImgShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD71DC1ABE14FE007C9EBF /* DMNailImgShareViewController.m */; };
+		CEFD71DF1ABE14FE007C9EBF /* DMNailImgShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFD71DD1ABE14FE007C9EBF /* DMNailImgShareViewController.xib */; };
+		CEFED60F1AE6F1EB00606249 /* DMApplyColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFED60D1AE6F1EB00606249 /* DMApplyColorViewController.m */; };
+		CEFED6101AE6F1EB00606249 /* DMApplyColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFED60E1AE6F1EB00606249 /* DMApplyColorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +300,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE156F421B1462C7008B1B68 /* DMHairImgShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairImgShareViewController.h; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.h; sourceTree = "<group>"; };
+		CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairImgShareViewController.m; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.m; sourceTree = "<group>"; };
+		CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMHairImgShareViewController.xib; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.xib; sourceTree = "<group>"; };
+		CE1A00EE1AB4668300790462 /* DMPromotionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPromotionDetailsViewController.h; path = PromotionDetailsViewController/DMPromotionDetailsViewController.h; sourceTree = "<group>"; };
+		CE1A00EF1AB4668300790462 /* DMPromotionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPromotionDetailsViewController.m; path = PromotionDetailsViewController/DMPromotionDetailsViewController.m; sourceTree = "<group>"; };
+		CE1A00F01AB4668300790462 /* DMPromotionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMPromotionDetailsViewController.xib; path = PromotionDetailsViewController/DMPromotionDetailsViewController.xib; sourceTree = "<group>"; };
+		CE1EDD341A9FBBE40038CFA4 /* DMRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRequestManager.h; path = RequestManager/DMRequestManager.h; sourceTree = "<group>"; };
+		CE1EDD351A9FBBE40038CFA4 /* DMRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMRequestManager.m; path = RequestManager/DMRequestManager.m; sourceTree = "<group>"; };
+		CE2693811AF72FE300363F99 /* DMSelectModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMSelectModelViewController.h; path = HairViewControllers/SelectModelViewController/DMSelectModelViewController.h; sourceTree = "<group>"; };
+		CE2693821AF72FE300363F99 /* DMSelectModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMSelectModelViewController.m; path = HairViewControllers/SelectModelViewController/DMSelectModelViewController.m; sourceTree = "<group>"; };
+		CE2693831AF72FE300363F99 /* DMSelectModelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMSelectModelViewController.xib; path = HairViewControllers/SelectModelViewController/DMSelectModelViewController.xib; sourceTree = "<group>"; };
 		CE53C68D18A6950000D04548 /* DMOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMOffer.h; path = Offer/DMOffer.h; sourceTree = "<group>"; };
 		CE53C68E18A6950000D04548 /* DMOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMOffer.m; path = Offer/DMOffer.m; sourceTree = "<group>"; };
 		CE53C69118A695ED00D04548 /* DMOffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMOffersViewController.h; path = OffersViewController/DMOffersViewController.h; sourceTree = "<group>"; };
@@ -526,8 +577,35 @@
 		CEC1349918E54DC6005FB230 /* dmLogo_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dmLogo_iPad@2x.png"; sourceTree = "<group>"; };
 		CEC1349C18E55034005FB230 /* telefon_btn_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = telefon_btn_iPad.png; sourceTree = "<group>"; };
 		CEC1349D18E55034005FB230 /* telefon_btn_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "telefon_btn_iPad@2x.png"; sourceTree = "<group>"; };
+		CEC14CE81B0AF6610015224A /* DMHairHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairHelpViewController.h; path = HairViewControllers/HairHelpViewController/DMHairHelpViewController.h; sourceTree = "<group>"; };
+		CEC14CE91B0AF6610015224A /* DMHairHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairHelpViewController.m; path = HairViewControllers/HairHelpViewController/DMHairHelpViewController.m; sourceTree = "<group>"; };
+		CEC14CEA1B0AF6610015224A /* DMHairHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMHairHelpViewController.xib; path = HairViewControllers/HairHelpViewController/DMHairHelpViewController.xib; sourceTree = "<group>"; };
+		CEC14CED1B0AF7930015224A /* help_image_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_image_1.png; sourceTree = "<group>"; };
+		CEC14CEF1B0AFDB80015224A /* help_image_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_image_2.png; sourceTree = "<group>"; };
+		CEC14CF01B0AFDB80015224A /* help_image_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_image_3.png; sourceTree = "<group>"; };
+		CEC14CF11B0AFDB80015224A /* help_image_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_image_4.png; sourceTree = "<group>"; };
+		CECEAF5D1AB7213A002EAFB5 /* DMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMAboutViewController.h; path = AboutViewController/DMAboutViewController.h; sourceTree = "<group>"; };
+		CECEAF5E1AB7213A002EAFB5 /* DMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMAboutViewController.m; path = AboutViewController/DMAboutViewController.m; sourceTree = "<group>"; };
+		CECEAF5F1AB7213A002EAFB5 /* DMAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMAboutViewController.xib; path = AboutViewController/DMAboutViewController.xib; sourceTree = "<group>"; };
+		CECEAF631AB72166002EAFB5 /* DMNailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMNailsViewController.h; path = NailsViewController/DMNailsViewController.h; sourceTree = "<group>"; };
+		CECEAF641AB72166002EAFB5 /* DMNailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMNailsViewController.m; path = NailsViewController/DMNailsViewController.m; sourceTree = "<group>"; };
+		CECEAF651AB72166002EAFB5 /* DMNailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMNailsViewController.xib; path = NailsViewController/DMNailsViewController.xib; sourceTree = "<group>"; };
+		CED4A8881AF7D9E600A654F1 /* DMCompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCompareViewController.h; path = HairViewControllers/CompareViewController/DMCompareViewController.h; sourceTree = "<group>"; };
+		CED4A8891AF7D9E600A654F1 /* DMCompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCompareViewController.m; path = HairViewControllers/CompareViewController/DMCompareViewController.m; sourceTree = "<group>"; };
+		CED4A88A1AF7D9E600A654F1 /* DMCompareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMCompareViewController.xib; path = HairViewControllers/CompareViewController/DMCompareViewController.xib; sourceTree = "<group>"; };
+		CED5BA241AB8E3A50079D710 /* DMNailColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMNailColor.h; path = DMNailColor/DMNailColor.h; sourceTree = "<group>"; };
+		CED5BA251AB8E3A50079D710 /* DMNailColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMNailColor.m; path = DMNailColor/DMNailColor.m; sourceTree = "<group>"; };
+		CED71DD01AE5686E0084EC8B /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
+		CED71DD11AE5686E0084EC8B /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 		CED7476818DF67CC0010C751 /* DMStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMStatistics.h; path = Statistics/DMStatistics.h; sourceTree = "<group>"; };
 		CED7476918DF67CC0010C751 /* DMStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMStatistics.m; path = Statistics/DMStatistics.m; sourceTree = "<group>"; };
+		CED7D2911A9BB5F300B65486 /* DMPromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPromotionsViewController.h; path = PromotionsViewController/DMPromotionsViewController.h; sourceTree = "<group>"; };
+		CED7D2921A9BB5F300B65486 /* DMPromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPromotionsViewController.m; path = PromotionsViewController/DMPromotionsViewController.m; sourceTree = "<group>"; };
+		CED7D2931A9BB5F300B65486 /* DMPromotionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMPromotionsViewController.xib; path = PromotionsViewController/DMPromotionsViewController.xib; sourceTree = "<group>"; };
+		CED93D771AEBA802001B3468 /* DMHairColorManufacturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairColorManufacturer.h; path = HairColorManufacturer/DMHairColorManufacturer.h; sourceTree = "<group>"; };
+		CED93D781AEBA802001B3468 /* DMHairColorManufacturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairColorManufacturer.m; path = HairColorManufacturer/DMHairColorManufacturer.m; sourceTree = "<group>"; };
+		CED93D7B1AEBAA9A001B3468 /* DMHairColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairColor.h; path = HairColor/DMHairColor.h; sourceTree = "<group>"; };
+		CED93D7C1AEBAA9A001B3468 /* DMHairColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairColor.m; path = HairColor/DMHairColor.m; sourceTree = "<group>"; };
 		CEDAE4B318EF1E5200F1A29D /* akcija_head_bkg_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akcija_head_bkg_iPad.png; sourceTree = "<group>"; };
 		CEDAE4B418EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "akcija_head_bkg_iPad@2x.png"; sourceTree = "<group>"; };
 		CEDAE4B518EF1E5200F1A29D /* brojkomada_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brojkomada_iPad.png; sourceTree = "<group>"; };
@@ -539,8 +617,29 @@
 		CEDBA02218DCC74100BF3A71 /* DMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMWebViewController.h; path = WebViewController/DMWebViewController.h; sourceTree = "<group>"; };
 		CEDBA02318DCC74100BF3A71 /* DMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMWebViewController.m; path = WebViewController/DMWebViewController.m; sourceTree = "<group>"; };
 		CEDBA02418DCC74100BF3A71 /* DMWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMWebViewController.xib; path = WebViewController/DMWebViewController.xib; sourceTree = "<group>"; };
+		CEE016701ADC299800EABFF9 /* maska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maska.png; sourceTree = "<group>"; };
+		CEE016711ADC299800EABFF9 /* model.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = model.jpg; sourceTree = "<group>"; };
+		CEE05BBC1AD3141A005F3A8B /* DMChooseImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMChooseImageViewController.h; path = HairViewControllers/ChooseImageViewController/DMChooseImageViewController.h; sourceTree = "<group>"; };
+		CEE05BBD1AD3141A005F3A8B /* DMChooseImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMChooseImageViewController.m; path = HairViewControllers/ChooseImageViewController/DMChooseImageViewController.m; sourceTree = "<group>"; };
+		CEE05BBE1AD3141A005F3A8B /* DMChooseImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMChooseImageViewController.xib; path = HairViewControllers/ChooseImageViewController/DMChooseImageViewController.xib; sourceTree = "<group>"; };
 		CEE0AA2618BFDDA400EA178E /* DMCustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCustomItem.h; path = CustomItem/DMCustomItem.h; sourceTree = "<group>"; };
 		CEE0AA2718BFDDA400EA178E /* DMCustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCustomItem.m; path = CustomItem/DMCustomItem.m; sourceTree = "<group>"; };
+		CEE659CB1AAC93B700BED597 /* DMPromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPromotion.h; path = DMPromotion/DMPromotion.h; sourceTree = "<group>"; };
+		CEE659CC1AAC93B700BED597 /* DMPromotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPromotion.m; path = DMPromotion/DMPromotion.m; sourceTree = "<group>"; };
+		CEEC5A7F1AC9E26900811519 /* DMModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMModelController.h; path = DMModelController/DMModelController.h; sourceTree = "<group>"; };
+		CEEC5A801AC9E26900811519 /* DMModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMModelController.m; path = DMModelController/DMModelController.m; sourceTree = "<group>"; };
+		CEEF727F1AD7F41100C9999A /* DMDrawMaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMDrawMaskViewController.h; path = HairViewControllers/DrawMaskViewController/DMDrawMaskViewController.h; sourceTree = "<group>"; };
+		CEEF72801AD7F41200C9999A /* DMDrawMaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMDrawMaskViewController.m; path = HairViewControllers/DrawMaskViewController/DMDrawMaskViewController.m; sourceTree = "<group>"; };
+		CEEF72811AD7F41200C9999A /* DMDrawMaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMDrawMaskViewController.xib; path = HairViewControllers/DrawMaskViewController/DMDrawMaskViewController.xib; sourceTree = "<group>"; };
+		CEF3A1C71A921D9300297821 /* DMStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMStartViewController.h; path = StartViewContoller/DMStartViewController.h; sourceTree = "<group>"; };
+		CEF3A1C81A921D9300297821 /* DMStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMStartViewController.m; path = StartViewContoller/DMStartViewController.m; sourceTree = "<group>"; };
+		CEF3A1C91A921D9300297821 /* DMStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMStartViewController.xib; path = StartViewContoller/DMStartViewController.xib; sourceTree = "<group>"; };
+		CEFD71DB1ABE14FE007C9EBF /* DMNailImgShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMNailImgShareViewController.h; path = NailImgShareViewController/DMNailImgShareViewController.h; sourceTree = "<group>"; };
+		CEFD71DC1ABE14FE007C9EBF /* DMNailImgShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMNailImgShareViewController.m; path = NailImgShareViewController/DMNailImgShareViewController.m; sourceTree = "<group>"; };
+		CEFD71DD1ABE14FE007C9EBF /* DMNailImgShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMNailImgShareViewController.xib; path = NailImgShareViewController/DMNailImgShareViewController.xib; sourceTree = "<group>"; };
+		CEFED60C1AE6F1EB00606249 /* DMApplyColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMApplyColorViewController.h; path = HairViewControllers/ApplyColorViewController/DMApplyColorViewController.h; sourceTree = "<group>"; };
+		CEFED60D1AE6F1EB00606249 /* DMApplyColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMApplyColorViewController.m; path = HairViewControllers/ApplyColorViewController/DMApplyColorViewController.m; sourceTree = "<group>"; };
+		CEFED60E1AE6F1EB00606249 /* DMApplyColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMApplyColorViewController.xib; path = HairViewControllers/ApplyColorViewController/DMApplyColorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +679,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE156F411B146283008B1B68 /* HairImgShareViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE156F421B1462C7008B1B68 /* DMHairImgShareViewController.h */,
+				CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */,
+				CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */,
+			);
+			name = HairImgShareViewController;
+			sourceTree = "<group>";
+		};
+		CE1A00ED1AB4664D00790462 /* PromotionDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A00EE1AB4668300790462 /* DMPromotionDetailsViewController.h */,
+				CE1A00EF1AB4668300790462 /* DMPromotionDetailsViewController.m */,
+				CE1A00F01AB4668300790462 /* DMPromotionDetailsViewController.xib */,
+			);
+			name = PromotionDetailsViewController;
+			sourceTree = "<group>";
+		};
+		CE1EDD331A9FBB820038CFA4 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE1EDD341A9FBBE40038CFA4 /* DMRequestManager.h */,
+				CE1EDD351A9FBBE40038CFA4 /* DMRequestManager.m */,
+			);
+			name = RequestManager;
+			sourceTree = "<group>";
+		};
+		CE2693801AF72FA400363F99 /* SelectModelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE2693811AF72FE300363F99 /* DMSelectModelViewController.h */,
+				CE2693821AF72FE300363F99 /* DMSelectModelViewController.m */,
+				CE2693831AF72FE300363F99 /* DMSelectModelViewController.xib */,
+			);
+			name = SelectModelViewController;
+			sourceTree = "<group>";
+		};
 		CE53C68C18A694CA00D04548 /* Offer */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +941,12 @@
 		CEBD58EC18A67AF50072E091 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEC14CED1B0AF7930015224A /* help_image_1.png */,
+				CEC14CEF1B0AFDB80015224A /* help_image_2.png */,
+				CEC14CF01B0AFDB80015224A /* help_image_3.png */,
+				CEC14CF11B0AFDB80015224A /* help_image_4.png */,
+				CEE016701ADC299800EABFF9 /* maska.png */,
+				CEE016711ADC299800EABFF9 /* model.jpg */,
 				CEBD58ED18A67AF50072E091 /* DMDrogerie-Info.plist */,
 				CEBD58EE18A67AF50072E091 /* InfoPlist.strings */,
 				CEBD58F118A67AF50072E091 /* main.m */,
@@ -900,15 +1044,22 @@
 		CEBD595418A67C390072E091 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE05BBA1AD31386005F3A8B /* HairViewControllers */,
+				CEFD71D71ABE1397007C9EBF /* NailImgShareViewController */,
+				CECEAF621AB72146002EAFB5 /* NailsViewController */,
+				CECEAF5C1AB72103002EAFB5 /* AboutViewController */,
+				CE1A00ED1AB4664D00790462 /* PromotionDetailsViewController */,
+				CED7D2901A9BB5CC00B65486 /* PromotionsViewController */,
+				CEF3A1C61A921D6200297821 /* StartViewController */,
 				CEDBA02118DCC72400BF3A71 /* WebViewController */,
-				CEB9E7A318DA2BE400C61DC9 /* AktuelnostDetaljiViewController */,
 				CEBE051018D78CD100378F88 /* MapViewController */,
 				CEC00EA218BE9D6A0048291D /* ShoppingListViewController */,
 				CE9F787E18AD428600E11A78 /* StoreDetailsViewController */,
-				CEA56C8D18ABF94D00FBD1EE /* OfferDetailsViewController */,
-				CE53C69618A6999A00D04548 /* DiscountsViewController */,
-				CE53C69018A695BC00D04548 /* OffersViewController */,
 				CEBD596118A68F350072E091 /* LocationsViewController */,
+				CEA56C8D18ABF94D00FBD1EE /* OfferDetailsViewController */,
+				CE53C69018A695BC00D04548 /* OffersViewController */,
+				CE53C69618A6999A00D04548 /* DiscountsViewController */,
+				CEB9E7A318DA2BE400C61DC9 /* AktuelnostDetaljiViewController */,
 				CEBD595518A67C4F0072E091 /* MainViewController */,
 			);
 			path = ViewControllers;
@@ -928,6 +1079,12 @@
 		CEBD595B18A68BBF0072E091 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CED93D7A1AEBAA7D001B3468 /* HairColor */,
+				CED93D761AEBA7C7001B3468 /* HairColorManufacturer */,
+				CEEC5A7E1AC9E23800811519 /* DMModelController */,
+				CED5BA231AB8E36E0079D710 /* DMNailColor */,
+				CEE659CA1AAC937A00BED597 /* DMPromotion */,
+				CE1EDD331A9FBB820038CFA4 /* RequestManager */,
 				CED7476718DF679D0010C751 /* Statistics */,
 				CEE0AA2518BFDD8300EA178E /* CustomItem */,
 				CE53C69C18A69AE600D04548 /* Discount */,
@@ -972,6 +1129,8 @@
 			children = (
 				CEBE537918E4E427009D9B5C /* zastavica.png */,
 				CEBE537718E4E41D009D9B5C /* zastavica@2x.png */,
+				CED71DD01AE5686E0084EC8B /* arrow_right.png */,
+				CED71DD11AE5686E0084EC8B /* arrow_right@2x.png */,
 				CEBE2A4B18E4A3BB005EA4D9 /* arrow_down.png */,
 				CEBE2A4C18E4A3BB005EA4D9 /* arrow_down@2x.png */,
 				CEBE2A4D18E4A3BB005EA4D9 /* bkg_broj_komada.png */,
@@ -1103,6 +1262,55 @@
 			name = ShoppingListViewController;
 			sourceTree = "<group>";
 		};
+		CECEAF5C1AB72103002EAFB5 /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CECEAF5D1AB7213A002EAFB5 /* DMAboutViewController.h */,
+				CECEAF5E1AB7213A002EAFB5 /* DMAboutViewController.m */,
+				CECEAF5F1AB7213A002EAFB5 /* DMAboutViewController.xib */,
+			);
+			name = AboutViewController;
+			sourceTree = "<group>";
+		};
+		CECEAF621AB72146002EAFB5 /* NailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CECEAF631AB72166002EAFB5 /* DMNailsViewController.h */,
+				CECEAF641AB72166002EAFB5 /* DMNailsViewController.m */,
+				CECEAF651AB72166002EAFB5 /* DMNailsViewController.xib */,
+			);
+			name = NailsViewController;
+			sourceTree = "<group>";
+		};
+		CED4A8871AF7D9B900A654F1 /* CompareViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CED4A8881AF7D9E600A654F1 /* DMCompareViewController.h */,
+				CED4A8891AF7D9E600A654F1 /* DMCompareViewController.m */,
+				CED4A88A1AF7D9E600A654F1 /* DMCompareViewController.xib */,
+			);
+			name = CompareViewController;
+			sourceTree = "<group>";
+		};
+		CED5BA231AB8E36E0079D710 /* DMNailColor */ = {
+			isa = PBXGroup;
+			children = (
+				CED5BA241AB8E3A50079D710 /* DMNailColor.h */,
+				CED5BA251AB8E3A50079D710 /* DMNailColor.m */,
+			);
+			name = DMNailColor;
+			sourceTree = "<group>";
+		};
+		CED71DD41AE569EE0084EC8B /* HairHelpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEC14CE81B0AF6610015224A /* DMHairHelpViewController.h */,
+				CEC14CE91B0AF6610015224A /* DMHairHelpViewController.m */,
+				CEC14CEA1B0AF6610015224A /* DMHairHelpViewController.xib */,
+			);
+			name = HairHelpViewController;
+			sourceTree = "<group>";
+		};
 		CED7476718DF679D0010C751 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1110,6 +1318,34 @@
 				CED7476918DF67CC0010C751 /* DMStatistics.m */,
 			);
 			name = Statistics;
+			sourceTree = "<group>";
+		};
+		CED7D2901A9BB5CC00B65486 /* PromotionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CED7D2911A9BB5F300B65486 /* DMPromotionsViewController.h */,
+				CED7D2921A9BB5F300B65486 /* DMPromotionsViewController.m */,
+				CED7D2931A9BB5F300B65486 /* DMPromotionsViewController.xib */,
+			);
+			name = PromotionsViewController;
+			sourceTree = "<group>";
+		};
+		CED93D761AEBA7C7001B3468 /* HairColorManufacturer */ = {
+			isa = PBXGroup;
+			children = (
+				CED93D771AEBA802001B3468 /* DMHairColorManufacturer.h */,
+				CED93D781AEBA802001B3468 /* DMHairColorManufacturer.m */,
+			);
+			name = HairColorManufacturer;
+			sourceTree = "<group>";
+		};
+		CED93D7A1AEBAA7D001B3468 /* HairColor */ = {
+			isa = PBXGroup;
+			children = (
+				CED93D7B1AEBAA9A001B3468 /* DMHairColor.h */,
+				CED93D7C1AEBAA9A001B3468 /* DMHairColor.m */,
+			);
+			name = HairColor;
 			sourceTree = "<group>";
 		};
 		CEDBA02118DCC72400BF3A71 /* WebViewController */ = {
@@ -1122,6 +1358,30 @@
 			name = WebViewController;
 			sourceTree = "<group>";
 		};
+		CEE05BBA1AD31386005F3A8B /* HairViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE156F411B146283008B1B68 /* HairImgShareViewController */,
+				CED4A8871AF7D9B900A654F1 /* CompareViewController */,
+				CE2693801AF72FA400363F99 /* SelectModelViewController */,
+				CEFED60B1AE6F19900606249 /* ApplyColorViewController */,
+				CED71DD41AE569EE0084EC8B /* HairHelpViewController */,
+				CEEF727E1AD7F38B00C9999A /* DrawMaskViewController */,
+				CEE05BBB1AD313DA005F3A8B /* ChooseImageViewController */,
+			);
+			name = HairViewControllers;
+			sourceTree = "<group>";
+		};
+		CEE05BBB1AD313DA005F3A8B /* ChooseImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEE05BBC1AD3141A005F3A8B /* DMChooseImageViewController.h */,
+				CEE05BBD1AD3141A005F3A8B /* DMChooseImageViewController.m */,
+				CEE05BBE1AD3141A005F3A8B /* DMChooseImageViewController.xib */,
+			);
+			name = ChooseImageViewController;
+			sourceTree = "<group>";
+		};
 		CEE0AA2518BFDD8300EA178E /* CustomItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1389,64 @@
 				CEE0AA2718BFDDA400EA178E /* DMCustomItem.m */,
 			);
 			name = CustomItem;
+			sourceTree = "<group>";
+		};
+		CEE659CA1AAC937A00BED597 /* DMPromotion */ = {
+			isa = PBXGroup;
+			children = (
+				CEE659CB1AAC93B700BED597 /* DMPromotion.h */,
+				CEE659CC1AAC93B700BED597 /* DMPromotion.m */,
+			);
+			name = DMPromotion;
+			sourceTree = "<group>";
+		};
+		CEEC5A7E1AC9E23800811519 /* DMModelController */ = {
+			isa = PBXGroup;
+			children = (
+				CEEC5A7F1AC9E26900811519 /* DMModelController.h */,
+				CEEC5A801AC9E26900811519 /* DMModelController.m */,
+			);
+			name = DMModelController;
+			sourceTree = "<group>";
+		};
+		CEEF727E1AD7F38B00C9999A /* DrawMaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEEF727F1AD7F41100C9999A /* DMDrawMaskViewController.h */,
+				CEEF72801AD7F41200C9999A /* DMDrawMaskViewController.m */,
+				CEEF72811AD7F41200C9999A /* DMDrawMaskViewController.xib */,
+			);
+			name = DrawMaskViewController;
+			sourceTree = "<group>";
+		};
+		CEF3A1C61A921D6200297821 /* StartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEF3A1C71A921D9300297821 /* DMStartViewController.h */,
+				CEF3A1C81A921D9300297821 /* DMStartViewController.m */,
+				CEF3A1C91A921D9300297821 /* DMStartViewController.xib */,
+			);
+			name = StartViewController;
+			sourceTree = "<group>";
+		};
+		CEFD71D71ABE1397007C9EBF /* NailImgShareViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD71DB1ABE14FE007C9EBF /* DMNailImgShareViewController.h */,
+				CEFD71DC1ABE14FE007C9EBF /* DMNailImgShareViewController.m */,
+				CEFD71DD1ABE14FE007C9EBF /* DMNailImgShareViewController.xib */,
+			);
+			name = NailImgShareViewController;
+			sourceTree = "<group>";
+		};
+		CEFED60B1AE6F19900606249 /* ApplyColorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEFED60C1AE6F1EB00606249 /* DMApplyColorViewController.h */,
+				CEFED60D1AE6F1EB00606249 /* DMApplyColorViewController.m */,
+				CEFED60E1AE6F1EB00606249 /* DMApplyColorViewController.xib */,
+			);
+			name = ApplyColorViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1179,6 +1497,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Vlada;
 				TargetAttributes = {
+					CEBD58E118A67AF50072E091 = {
+						DevelopmentTeam = R9RD7A9N3Z;
+					};
 					CEBD590218A67AF50072E091 = {
 						TestTargetID = CEBD58E118A67AF50072E091;
 					};
@@ -1213,6 +1534,7 @@
 				CEB9CFE218A95F63002F3BDF /* CellDesign.xib in Resources */,
 				CEC1349A18E54DC6005FB230 /* dmLogo_iPad.png in Resources */,
 				CEBD58FE18A67AF50072E091 /* Images.xcassets in Resources */,
+				CECEAF611AB7213A002EAFB5 /* DMAboutViewController.xib in Resources */,
 				CEA56C9218ABF98300FBD1EE /* DMOfferDetailsViewController.xib in Resources */,
 				CEDAE4C018EF1E5200F1A29D /* cenakomad_iPad@2x.png in Resources */,
 				CEB8B48E18D90A7B00F090E6 /* btn-plus.png in Resources */,
@@ -1221,6 +1543,7 @@
 				CE9D008F18E22BC80094A6F4 /* DMLocationsViewController_iPad.xib in Resources */,
 				CEBE04E118D77DC400378F88 /* store_bkg@2x.png in Resources */,
 				CEB8B48618D900EE00F090E6 /* pozadina_talas_shopping.png in Resources */,
+				CECEAF671AB72166002EAFB5 /* DMNailsViewController.xib in Resources */,
 				CEDAE4BC18EF1E5200F1A29D /* akcija_head_bkg_iPad@2x.png in Resources */,
 				CEBE051518D78D0400378F88 /* DMMapViewController.xib in Resources */,
 				CEBE2A5E18E4A3BB005EA4D9 /* btn_close_list@2x.png in Resources */,
@@ -1230,7 +1553,10 @@
 				CEBAAE4F18D8D0B100232E50 /* novo-crveni.png in Resources */,
 				CEBE04D618D7642100378F88 /* novo-normal.png in Resources */,
 				CEBE04E718D77E8B00378F88 /* prodavnica-pozadina-adresa@2x.png in Resources */,
+				CEC14CF31B0AFDB80015224A /* help_image_3.png in Resources */,
 				CEB89FA618E257E8000B6F88 /* dodaj_u_shoppinglistu_iPad.png in Resources */,
+				CE1A00F21AB4668300790462 /* DMPromotionDetailsViewController.xib in Resources */,
+				CE156F461B1462C7008B1B68 /* DMHairImgShareViewController.xib in Resources */,
 				CEBE04F218D7851500378F88 /* btn-map.png in Resources */,
 				CEB89F9318E2542F000B6F88 /* akcija_head_iPad@2x.png in Resources */,
 				CEBE04CA18D7642100378F88 /* akcija-selected.png in Resources */,
@@ -1240,6 +1566,7 @@
 				CEBE04F318D7851500378F88 /* btn-map@2x.png in Resources */,
 				CEBF814F18E4F9FD00C7180F /* cena_po_komadu_bkg_iPad@2x.png in Resources */,
 				CEBF816118E4FBBC00C7180F /* btn_ubaci_iPad@2x.png in Resources */,
+				CED71DD31AE5686E0084EC8B /* arrow_right@2x.png in Resources */,
 				CEDAE4BE18EF1E5200F1A29D /* brojkomada_iPad@2x.png in Resources */,
 				CEB89FA218E256B2000B6F88 /* akcija_redovnacena_iPad.png in Resources */,
 				CEBE2A6218E4A79F005EA4D9 /* dmLogo_header@2x.png in Resources */,
@@ -1268,7 +1595,9 @@
 				CEC1348B18E54C97005FB230 /* info_prodavnica_bkg_iPad@2x.png in Resources */,
 				CEBF814E18E4F9FD00C7180F /* cena_po_komadu_bkg_iPad.png in Resources */,
 				CEB8B48A18D9034500F090E6 /* btn-obrisi.png in Resources */,
+				CEFED6101AE6F1EB00606249 /* DMApplyColorViewController.xib in Resources */,
 				CEBF815D18E4FBBC00C7180F /* btn_korpa_iPad@2x.png in Resources */,
+				CED71DD21AE5686E0084EC8B /* arrow_right.png in Resources */,
 				CEBA4B1D18E0C30000B14783 /* header_bg@2x.png in Resources */,
 				CEC1349218E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad.png in Resources */,
 				CEBE2A6118E4A79F005EA4D9 /* dmLogo_header.png in Resources */,
@@ -1276,6 +1605,7 @@
 				CEC1348A18E54C97005FB230 /* info_prodavnica_bkg_iPad.png in Resources */,
 				CE9D008B18E207180094A6F4 /* delet@2x.png in Resources */,
 				CEC1347B18E544AD005FB230 /* novo_komad_bkg_iPad@2x.png in Resources */,
+				CEC14CF41B0AFDB80015224A /* help_image_4.png in Resources */,
 				CEC1349318E54CD3005FB230 /* pozadina_prodavnica_prikaz_iPad@2x.png in Resources */,
 				CEBE04CD18D7642100378F88 /* aktuelno-normal@2x.png in Resources */,
 				CEBE04F518D7851500378F88 /* btn-tel@2x.png in Resources */,
@@ -1291,6 +1621,7 @@
 				CEC1349718E54CFD005FB230 /* DMStoreDetailsViewController_iPad.xib in Resources */,
 				CEBE04B018D761F400378F88 /* tab_background@2x.png in Resources */,
 				CE9D009718E22C880094A6F4 /* DMMainViewController_iPad.xib in Resources */,
+				CE2693851AF72FE300363F99 /* DMSelectModelViewController.xib in Resources */,
 				CEBE2A5818E4A3BB005EA4D9 /* bkg_broj_komada@2x.png in Resources */,
 				CEBE04AF18D761F400378F88 /* tab_background.png in Resources */,
 				CEBE04ED18D77F9B00378F88 /* dmLogo@2x.png in Resources */,
@@ -1303,6 +1634,7 @@
 				CEBAAE5818D8D0E300232E50 /* Btn@2x.png in Resources */,
 				CEBE04C918D7642100378F88 /* akcija-normal@2x.png in Resources */,
 				CE9D009B18E22D1E0094A6F4 /* DMShoppingListViewController_iPad.xib in Resources */,
+				CEC14CEC1B0AF6610015224A /* DMHairHelpViewController.xib in Resources */,
 				CEBAAE7618D8DACE00232E50 /* Back-icon@2x.png in Resources */,
 				CEBAAE6118D8D9A600232E50 /* akcija-okvir-txt.png in Resources */,
 				CEBE04CF18D7642100378F88 /* cart-normal@2x.png in Resources */,
@@ -1313,6 +1645,7 @@
 				CEBE04C718D7642100378F88 /* actuelno-selected@2x.png in Resources */,
 				CEBAAE4B18D8D0B100232E50 /* footer-novo-prikaz.png in Resources */,
 				CEBE04CE18D7642100378F88 /* cart-normal.png in Resources */,
+				CEEF72831AD7F41200C9999A /* DMDrawMaskViewController.xib in Resources */,
 				CEBF814418E4F97800C7180F /* promena_stavki_bkg_iPad.png in Resources */,
 				CEBE04D418D7642100378F88 /* map-selected.png in Resources */,
 				CEBE537D18E4EF86009D9B5C /* footer_shopping_bkg_iPad.png in Resources */,
@@ -1323,8 +1656,10 @@
 				CE9D007A18E1FF970094A6F4 /* btn_izbaci.png in Resources */,
 				CEB89F8A18E23924000B6F88 /* GoogleMaps.bundle in Resources */,
 				CE53C69B18A699BF00D04548 /* DMDiscountsViewController.xib in Resources */,
+				CEFD71DF1ABE14FE007C9EBF /* DMNailImgShareViewController.xib in Resources */,
 				CEB8B48F18D90A7B00F090E6 /* btn-plus@2x.png in Resources */,
 				CEBAAE4E18D8D0B100232E50 /* header-novo@2x.png in Resources */,
+				CEC14CF21B0AFDB80015224A /* help_image_2.png in Resources */,
 				CEBE04CB18D7642100378F88 /* akcija-selected@2x.png in Resources */,
 				CEBE04CC18D7642100378F88 /* aktuelno-normal.png in Resources */,
 				CEC1348418E54905005FB230 /* saznaj_vise_btn_iPad.png in Resources */,
@@ -1337,8 +1672,10 @@
 				CEBE04E818D77E8B00378F88 /* ranovreme-poz.png in Resources */,
 				CEC1348318E54905005FB230 /* pozadina_aktuelno_prikaz_iPad@2x.png in Resources */,
 				CEBF815118E4F9FD00C7180F /* naziv_proizvoda_bkg_iPad@2x.png in Resources */,
+				CED7D2951A9BB5F300B65486 /* DMPromotionsViewController.xib in Resources */,
 				CEBAAE5218D8D0B100232E50 /* novo-plavi-rtg-komad@2x.png in Resources */,
 				CEBE2A5D18E4A3BB005EA4D9 /* btn_close_list.png in Resources */,
+				CEE016731ADC299800EABFF9 /* model.jpg in Resources */,
 				CEC1347818E544AD005FB230 /* novo_cena_bkg_iPad.png in Resources */,
 				CEBE537A18E4E427009D9B5C /* zastavica.png in Resources */,
 				CEBF816018E4FBBC00C7180F /* btn_ubaci_iPad.png in Resources */,
@@ -1355,6 +1692,8 @@
 				CEB89F9A18E25526000B6F88 /* popust_krug_iPad.png in Resources */,
 				CEBAAE6B18D8DA7A00232E50 /* Ellipse-2.png in Resources */,
 				CEBAAE7518D8DACE00232E50 /* Back-icon.png in Resources */,
+				CEE05BC01AD3141A005F3A8B /* DMChooseImageViewController.xib in Resources */,
+				CEE016721ADC299800EABFF9 /* maska.png in Resources */,
 				CEBF815C18E4FBBC00C7180F /* btn_korpa_iPad.png in Resources */,
 				CEC1348518E54905005FB230 /* saznaj_vise_btn_iPad@2x.png in Resources */,
 				CE9D007F18E1FF970094A6F4 /* btn_ok@2x.png in Resources */,
@@ -1377,6 +1716,8 @@
 				CEBF815B18E4FBBC00C7180F /* btn_izbaci_iPad@2x.png in Resources */,
 				CEC1349518E54CD3005FB230 /* radno_vreme_bkg_iPad@2x.png in Resources */,
 				CEBE2A5718E4A3BB005EA4D9 /* bkg_broj_komada.png in Resources */,
+				CED4A88C1AF7D9E600A654F1 /* DMCompareViewController.xib in Resources */,
+				CEC14CEE1B0AF7930015224A /* help_image_1.png in Resources */,
 				CEBAAE5318D8D0B100232E50 /* novo-rtg.png in Resources */,
 				CEBE538118E4F085009D9B5C /* obrisi_btn_iPad.png in Resources */,
 				CEBF815A18E4FBBC00C7180F /* btn_izbaci_iPad.png in Resources */,
@@ -1387,6 +1728,7 @@
 				CEC1347D18E547C0005FB230 /* DMAktuelnostDetaljiViewController_iPad.xib in Resources */,
 				CEDAE4C118EF1E5200F1A29D /* naziv_proizvoda_iPad.png in Resources */,
 				CEDAE4BD18EF1E5200F1A29D /* brojkomada_iPad.png in Resources */,
+				CEF3A1CB1A921D9300297821 /* DMStartViewController.xib in Resources */,
 				CEB89FA318E256B2000B6F88 /* akcija_redovnacena_iPad@2x.png in Resources */,
 				CEB89F9218E2542F000B6F88 /* akcija_head_iPad.png in Resources */,
 				CEBAAE5F18D8D9A600232E50 /* akcija-head.png in Resources */,
@@ -1410,16 +1752,25 @@
 			files = (
 				CEBD595118A67B4C0072E091 /* UIProgressView+AFNetworking.m in Sources */,
 				CEB89F8F18E23B58000B6F88 /* Helper.m in Sources */,
+				CEF3A1CA1A921D9300297821 /* DMStartViewController.m in Sources */,
 				CEBD594F18A67B4C0072E091 /* UIButton+AFNetworking.m in Sources */,
+				CEFED60F1AE6F1EB00606249 /* DMApplyColorViewController.m in Sources */,
 				CEBD594E18A67B4C0072E091 /* UIAlertView+AFNetworking.m in Sources */,
+				CEFD71DE1ABE14FE007C9EBF /* DMNailImgShareViewController.m in Sources */,
 				CEB9E7A718DA2C2200C61DC9 /* DMAktuelnostDetaljiViewController.m in Sources */,
 				CEBD594218A67B4C0072E091 /* AFHTTPRequestOperation.m in Sources */,
 				CEE0AA2818BFDDA400EA178E /* DMCustomItem.m in Sources */,
 				CEBD58F218A67AF50072E091 /* main.m in Sources */,
 				CEBD594318A67B4C0072E091 /* AFHTTPRequestOperationManager.m in Sources */,
+				CEC14CEB1B0AF6610015224A /* DMHairHelpViewController.m in Sources */,
 				CE9F788218AD42B600E11A78 /* DMStoreDetailsViewController.m in Sources */,
+				CED7D2941A9BB5F300B65486 /* DMPromotionsViewController.m in Sources */,
+				CEEF72821AD7F41200C9999A /* DMDrawMaskViewController.m in Sources */,
+				CED93D791AEBA802001B3468 /* DMHairColorManufacturer.m in Sources */,
+				CED93D7D1AEBAA9A001B3468 /* DMHairColor.m in Sources */,
 				CED7476A18DF67CC0010C751 /* DMStatistics.m in Sources */,
 				CEA56C9118ABF98300FBD1EE /* DMOfferDetailsViewController.m in Sources */,
+				CE1A00F11AB4668300790462 /* DMPromotionDetailsViewController.m in Sources */,
 				CEBD595918A67C730072E091 /* DMMainViewController.m in Sources */,
 				CEBD594518A67B4C0072E091 /* AFNetworkReachabilityManager.m in Sources */,
 				CEBD594918A67B4C0072E091 /* AFURLResponseSerialization.m in Sources */,
@@ -1432,14 +1783,24 @@
 				CEC00EA618BE9DA50048291D /* DMShoppingListViewController.m in Sources */,
 				CEBD594618A67B4C0072E091 /* AFSecurityPolicy.m in Sources */,
 				CE53C68F18A6950000D04548 /* DMOffer.m in Sources */,
+				CEE05BBF1AD3141A005F3A8B /* DMChooseImageViewController.m in Sources */,
+				CEE659CD1AAC93B700BED597 /* DMPromotion.m in Sources */,
 				CEB9CFE318A95F63002F3BDF /* UITableViewController+CustomCells.m in Sources */,
+				CE2693841AF72FE300363F99 /* DMSelectModelViewController.m in Sources */,
+				CE156F451B1462C7008B1B68 /* DMHairImgShareViewController.m in Sources */,
+				CECEAF661AB72166002EAFB5 /* DMNailsViewController.m in Sources */,
 				CEDBA02518DCC74100BF3A71 /* DMWebViewController.m in Sources */,
 				CEBD595218A67B4C0072E091 /* UIWebView+AFNetworking.m in Sources */,
 				CEBD595F18A68C230072E091 /* DMAktuelnost.m in Sources */,
 				CE53C69418A695ED00D04548 /* DMOffersViewController.m in Sources */,
+				CED4A88B1AF7D9E600A654F1 /* DMCompareViewController.m in Sources */,
 				CEBD594418A67B4C0072E091 /* AFHTTPSessionManager.m in Sources */,
+				CEEC5A811AC9E26900811519 /* DMModelController.m in Sources */,
 				CE53C69F18A69B1900D04548 /* DMDiscount.m in Sources */,
+				CECEAF601AB7213A002EAFB5 /* DMAboutViewController.m in Sources */,
 				CEBD594818A67B4C0072E091 /* AFURLRequestSerialization.m in Sources */,
+				CE1EDD361A9FBBE40038CFA4 /* DMRequestManager.m in Sources */,
+				CED5BA261AB8E3A50079D710 /* DMNailColor.m in Sources */,
 				CEBD594B18A67B4C0072E091 /* MBProgressHUD.m in Sources */,
 				CEBD594A18A67B4C0072E091 /* AFURLSessionManager.m in Sources */,
 				CEBD594C18A67B4C0072E091 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1504,7 +1865,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1519,7 +1880,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
@@ -1546,7 +1907,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1555,7 +1916,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1568,9 +1929,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 5;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
@@ -1579,7 +1940,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
 				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1592,9 +1953,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 5;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
@@ -1603,7 +1964,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
 				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1670,7 +2031,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1679,7 +2040,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1692,9 +2053,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 5;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/user/Documents/Projects/DMDrogerie/DMDrogerie,
@@ -1703,7 +2064,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DMDrogerie/DMDrogerie-Prefix.pch";
 				INFOPLIST_FILE = "DMDrogerie/DMDrogerie-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

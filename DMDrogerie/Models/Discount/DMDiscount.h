@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong)NSString* objectId;
 @property (nonatomic, strong)NSString* item;
-@property (nonatomic, strong)NSString* description;
+@property (nonatomic, strong)NSString* descr;
 @property (nonatomic, strong)NSString* quantity;
 @property (nonatomic, strong)NSString* name;
 @property (nonatomic, strong)NSString* oldPrice;
@@ -23,6 +23,8 @@
 @property (nonatomic, strong)NSString* saving;
 @property (nonatomic, strong)NSString* activeTo;
 @property (nonatomic, strong)NSString* ref;
+
+@property (nonatomic, strong)NSNumber* dmBrand;
 
 @property (nonatomic, strong)NSNumber* numberOfItems;
 @property (nonatomic, strong)NSNumber* inCart;

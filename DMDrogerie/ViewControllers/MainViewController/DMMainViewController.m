@@ -9,8 +9,11 @@
 #import "DMMainViewController.h"
 #import "DMAktuelnost.h"
 #import "DMAktuelnostDetaljiViewController.h"
-#import "AFNetworking.h"
+#import "DMWebViewController.h"
+
 #import "UIKit+AFNetworking.h"
+
+#import "DMRequestManager.h"
 
 #import "UITableViewController+CustomCells.h"
 #import "MBProgressHUD.h"
@@ -18,14 +21,16 @@
 
 @interface DMMainViewController ()
 
-@property(strong) NSMutableArray* arrAktuelnosti;//package containing the complete response
-@property(strong) NSMutableDictionary *currentDictionary;//current section being parsed
-@property(strong) NSString *previousElementName;
-@property(strong) NSString *elementName;
-@property(strong) NSMutableString *outstring;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPromo;
+@property (weak, nonatomic) IBOutlet UILabel *lblPromoTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblPromoDesc;
+
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSArray* dataSource;
+
+@property (weak, nonatomic) IBOutlet UIView *topNewsView;
 
 
 @end
@@ -41,6 +46,27 @@
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray* )arr
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        
+        self.dataSource = [arr sortedArrayUsingComparator:^NSComparisonResult(DMAktuelnost* obj1, DMAktuelnost* obj2){
+            NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+            [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
+            
+            NSDate* dt1 = [formateer dateFromString:obj1.time];
+            NSDate* dt2 = [formateer dateFromString:obj2.time];
+            
+            NSComparisonResult res = [dt2 compare:dt1];
+            
+            return res;
+        }];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +75,7 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self.tableView reloadData];
 //    [self getData];
     
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
@@ -58,14 +85,54 @@
     [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
+    
+    [self.lblPromoTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
+    [self.lblPromoTitle setTextColor:[UIColor colorWithRed:248.0/255 green:0.0/255 blue:0.0/255 alpha:1.0]];
+    [self.lblPromoTitle setNumberOfLines:2];
+    
+    [self.lblPromoDesc setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:11.5]]];
+    [self.lblPromoDesc setTextColor:[UIColor blackColor]];
+    [self.lblPromoDesc setNumberOfLines:5];
+    
+    
+    if (![DMRequestManager sharedManager].promoDict) {
+        [self.topNewsView setHidden:YES];
+        CGRect fr = self.tableView.frame;
+        fr.size.height = fr.size.height + fr.origin.y;
+        fr.origin.y = 0;
+        
+        [self.tableView setFrame:fr];
+    }
+    else{
+        [self.lblPromoTitle setText:[[DMRequestManager sharedManager].promoDict objectForKey:@"naslov"]];
+        [self.lblPromoDesc setText:[[DMRequestManager sharedManager].promoDict objectForKey:@"opis"]];
+        [self.imgPromo setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, [[DMRequestManager sharedManager].promoDict objectForKey:@"slika_mala"]]]];
+    }
+    
+
+    
+    
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if (self.dataSource.count == 0) {
-        [self getData];
+    NSDictionary* dict = [[NSUserDefaults standardUserDefaults] objectForKey:@"banner"];
+    
+    NSDictionary* bannerDict = [DMRequestManager sharedManager].bannerDict;
+    if ([[dict objectForKey:@"shouldShow"] boolValue] && bannerDict) {
+        DMWebViewController* webView = [[DMWebViewController alloc] initWithNibName:@"DMWebViewController" bundle:[NSBundle mainBundle] andAdDict:bannerDict];
+        UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:webView];
+        [self presentViewController:navCon animated:YES completion:^{
+            NSMutableDictionary* mDict = [NSMutableDictionary dictionaryWithDictionary:dict];
+            [mDict setObject:[NSNumber numberWithBool:NO] forKey:@"shouldShow"];
+            [[NSUserDefaults standardUserDefaults] setObject:mDict forKey:@"banner"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,123 +141,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getData{
+- (IBAction)btnHeaderClicked:(id)sender {
+    //    {"tab":"4","vrsta":"tab","naslov":"dm Hair Color Expert","opis":"\u017delite novu boju za kose?! Uslikajte se i testirajte kako Vam stoji \u017eeljena nijansa!","det_opis":" ","aktivan_do":"2015-02-28","slika_mala":"PopupSlike\/SlikeMale\/3.png","slika_velika":"","link":""}
     
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/AktuelnostiData/aktuelnosti.xml" parameters:nil error:nil];
-    
-    AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
-    
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [op setResponseSerializer:[AFXMLParserResponseSerializer serializer]];
-	[op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-		NSLog(@"Success");
+    if ([[[DMRequestManager sharedManager].promoDict objectForKey:@"vrsta"] isEqualToString:@"tab"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"tab_clicked" object:nil];
+//        [self.navigationController.tabBarController setSelectedIndex:[[[DMRequestManager sharedManager].promoDict objectForKey:@"tab"] integerValue]];
+    }
+    else{
+//        "naslov": "dm Hair Color Expert",
+//        "opis": "Å½elite novu boju za kose?! Uslikajte se i testirajte kako Vam stoji Å¾eljena nijansa!",
+//        "det_opis": " ",
+//        "aktivan_do": "2015-02-28",
+//        "slika_mala": "PopupSlike/SlikeMale/3.png",
+//        "slika_velika": "PopupSlike/SlikeVelike/1.jpg",
+//        "link": ""
+        DMAktuelnost* akt = [[DMAktuelnost alloc] init];
+        akt.title = [[DMRequestManager sharedManager].promoDict objectForKey:@"naslov"];
+        akt.descr = [[DMRequestManager sharedManager].promoDict objectForKey:@"opis"];
+        akt.detailDescription = [[DMRequestManager sharedManager].promoDict objectForKey:@"det_opis"];
+        akt.activeTo = [[DMRequestManager sharedManager].promoDict objectForKey:@"aktivan_do"];
+        akt.imageSmall = [[DMRequestManager sharedManager].promoDict objectForKey:@"slika_mala"];
+        akt.imageBig = [[DMRequestManager sharedManager].promoDict objectForKey:@"slika_velika"];
+        akt.link = [[DMRequestManager sharedManager].promoDict objectForKey:@"link"];
         
-        NSXMLParser* parser = (NSXMLParser*)responseObject;
-        parser.delegate = self;
-        [parser parse];
+        DMAktuelnostDetaljiViewController* aktVC = [[DMAktuelnostDetaljiViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMAktuelnostDetaljiViewController"] bundle:[NSBundle mainBundle] andAktuelnost:akt];
+        UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:aktVC];
         
-	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
-		NSLog(@"Error");
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if (error.code == -1009) {
-            NSLog(@"No internet");
-        }
+        [self.navigationController presentViewController:navCon animated:YES completion:nil];
         
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obavještenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-	}];
-	
-	[op start];
-}
-
-
-#pragma mark - AFXMLRequestOperationDelegate
-
-- (void)parserDidStartDocument:(NSXMLParser *)parser{
-    self.arrAktuelnosti = [NSMutableArray array];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict  {
-    
-    
-    
-    self.previousElementName = self.elementName;
-    
-    if (elementName) {
-        self.elementName = elementName;
     }
     
-    if([elementName isEqualToString:@"aktuelnost"]){
-        self.currentDictionary = [NSMutableDictionary dictionary];
-    }
-    
-    self.outstring = [NSMutableString string];
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if (!self.elementName){
-        return;
-    }
-    
-    [self.outstring appendFormat:@"%@", string];
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    
-    if([elementName isEqualToString:@"aktuelnost"]){
-        
-        // Initalise the list of weather items if it dosnt exist
-        
-        DMAktuelnost* akt = [[DMAktuelnost alloc] initWithDictionary:self.currentDictionary];
-        [self.arrAktuelnosti addObject:akt];
-        
-        self.currentDictionary = nil;
-    }
-    else if([elementName isEqualToString:@"idAkt"] ||
-            [elementName isEqualToString:@"naslov"] ||
-            [elementName isEqualToString:@"opis"] ||
-            [elementName isEqualToString:@"det_op"] ||
-            [elementName isEqualToString:@"vreme"] ||
-            [elementName isEqualToString:@"akt"] ||
-            [elementName isEqualToString:@"sl_l"] ||
-            [elementName isEqualToString:@"sl_d"] ||
-            [elementName isEqualToString:@"linkA"]){
-        [self.currentDictionary setObject:self.outstring forKey:elementName];
-    }
-    
-	self.elementName = nil;
-}
-
-
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    
-    
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    
-
-    
-    self.dataSource = [self.arrAktuelnosti sortedArrayUsingComparator:^NSComparisonResult(DMAktuelnost* obj1, DMAktuelnost* obj2){
-        NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
-        [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
-        
-        NSDate* dt1 = [formateer dateFromString:obj1.time];
-        NSDate* dt2 = [formateer dateFromString:obj2.time];
-        
-        NSComparisonResult res = [dt2 compare:dt1];
-        
-        return res;
-    }];
-    
-    [self.tableView reloadData];
-}
-
-- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 #pragma mark - UITabeleViewDataSource
@@ -232,7 +213,7 @@
 	[lblTitle setText:akt.title];
 	
 	UILabel *lblDescription = (UILabel *)[cell viewWithTag:2];
-	[lblDescription setText:akt.description];
+	[lblDescription setText:akt.descr];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
 	[lblDate setText:akt.time];
@@ -295,7 +276,7 @@
     DMAktuelnostDetaljiViewController* aktVC = [[DMAktuelnostDetaljiViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMAktuelnostDetaljiViewController"] bundle:[NSBundle mainBundle] andAktuelnost:aktuelnost];
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:aktVC];
     
-    [self.navigationController presentViewController:navCon animated:YES completion:nil];
+    [self presentViewController:navCon animated:YES completion:nil];
     
 }
 

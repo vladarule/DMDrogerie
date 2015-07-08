@@ -86,7 +86,7 @@ GMSMapView *mapView_;
     
     
     GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bound
-                                             withPadding:50.0f];
+                                             withPadding:80.0f];
     [mapView_ moveCamera:update];
 }
 

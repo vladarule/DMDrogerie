@@ -10,7 +10,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-#define kBaseURL @"http://www.dmbih.com/"
+#define kBaseURL @"http://dmbih.com/mobile/"
 #define kSavedItems @"kSavedItems"
 #define kStatistics @"kStatistics"
 

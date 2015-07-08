@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMOfferDetailsViewController">
             <connections>
                 <outlet property="buttonAddToCart" destination="a27-k0-KQN" id="5bM-ew-8kp"/>
+                <outlet property="imgDm" destination="egk-EJ-rhu" id="doz-SJ-NQ3"/>
                 <outlet property="imgViewOffer" destination="xBm-ll-b6T" id="LCo-1I-itV"/>
                 <outlet property="lblDescription" destination="qy4-8C-2QZ" id="fLY-R6-9il"/>
                 <outlet property="lblItems" destination="Uw1-nQ-yWK" id="3Ls-Yk-bGw"/>
@@ -55,7 +57,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qy4-8C-2QZ">
-                    <rect key="frame" x="20" y="344.99999839308987" width="280" height="91"/>
+                    <rect key="frame" x="20" y="345.00000236598794" width="280" height="91"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
@@ -74,18 +76,26 @@
                     <rect key="frame" x="20" y="100" width="128" height="170"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dm_marka" id="egk-EJ-rhu">
+                    <rect key="frame" x="107" y="100" width="64" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
         <image name="Btn.png" width="174" height="40"/>
+        <image name="dm_marka" width="64" height="25"/>
         <image name="footer-novo-prikaz.png" width="320" height="20"/>
         <image name="header-novo.png" width="320" height="36"/>
         <image name="novo-crveni.png" width="127" height="34"/>
         <image name="novo-plavi-rtg-komad.png" width="74" height="25"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

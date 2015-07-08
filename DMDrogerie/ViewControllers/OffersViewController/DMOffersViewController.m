@@ -7,7 +7,6 @@
 //
 
 #import "DMOffersViewController.h"
-#import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 
 #import "DMOffer.h"
@@ -19,12 +18,6 @@
 
 
 @interface DMOffersViewController ()
-
-@property(strong) NSMutableArray* arrOffers;//package containing the complete response
-@property(strong) NSMutableDictionary *currentDictionary;//current section being parsed
-@property(strong) NSString *previousElementName;
-@property(strong) NSString *elementName;
-@property(strong) NSMutableString *outstring;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSArray* dataSource;
@@ -39,6 +32,28 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+    }
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray *)arr
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        
+        self.dataSource = [arr sortedArrayUsingComparator:^NSComparisonResult(DMOffer* obj1, DMOffer* obj2){
+            NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
+            [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
+            
+            NSDate* dt1 = [formateer dateFromString:obj1.time];
+            NSDate* dt2 = [formateer dateFromString:obj2.time];
+            
+            NSComparisonResult res = [dt2 compare:dt1];
+            
+            return res;
+        }];
     }
     return self;
 }
@@ -61,16 +76,13 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
-    
+    [self.tableView reloadData];
     
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if (self.dataSource.count == 0) {
-        [self getData];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,115 +91,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getData{
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/PonudeData/ponude.xml" parameters:nil error:nil];
-    
-	AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
-    
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [op setResponseSerializer:[AFXMLParserResponseSerializer serializer]];
-	[op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-		NSLog(@"Success");
-        
-        NSXMLParser* parser = (NSXMLParser*)responseObject;
-        parser.delegate = self;
-        [parser parse];
-        
-	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-		NSLog(@"Error");
-        if (error.code == -1009) {
-            NSLog(@"No internet");
-        }
-        
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obavještenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-	}];
-	
-	[op start];
-}
-
-#pragma mark - AFXMLRequestOperationDelegate
-
-- (void)parserDidStartDocument:(NSXMLParser *)parser{
-    self.arrOffers = [NSMutableArray array];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict  {
-    
-    
-    
-    self.previousElementName = self.elementName;
-    
-    if (elementName) {
-        self.elementName = elementName;
-    }
-    
-    if([elementName isEqualToString:@"ponuda"]){
-        self.currentDictionary = [NSMutableDictionary dictionary];
-    }
-    
-    self.outstring = [NSMutableString string];
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if (!self.elementName){
-        return;
-    }
-    
-    [self.outstring appendFormat:@"%@", string];
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    
-    if([elementName isEqualToString:@"ponuda"]){
-        
-        // Initalise the list of weather items if it dosnt exist
-        
-        DMOffer* offer = [[DMOffer alloc] initWithDictionary:self.currentDictionary];
-        [self.arrOffers addObject:offer];
-        
-        self.currentDictionary = nil;
-    }
-    else if([elementName isEqualToString:@"idPon"] ||
-            [elementName isEqualToString:@"naslov"] ||
-            [elementName isEqualToString:@"opis"] ||
-            [elementName isEqualToString:@"det_op"] ||
-            [elementName isEqualToString:@"vreme"] ||
-            [elementName isEqualToString:@"cen"] ||
-            [elementName isEqualToString:@"kol"] ||
-            [elementName isEqualToString:@"akt"] ||
-            [elementName isEqualToString:@"sl_l"] ||
-            [elementName isEqualToString:@"sl_d"]){
-        [self.currentDictionary setObject:self.outstring forKey:elementName];
-    }
-    
-	self.elementName = nil;
-}
-
-
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    self.dataSource = [self.arrOffers sortedArrayUsingComparator:^NSComparisonResult(DMOffer* obj1, DMOffer* obj2){
-        NSDateFormatter* formateer = [[NSDateFormatter alloc] init];
-        [formateer setDateFormat:@"dd.MM.yyyy. HH:mm:ss"];
-        
-        NSDate* dt1 = [formateer dateFromString:obj1.time];
-        NSDate* dt2 = [formateer dateFromString:obj2.time];
-        
-        NSComparisonResult res = [dt2 compare:dt1];
-        
-        return res;
-    }];
-    
-    [self.tableView reloadData];
-}
 
 #pragma mark - UITabeleViewDataSource
 
@@ -227,7 +130,7 @@
 	[lblTitle setText:offer.title];
 	
 	UILabel *lblDescription = (UILabel *)[cell viewWithTag:2];
-	[lblDescription setText:offer.description];
+	[lblDescription setText:offer.descr];
 	
 	UILabel *lblDate = (UILabel *)[cell viewWithTag:3];
 	[lblDate setText:offer.time];
@@ -289,6 +192,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     DMOfferDetailsViewController* offerDetVC = [[DMOfferDetailsViewController alloc] initWithNibName:[Helper getStringFromStr:@"DMOfferDetailsViewController"] bundle:[NSBundle mainBundle] andSelectedOffer:selOffer];
+    
     
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:offerDetVC];
     

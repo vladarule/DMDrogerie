@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMPromotionsViewController">
+            <connections>
+                <outlet property="tableView" destination="XrI-pg-Twk" id="QHV-Wz-PvU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-pg-Twk">
+                    <rect key="frame" x="0.0" y="30" width="320" height="383"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NmM-yJ-MPv"/>
+                        <outlet property="delegate" destination="-1" id="H4b-05-9Ey"/>
+                    </connections>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promotions_wave_top" translatesAutoresizingMaskIntoConstraints="NO" id="y9n-nG-I5v">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="303-S2-SAQ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promotions_wave_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="63J-uf-ka1">
+                    <rect key="frame" x="0.0" y="405" width="320" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="SSU-lg-YXa"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="y9n-nG-I5v" secondAttribute="trailing" id="0Ig-yM-gZK"/>
+                <constraint firstItem="XrI-pg-Twk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Rz-12-2AV"/>
+                <constraint firstAttribute="bottom" secondItem="XrI-pg-Twk" secondAttribute="bottom" constant="91" id="7Pa-Ct-DYh"/>
+                <constraint firstAttribute="bottom" secondItem="63J-uf-ka1" secondAttribute="bottom" constant="49" id="Cj5-yU-B49"/>
+                <constraint firstItem="63J-uf-ka1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D0A-Jk-qTp"/>
+                <constraint firstItem="XrI-pg-Twk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="FB2-yG-2Pm"/>
+                <constraint firstItem="y9n-nG-I5v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FzQ-zp-cQb"/>
+                <constraint firstAttribute="trailing" secondItem="XrI-pg-Twk" secondAttribute="trailing" id="eem-9K-EuT"/>
+                <constraint firstAttribute="trailing" secondItem="63J-uf-ka1" secondAttribute="trailing" id="oEw-ln-2Qu"/>
+                <constraint firstItem="y9n-nG-I5v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wtO-fi-MeQ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="195" y="152"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="promotions_wave_bottom" width="320" height="50"/>
+        <image name="promotions_wave_top" width="320" height="40"/>
+    </resources>
+</document>

@@ -10,4 +10,7 @@
 
 @interface DMOffersViewController : UIViewController<NSXMLParserDelegate>
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray *)arr;
+
 @end

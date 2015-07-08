@@ -9,22 +9,17 @@
 #import "DMLocationsViewController.h"
 #import "DMLocation.h"
 #import "DMStoreDetailsViewController.h"
+#import "DMWebViewController.h"
 
-#import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "UITableViewController+CustomCells.h"
 
 @interface DMLocationsViewController ()
 
-@property(strong) NSMutableArray* arrLocations;//package containing the complete response
-@property(strong) NSMutableDictionary *currentDictionary;//current section being parsed
-@property(strong) NSString *previousElementName;
-@property(strong) NSString *elementName;
-@property(strong) NSMutableString *outstring;
+@property(strong) NSArray* arrLocations;//package containing the complete response
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray* dataSource;
-@property (nonatomic, strong) NSArray* allLocations;
 
 @end
 
@@ -39,6 +34,31 @@
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray *)arr
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        
+        self.arrLocations = [arr sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
+            
+            DMLocation* location1 = (DMLocation* )obj1;
+            DMLocation* location2 = (DMLocation* )obj2;
+            
+            
+            if (location1.distance.floatValue > location2.distance.floatValue) {
+                return NSOrderedDescending;
+            }
+            else{
+                return NSOrderedAscending;
+            }
+            
+        }];
+;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,7 +67,7 @@
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 220, 44)];
     [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
     [btn setTitle:@"  PRODAVNICE" forState:UIControlStateDisabled];
     [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
@@ -55,18 +75,19 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
+    UIBarButtonItem* pdfBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pdfAction)];
+    [self.navigationItem setRightBarButtonItem:pdfBtn];
+    
     
     [self setupTitles];
-    
+    [self setupDataSource];
     
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if (self.dataSource.count == 0) {
-        [self getData];
-    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,35 +105,10 @@
     [self.lblOnlyOpen setText:@"Sve prodavnice"];
 }
 
-- (void)getData{
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/LokacijeData/lokacije.xml" parameters:nil error:nil];
-    
-    
-    
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-	AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
-    
-    [op setResponseSerializer:[AFXMLParserResponseSerializer serializer]];
-	[op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-		NSLog(@"Success");
-        
-        NSXMLParser* parser = (NSXMLParser*)responseObject;
-        parser.delegate = self;
-        [parser parse];
-        
-	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-		NSLog(@"Error");
-        if (error.code == -1009) {
-            NSLog(@"No internet");
-        }
-        
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obavještenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-	}];
-	
-	[op start];
+- (void)pdfAction{
+    DMWebViewController* webView = [[DMWebViewController alloc] initAndShowPDFWithNibName:@"DMWebViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:webView];
+    [self presentViewController:navCon animated:YES completion:nil];
 }
 
 - (IBAction)switchValueChanged:(id)sender {
@@ -129,7 +125,7 @@
 - (void)setupDataSource{
     if (!self.switchOnlyOpen.isOn) {
         NSMutableArray* arr = [NSMutableArray array];
-        for (DMLocation* location in self.allLocations) {
+        for (DMLocation* location in self.arrLocations) {
             
             NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
             NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit | NSHourCalendarUnit fromDate:[NSDate date]];
@@ -173,7 +169,7 @@
         self.dataSource = [NSArray arrayWithArray:arr];
     }
     else{
-        self.dataSource = [NSArray arrayWithArray:self.allLocations];
+        self.dataSource = [NSArray arrayWithArray:self.arrLocations];
     }
     
     [self.tableView reloadData];
@@ -181,6 +177,10 @@
 
 - (BOOL)isLocationWorking:(DMLocation* )location{
     BOOL isOpen = NO;
+    
+    if (location.nrd.length > 0 && location.nsrv.length == 0) {
+        return isOpen;
+    }
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit | NSHourCalendarUnit fromDate:[NSDate date]];
@@ -223,92 +223,6 @@
     return isOpen;
 }
 
-#pragma mark - AFXMLRequestOperationDelegate
-
-- (void)parserDidStartDocument:(NSXMLParser *)parser{
-    self.arrLocations = [NSMutableArray array];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict  {
-    
-    
-    
-    self.previousElementName = self.elementName;
-    
-    if (elementName) {
-        self.elementName = elementName;
-    }
-    
-    if([elementName isEqualToString:@"lokacija"]){
-        self.currentDictionary = [NSMutableDictionary dictionary];
-    }
-    
-    self.outstring = [NSMutableString string];
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if (!self.elementName){
-        return;
-    }
-    
-    [self.outstring appendFormat:@"%@", string];
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    if([elementName isEqualToString:@"lokacija"]){
-        
-        // Initalise the list of weather items if it dosnt exist
-        
-        DMLocation* location = [[DMLocation alloc] initWithDictionary:self.currentDictionary];
-        [self.arrLocations addObject:location];
-        
-        self.currentDictionary = nil;
-    }
-    else if([elementName isEqualToString:@"idLok"] ||
-            [elementName isEqualToString:@"ulica"] ||
-            [elementName isEqualToString:@"grad"] ||
-            [elementName isEqualToString:@"brtel"] ||
-            [elementName isEqualToString:@"radvr"] ||
-            [elementName isEqualToString:@"lati"] ||
-            [elementName isEqualToString:@"longi"] ||
-            [elementName isEqualToString:@"radS"] ||
-            [elementName isEqualToString:@"radN"] ||
-            [elementName isEqualToString:@"posl"] ||
-            [elementName isEqualToString:@"prod"]){
-        [self.currentDictionary setObject:self.outstring forKey:elementName];
-    }
-    
-	self.elementName = nil;
-}
-
-
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    
-    
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    
-    self.allLocations = [self.arrLocations sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
-       
-        DMLocation* location1 = (DMLocation* )obj1;
-        DMLocation* location2 = (DMLocation* )obj2;
-        
-        
-        if (location1.distance.floatValue > location2.distance.floatValue) {
-            return NSOrderedDescending;
-        }
-        else{
-            return NSOrderedAscending;
-        }
-        
-    }];
-    
-    
-    [self setupDataSource];
-}
 
 #pragma mark - UITabeleViewDataSource
 

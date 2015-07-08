@@ -23,6 +23,9 @@
 @property (nonatomic, strong)NSString* chief;
 @property (nonatomic, strong)NSString* prod;
 
+@property (nonatomic, strong)NSString* nrd;
+@property (nonatomic, strong)NSString* nsrv;
+
 @property (nonatomic, strong)NSString* distance;
 
 - (id)initWithDictionary:(NSDictionary *)dict;

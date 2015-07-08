@@ -28,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldItemName;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldItemPrice;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldItemCount;
-@property (weak, nonatomic) IBOutlet UILabel *lblKm;
+//@property (weak, nonatomic) IBOutlet UILabel *lblKm;
 @property (weak, nonatomic) IBOutlet UIButton *btnAddNewItem;
 
 
@@ -84,6 +84,8 @@
     [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,6 +126,7 @@
 
 - (void)setupTitles{
     
+    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
     [self.lblEditedItemTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:17.0]]];
     [self.lblEditedItemTitle setTextColor:[UIColor colorWithRed:21.0/255 green:7.0/255 blue:77.0/255 alpha:1.0]];
@@ -156,25 +159,28 @@
     [self.btnDeleteAll.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.5]]];
     [self.btnDeleteAll setTitleEdgeInsets:UIEdgeInsetsMake(2, [Helper getFontSizeFromSz:23.0], 0, 0)];
     
-    [self.lblKm setTextColor:[UIColor whiteColor]];
-    [self.lblKm setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
+//    [self.lblKm setTextColor:[UIColor whiteColor]];
+//    [self.lblKm setFont:[UIFont boldSystemFontOfSize:[Helper getFontSizeFromSz:16.0]]];
     
     
     [self.textFieldItemCount setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.textFieldItemPrice setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.textFieldItemName setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     
+    UIBarButtonItem* it = [[UIBarButtonItem alloc] initWithTitle:@"Kraj" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)];
+    [it setTintColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0]];
+    
     UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
 	numberToolbar.barStyle = UIBarStyleBlackTranslucent;
 	numberToolbar.items = [NSArray arrayWithObjects:
                            //							   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],
                            [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                           [[UIBarButtonItem alloc] initWithTitle:@"Kraj" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithNumberPad)],
+                           it,
                            nil];
     
     [self.textFieldItemName setPlaceholder:@"Naziv proizvoda"];
     
-    [self.textFieldItemPrice setPlaceholder:@"Cijena komad"];
+    [self.textFieldItemPrice setPlaceholder:@"Cena komad"];
 //    [self.textFieldItemPrice setTextAlignment:NSTextAlignmentRight];
     [self.textFieldItemPrice setKeyboardType:UIKeyboardTypeDecimalPad];
     [self.textFieldItemPrice setInputAccessoryView:numberToolbar];
@@ -232,8 +238,8 @@
     NSString* strTotalPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
     NSString* strCartPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:cartPrice]];
     
-    [self.lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strTotalPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
-    [self.lblCartPrice setText:[NSString stringWithFormat:@"Cijena u korpi: %@ KM", [strCartPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+    [self.lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ RSD", [strTotalPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+    [self.lblCartPrice setText:[NSString stringWithFormat:@"Cijena u korpi: %@ RSD", [strCartPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
     
 }
 
@@ -286,7 +292,7 @@
         
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@", offer.title]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", offer.numberOfItems]];
-        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", offer.price]];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ RSD", offer.price]];
         if ([offer.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", [Helper getStringFromStr:@"btn_izbaci"]]] forState:UIControlStateNormal];
         }
@@ -298,7 +304,7 @@
         DMDiscount* discount = (DMDiscount *)obj;
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@ - %@", discount.item, discount.name]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", discount.numberOfItems]];
-        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", discount.nwPrice]];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ RSD", discount.nwPrice]];
         
         if ([discount.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_izbaci.png"] forState:UIControlStateNormal];
@@ -311,7 +317,7 @@
         DMCustomItem* item = (DMCustomItem *)obj;
         [self.lblEditedItemTitle setText:[NSString stringWithFormat:@"%@", item.name]];
         [self.textFieldEditedItemCount setText:[NSString stringWithFormat:@"%@", item.numberOfItems]];
-        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ KM", item.price]];
+        [self.lblEditedItemPrice setText:[NSString stringWithFormat:@"%@ RSD", item.price]];
         
         if ([item.inCart boolValue]) {
             [self.btnAddRemoveFromCart setImage:[UIImage imageNamed:@"btn_izbaci.png"] forState:UIControlStateNormal];
@@ -405,7 +411,7 @@
     // Configure for text only and offset down
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"";
-    hud.detailsLabelText = @"Proizvod zamijenjen";
+    hud.detailsLabelText = @"Proizvod zamenjen";
     hud.margin = 10.f;
     hud.yOffset = 130.f;
     hud.removeFromSuperViewOnHide = YES;
@@ -619,7 +625,7 @@
         
         [lblTitle setText:[NSString stringWithFormat:@"%@", offer.title]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", offer.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [offer.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cena komad: %@ RSD", [offer.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [offer.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];
@@ -629,7 +635,7 @@
         NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ RSD", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([offer.inCart boolValue]) {
             [imgVIew setHidden:NO];
@@ -643,7 +649,7 @@
         DMDiscount* discount = (DMDiscount *)obj;
         [lblTitle setText:[NSString stringWithFormat:@"%@ - %@", discount.item, discount.name]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", discount.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [discount.nwPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cena komad: %@ RSD", [discount.nwPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];
@@ -653,7 +659,7 @@
         NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ RSD", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([discount.inCart boolValue]) {
             [imgVIew setHidden:NO];
@@ -666,7 +672,7 @@
         DMCustomItem* item = (DMCustomItem *)obj;
         [lblTitle setText:[NSString stringWithFormat:@"%@", item.name]];
         [lblCount setText:[NSString stringWithFormat:@"Broj komada: %@", item.numberOfItems]];
-        [lblPrice setText:[NSString stringWithFormat:@"Cijena komad: %@ KM", [item.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblPrice setText:[NSString stringWithFormat:@"Cena komada: %@ RSD", [item.price stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         NSString* str = [item.price stringByReplacingOccurrencesOfString:@"," withString:@"."];
         float price = [str floatValue];
@@ -676,7 +682,7 @@
         NSString* strPrice = [numForm stringFromNumber:[NSNumber numberWithFloat:totalPrice]];
         
         
-        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ KM", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
+        [lblTotalPrice setText:[NSString stringWithFormat:@"Cijena ukupno: %@ RSD", [strPrice stringByReplacingOccurrencesOfString:@"." withString:@","]]];
         
         if ([item.inCart boolValue]) {
             [imgVIew setHidden:NO];

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMStoreDetailsViewController">
@@ -12,6 +13,7 @@
                 <outlet property="lblChief" destination="Ab8-gp-823" id="NJL-Rk-wta"/>
                 <outlet property="lblChiefValue" destination="g4U-Wf-PrT" id="f8u-d6-Ybm"/>
                 <outlet property="lblCity" destination="uLd-aT-rXJ" id="Oyi-ug-Omi"/>
+                <outlet property="lblNrd" destination="5pR-mF-fsN" id="uFl-hX-uSY"/>
                 <outlet property="lblSaturday" destination="EL2-qZ-Kqj" id="bVX-da-rUW"/>
                 <outlet property="lblSaturdayValue" destination="pqZ-3w-XtV" id="Q6T-qb-Zu7"/>
                 <outlet property="lblStoreNo" destination="D1l-QZ-Jwl" id="0mU-a6-qc2"/>
@@ -142,11 +144,16 @@
                         <action selector="buttonShowOnMapClicked:" destination="-1" eventType="touchUpInside" id="5UO-GP-hqC"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5pR-mF-fsN">
+                    <rect key="frame" x="13" y="280" width="295" height="125"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
@@ -157,4 +164,9 @@
         <image name="ranovreme-poz.png" width="295" height="100"/>
         <image name="store_bkg.png" width="320" height="480"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

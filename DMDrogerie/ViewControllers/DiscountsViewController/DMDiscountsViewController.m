@@ -12,15 +12,10 @@
 #import "DMDiscount.h"
 #import "MBProgressHUD.h"
 
-
-
 @interface DMDiscountsViewController ()
 
-@property(strong) NSMutableArray* arrDiscounts;//package containing the complete response
-@property(strong) NSMutableDictionary *currentDictionary;//current section being parsed
-@property(strong) NSString *previousElementName;
-@property(strong) NSString *elementName;
-@property(strong) NSMutableString *outstring;
+@property (weak, nonatomic) IBOutlet UIImageView *imgDm;
+@property (weak, nonatomic) IBOutlet UIImageView *imgDm2;
 
 @end
 
@@ -35,6 +30,18 @@
     return self;
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray *)arr
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        
+        self.dataSource = [NSArray arrayWithArray:arr];
+        self.selectedIndex = 0;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,7 +52,7 @@
     
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
     [btn setImage:[UIImage imageNamed:@"dmLogo_header.png"] forState:UIControlStateDisabled];
-    [btn setTitle:@"  AKCIJA" forState:UIControlStateDisabled];
+    [btn setTitle:@"  POPUSTI" forState:UIControlStateDisabled];
     [btn setTitleColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0] forState:UIControlStateDisabled];
     [btn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
     [btn setEnabled:NO];
@@ -76,16 +83,17 @@
     
     [self setupTitles];
     
-    [self.secondView setTag:-1];
+    [self.secondView setTag:0];
     [self.mainView setTag:-1];
+    
+    [self setupValues];
+    self.mainView.tag = 0;
+    self.secondView.tag = -1;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if (self.dataSource.count == 0) {
-        [self getData];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,33 +102,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)getData{
-    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:@"http://www.dmbih.com/PopustiData/popusti.xml" parameters:nil error:nil];
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-	AFHTTPRequestOperation* op = [[AFHTTPRequestOperation alloc] initWithRequest:req];
-    
-    [op setResponseSerializer:[AFXMLParserResponseSerializer serializer]];
-	[op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-		NSLog(@"Success");
-        
-        NSXMLParser* parser = (NSXMLParser*)responseObject;
-        parser.delegate = self;
-        [parser parse];
-        
-	}failure:^(AFHTTPRequestOperation *operation, NSError *error){
-		NSLog(@"Error");
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if (error.code == -1009) {
-            NSLog(@"No internet");
-        }
-        
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Obavještenje" message:@"Trenutno se ne mogu preuzeti podaci. Molimo Vas pokušajte kasnije." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-	}];
-	
-	[op start];
-}
+
 
 - (void)setupTitles{
     
@@ -193,15 +175,15 @@
 
     
     
-    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.buttonAddToCart.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:10]]];
     [self.buttonAddToCart setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
     [self.buttonAddToCart setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20], 0, 0)];
-    [self.buttonAddToCart setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
+    [self.buttonAddToCart setTitle:@"DODAJ U SHOPPING LISTU" forState:UIControlStateNormal];
     
-    [self.buttonAddToCart2.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12]]];
+    [self.buttonAddToCart2.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:10]]];
     [self.buttonAddToCart2 setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
     [self.buttonAddToCart2 setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:20], 0, 0)];
-    [self.buttonAddToCart2 setTitle:@"Dodaj u shopping listu" forState:UIControlStateNormal];
+    [self.buttonAddToCart2 setTitle:@"DODAJ U SHOPPING LISTU" forState:UIControlStateNormal];
     
     
     
@@ -212,13 +194,13 @@
     if (self.mainView.tag < 0) {
         [self.lblTitle setText:discount.item];
         [self.lblSubtitle setText:discount.name];
-        [self.lblDescription setText:[NSString stringWithFormat:@"%@\n%@", discount.description, discount.quantity]];
+        [self.lblDescription setText:[NSString stringWithFormat:@"%@\n%@", discount.descr, discount.quantity]];
         CGRect descRect = self.lblDescription.frame;
         descRect.size.width = 165;
         [self.lblDescription setFrame:descRect];
         [self.lblDescription sizeToFit];
         //    [self.lblDescription setHidden:YES];
-        [self.lblBefore setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        [self.lblBefore setText:[NSString stringWithFormat:@"Prije: %@", discount.oldPrice]];
         if ([discount.oldPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblBefore setHidden:YES];
             [self.imgViewBlue setHidden:YES];
@@ -232,17 +214,17 @@
         if ([discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblPrice setHidden:YES];
             [self.imgViewRed setHidden:YES];
-            [self.lblKM setHidden:YES];
+//            [self.lblKM setHidden:YES];
         }
         else{
             [self.lblPrice setHidden:NO];
             [self.imgViewRed setHidden:NO];
-            [self.lblKM setHidden:NO];
+//            [self.lblKM setHidden:NO];
         }
         
-        [self.lblSaving setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
+        [self.lblSaving setText:[NSString stringWithFormat:@"Ušteda: %@", discount.saving]];
         
-        [self.lblActiveTo setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
+        [self.lblActiveTo setText:[NSString stringWithFormat:@"Važi do: %@", discount.activeTo]];
         [self.lblDiscount setText:discount.discount];
         if ([discount.ref stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblRef setHidden:YES];
@@ -277,20 +259,28 @@
         }
         
         
-        [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
+        [self.lblIndex setText:[NSString stringWithFormat:@"%d od %lu", self.selectedIndex + 1, (unsigned long)self.dataSource.count]];
         
         [self.imgView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
+        
+        if ([discount.dmBrand boolValue]) {
+            [self.imgDm setHidden:NO];
+        }
+        else{
+            [self.imgDm setHidden:YES];
+        }
+        
     }
     else{
         [self.lblTitle2 setText:discount.item];
         [self.lblSubtitle2 setText:discount.name];
-        [self.lblDescription2 setText:[NSString stringWithFormat:@"%@\n%@", discount.description, discount.quantity]];
+        [self.lblDescription2 setText:[NSString stringWithFormat:@"%@\n%@", discount.descr, discount.quantity]];
         CGRect descRect = self.lblDescription2.frame;
         descRect.size.width = 165;
         [self.lblDescription2 setFrame:descRect];
         [self.lblDescription2 sizeToFit];
         //    [self.lblDescription setHidden:YES];
-        [self.lblBefore2 setText:[NSString stringWithFormat:@"Redovna: %@ KM", discount.oldPrice]];
+        [self.lblBefore2 setText:[NSString stringWithFormat:@"Prije: %@", discount.oldPrice]];
         if ([discount.oldPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblBefore2 setHidden:YES];
             [self.imgViewBlue2 setHidden:YES];
@@ -304,19 +294,19 @@
         if ([discount.nwPrice stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblPrice2 setHidden:YES];
             [self.imgViewRed2 setHidden:YES];
-            [self.lblKm2 setHidden:YES];
+//            [self.lblKm2 setHidden:YES];
         }
         else{
             [self.lblPrice2 setHidden:NO];
             [self.imgViewRed2 setHidden:NO];
-            [self.lblKm2 setHidden:NO];
+//            [self.lblKm2 setHidden:NO];
         }
         
         
-        [self.lblSaving2 setText:[NSString stringWithFormat:@"Uštedite: %@ KM", discount.saving]];
+        [self.lblSaving2 setText:[NSString stringWithFormat:@"Ušteda: %@", discount.saving]];
         
         
-        [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Vrijedi do: %@", discount.activeTo]];
+        [self.lblActiveTo2 setText:[NSString stringWithFormat:@"Važi do: %@", discount.activeTo]];
         [self.lblDiscount2 setText:discount.discount];
         if ([discount.ref stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue == 0) {
             [self.lblRef2 setHidden:YES];
@@ -353,6 +343,14 @@
         [self.lblIndex setText:[NSString stringWithFormat:@"%d od %d", self.selectedIndex + 1, self.dataSource.count]];
         
         [self.imgView2 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, discount.image]]];
+        
+        if ([discount.dmBrand boolValue]) {
+            [self.imgDm2 setHidden:NO];
+        }
+        else{
+            [self.imgDm2 setHidden:YES];
+        }
+        
     }
     
     
@@ -514,7 +512,7 @@
     // Configure for text only and offset down
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"";
-    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ - %@ dodan u shopping listu", discount.item, discount.name];
+    hud.detailsLabelText = [NSString stringWithFormat:@"Proizvod %@ - %@ dodat u shopping listu", discount.item, discount.name];
     hud.margin = 10.f;
     hud.yOffset = 120.f;
     hud.removeFromSuperViewOnHide = YES;
@@ -523,77 +521,6 @@
 }
 
 
-#pragma mark - AFXMLRequestOperationDelegate
 
-- (void)parserDidStartDocument:(NSXMLParser *)parser{
-    self.arrDiscounts = [NSMutableArray array];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict  {
-    
-    
-    
-    self.previousElementName = self.elementName;
-    
-    if (elementName) {
-        self.elementName = elementName;
-    }
-    
-    if([elementName isEqualToString:@"popust"]){
-        self.currentDictionary = [NSMutableDictionary dictionary];
-    }
-    
-    self.outstring = [NSMutableString string];
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if (!self.elementName){
-        return;
-    }
-    
-    [self.outstring appendFormat:@"%@", string];
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    
-    if([elementName isEqualToString:@"popust"]){
-        
-        // Initalise the list of weather items if it dosnt exist
-        
-        DMDiscount* discount = [[DMDiscount alloc] initWithDictionary:self.currentDictionary];
-        [self.arrDiscounts addObject:discount];
-        self.currentDictionary = nil;
-    }
-    else if([elementName isEqualToString:@"idPop"] ||
-            [elementName isEqualToString:@"naziv"] ||
-            [elementName isEqualToString:@"opis"] ||
-            [elementName isEqualToString:@"proiz"] ||
-            [elementName isEqualToString:@"st_ce"] ||
-            [elementName isEqualToString:@"kol"] ||
-            [elementName isEqualToString:@"no_ce"] ||
-            [elementName isEqualToString:@"ust"] ||
-            [elementName isEqualToString:@"pop"] ||
-            [elementName isEqualToString:@"akt"] ||
-            [elementName isEqualToString:@"sl"] ||
-            [elementName isEqualToString:@"ref"]){
-        [self.currentDictionary setObject:self.outstring forKey:elementName];
-    }
-
-	self.elementName = nil;
-}
-
-
-
--(void) parserDidEndDocument:(NSXMLParser *)parser {
-    
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    self.dataSource = [NSArray arrayWithArray:self.arrDiscounts];
-    self.selectedIndex = 0;
-    [self setupValues];
-    [self.mainView setTag:0];
-}
 
 @end

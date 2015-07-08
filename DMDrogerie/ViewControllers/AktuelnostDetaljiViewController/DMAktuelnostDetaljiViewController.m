@@ -98,7 +98,7 @@
     [self.btnLink setTitle:@"Saznajte više" forState:UIControlStateNormal];
     
     
-    if ([self.aktuelnost.link isEqualToString:@"0"]) {
+    if ([self.aktuelnost.link isEqualToString:@"0"] || self.aktuelnost.link.length == 0) {
         [self.btnLink setHidden:YES];
     }
     else{

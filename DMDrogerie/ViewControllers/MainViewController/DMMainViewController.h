@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DMMainViewController : UIViewController<NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface DMMainViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andArray:(NSArray* )arr;
 
 @end

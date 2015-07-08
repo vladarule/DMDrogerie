@@ -11,7 +11,7 @@
 @interface DMAktuelnost : NSObject
 
 @property (nonatomic, strong)NSString* title;
-@property (nonatomic, strong)NSString* description;
+@property (nonatomic, strong)NSString* descr;
 @property (nonatomic, strong)NSString* detailDescription;
 @property (nonatomic, strong)NSString* time;
 @property (nonatomic, strong)NSString* activeTo;
