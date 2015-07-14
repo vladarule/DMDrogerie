@@ -55,7 +55,7 @@
             [self.scrollView setBackgroundColor:[UIColor colorWithRed:53.0/255 green:48.0/255 blue:117.0/255 alpha:1.0]];
             [self.scrollView setDelegate:self];
             
-            NSArray* tabNames = @[@"Vesti", @"Popusti", @"Novo", @"Promocije", @"Frizure", @"Nokti", @"Lokacije", @"Shop", @"Info"];
+            NSArray* tabNames = @[@"Vijesti", @"Akcija", @"Novo", @"Promocije", @"Frizure", @"Nokti", @"Prodavnice", @"Shopping", @"Info"];
             self.tabNormalImages = @[[UIImage imageNamed:@"vesti_norm"], [UIImage imageNamed:@"procenat_norm"], [UIImage imageNamed:@"novo_norm"], [UIImage imageNamed:@"promocije_norm"], [UIImage imageNamed:@"frizure_norm"], [UIImage imageNamed:@"nokti_norm"], [UIImage imageNamed:@"mapa_norm"], [UIImage imageNamed:@"shop_norm"], [UIImage imageNamed:@"info_norm"]];
             self.tabSelectedImages = @[[UIImage imageNamed:@"vesti_sel"], [UIImage imageNamed:@"procenat_sel"], [UIImage imageNamed:@"novo_sel"], [UIImage imageNamed:@"promocije_sel"], [UIImage imageNamed:@"frizure_sel"], [UIImage imageNamed:@"nokti_sel"], [UIImage imageNamed:@"mapa_sel"], [UIImage imageNamed:@"shop_sel"], [UIImage imageNamed:@"info_sel"]];
             

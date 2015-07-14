@@ -56,7 +56,7 @@
     
 //    http://dm-mobile.darijo73.mycpanel.rs/Data/data_final.json
 //    @"http://dm-mobile.darijo73.mycpanel.rs/Data/data.json"
-    [[AFHTTPRequestOperationManager manager] GET:@"http://dmbih.com/mobile" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[AFHTTPRequestOperationManager manager] GET:@"http://dmbih.com/mobile/Data/data.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
         NSDictionary* dict = (NSDictionary *)responseObject;
