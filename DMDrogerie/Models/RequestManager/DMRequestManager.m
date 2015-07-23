@@ -56,7 +56,7 @@
     
 //    http://dm-mobile.darijo73.mycpanel.rs/Data/data_final.json
 //    @"http://dm-mobile.darijo73.mycpanel.rs/Data/data.json"
-    [[AFHTTPRequestOperationManager manager] GET:@"http://dmbih.com/mobile/Data/data.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[AFHTTPRequestOperationManager manager] GET:@"http://dmbih.com/mobile/Data/data_final.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
         NSDictionary* dict = (NSDictionary *)responseObject;
@@ -71,32 +71,46 @@
         NSDictionary* tempBannerDict = [dict objectForKey:@"banner"];
         
         
-        
-        NSMutableDictionary* tempDict = [NSMutableDictionary dictionaryWithDictionary:tempBannerDict];
-        if ([[bannerHelper objectForKey:@"id"] isEqualToString:[tempBannerDict objectForKey:@"id"]]) {
-           
-            [tempDict setObject:[NSNumber numberWithBool:NO] forKey:@"shouldShow"];
-        }
-        else{
-            NSDate* lastDate = [bannerHelper objectForKey:@"lastDate"];
-            NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"dd.MM.yyyy"];
-            BOOL startedToday = [[formatter stringFromDate:lastDate] isEqualToString:[formatter stringFromDate:[NSDate date]]];
-            if (startedToday) {
+        if (tempBannerDict) {
+            NSMutableDictionary* tempDict = [NSMutableDictionary dictionaryWithDictionary:tempBannerDict];
+            if ([[bannerHelper objectForKey:@"id"] isEqualToString:[tempBannerDict objectForKey:@"id"]]) {
+                
                 [tempDict setObject:[NSNumber numberWithBool:NO] forKey:@"shouldShow"];
             }
             else{
-                [tempDict setObject:[NSNumber numberWithBool:YES] forKey:@"shouldShow"];
-                [tempDict setObject:[NSDate date] forKey:@"lastDate"];
-                [tempDict setObject:[tempBannerDict objectForKey:@"id"] forKey:@"id"];
-                self.bannerDict = [dict objectForKey:@"banner"];
+                NSDate* lastDate = [bannerHelper objectForKey:@"lastDate"];
+                NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateFormat:@"dd.MM.yyyy"];
+                BOOL startedToday = [[formatter stringFromDate:lastDate] isEqualToString:[formatter stringFromDate:[NSDate date]]];
+                if (startedToday) {
+                    [tempDict setObject:[NSNumber numberWithBool:NO] forKey:@"shouldShow"];
+                }
+                else{
+                    [tempDict setObject:[NSNumber numberWithBool:YES] forKey:@"shouldShow"];
+                    [tempDict setObject:[NSDate date] forKey:@"lastDate"];
+                    if ([tempBannerDict objectForKey:@"id"]) {
+                        [tempDict setObject:[tempBannerDict objectForKey:@"id"] forKey:@"id"];
+                    }
+            
+                    
+                    self.bannerDict = [dict objectForKey:@"banner"];
+                }
             }
+            
+            [[NSUserDefaults standardUserDefaults] setObject:tempDict forKey:@"banner"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         
-        [[NSUserDefaults standardUserDefaults] setObject:tempDict forKey:@"banner"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        NSArray* ponude = [NSArray arrayWithArray:[dict objectForKey:@"ponude"]];
+        
+        NSArray* ponude;
+        if ([[dict objectForKey:@"ponude"] isKindOfClass:[NSArray class]]) {
+             ponude = [NSArray arrayWithArray:[dict objectForKey:@"ponude"]];
+        }
+        else{
+            ponude = [NSArray array];
+        }
+        
         NSMutableArray* arrPonude = [NSMutableArray array];
         
         for (NSDictionary* ponuda in ponude) {
@@ -104,7 +118,13 @@
             [arrPonude addObject:offer];
         }
         
-        NSArray* popusti = [NSArray arrayWithArray:[dict objectForKey:@"popusti"]];
+        NSArray* popusti;
+        if ([[dict objectForKey:@"popusti"] isKindOfClass:[NSArray class]]) {
+            popusti = [NSArray arrayWithArray:[dict objectForKey:@"popusti"]];
+        }
+        else{
+            popusti = [NSArray array];
+        }
         NSMutableArray* arrPopusti = [NSMutableArray array];
         
         for (id popust in popusti) {
@@ -115,7 +135,14 @@
             
         }
         
-        NSArray* lokacije = [NSArray arrayWithArray:[dict objectForKey:@"lokacije"]];
+        
+        NSArray* lokacije;
+        if ([[dict objectForKey:@"lokacije"] isKindOfClass:[NSArray class]]) {
+            lokacije = [NSArray arrayWithArray:[dict objectForKey:@"lokacije"]];
+        }
+        else{
+            lokacije = [NSArray array];
+        }
         NSMutableArray* arrLokacije = [NSMutableArray array];
         
         for (id lokacija in lokacije) {
@@ -127,7 +154,15 @@
             
         }
         
-        NSArray* aktuelnosti = [NSArray arrayWithArray:[dict objectForKey:@"aktuelnosti"]];
+        
+        NSArray* aktuelnosti;
+        if ([[dict objectForKey:@"aktuelnosti"] isKindOfClass:[NSArray class]]) {
+            aktuelnosti = [NSArray arrayWithArray:[dict objectForKey:@"aktuelnosti"]];
+        }
+        else{
+            aktuelnosti = [NSArray array];
+        }
+        
         NSMutableArray* arrAktuelnosti = [NSMutableArray array];
         
         for (NSDictionary* aktuelnos in aktuelnosti) {
@@ -135,7 +170,14 @@
             [arrAktuelnosti addObject:act];
         }
         
-        NSArray* promocije = [NSArray arrayWithArray:[dict objectForKey:@"promo"]];
+        NSArray* promocije;
+        if ([[dict objectForKey:@"promo"] isKindOfClass:[NSArray class]]) {
+            promocije = [NSArray arrayWithArray:[dict objectForKey:@"promo"]];
+        }
+        else{
+            promocije = [NSArray array];
+        }
+        
         NSMutableArray* arrPromocije = [NSMutableArray array];
         
         for (NSDictionary* promocija in promocije) {
@@ -143,7 +185,13 @@
             [arrPromocije addObject:promption];
         }
         
-        NSArray* nokti = [NSArray arrayWithArray:[dict objectForKey:@"nokti"]];
+        NSArray* nokti;
+        if ([[dict objectForKey:@"nokti"] isKindOfClass:[NSArray class]]) {
+            nokti = [NSArray arrayWithArray:[dict objectForKey:@"nokti"]];
+        }
+        else{
+            nokti = [NSArray array];
+        }
         NSMutableArray* arrNokti = [NSMutableArray array];
         
         for (NSDictionary* nail in nokti) {
@@ -154,17 +202,24 @@
         self.arrayLocations = [NSArray arrayWithArray:arrLokacije];
         
         
-        NSArray* boje = [NSArray arrayWithArray:[dict objectForKey:@"boje"]];
+        
+        NSArray* boje;
+        if ([[dict objectForKey:@"boje"] isKindOfClass:[NSArray class]]) {
+            boje = [NSArray arrayWithArray:[dict objectForKey:@"boje"]];
+        }
+        else{
+            boje = [NSArray array];
+        }
         self.arrayHairColors = [NSMutableArray array];
         
-        for (id d in boje) {
-            
-            if ([d isKindOfClass:[NSDictionary class]]) {
-                DMHairColorManufacturer* hairC = [[DMHairColorManufacturer alloc] initWithDictionary:d];
-                [self.arrayHairColors addObject:hairC];
-            }
-            
-        }
+//        for (id d in boje) {
+//            
+//            if ([d isKindOfClass:[NSDictionary class]]) {
+//                DMHairColorManufacturer* hairC = [[DMHairColorManufacturer alloc] initWithDictionary:d];
+//                [self.arrayHairColors addObject:hairC];
+//            }
+//            
+//        }
         
         
         self.finalDict = @{@"aktuelnosti": arrAktuelnosti,

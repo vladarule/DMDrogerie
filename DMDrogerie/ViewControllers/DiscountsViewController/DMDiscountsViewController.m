@@ -190,6 +190,11 @@
 }
 
 - (void)setupValues{
+    if (self.dataSource.count == 0) {
+        [self.view setHidden:YES];
+        return;
+    }
+    
     DMDiscount* discount = [self.dataSource objectAtIndex:self.selectedIndex];
     if (self.mainView.tag < 0) {
         [self.lblTitle setText:discount.item];

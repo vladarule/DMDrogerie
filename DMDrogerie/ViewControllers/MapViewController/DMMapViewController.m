@@ -80,14 +80,26 @@ GMSMapView *mapView_;
     marker.icon = [UIImage imageNamed:@"zastavica.png"];
     marker.map = mapView_;
     
-    GMSCoordinateBounds* bound = [[GMSCoordinateBounds alloc] initWithCoordinate:marker.position coordinate:mapView_.myLocation.coordinate];
+    
+
     
     
     
     
-    GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bound
-                                             withPadding:80.0f];
-    [mapView_ moveCamera:update];
+    
+    if (mapView_.myLocation) {
+        GMSCoordinateBounds* bound = [[GMSCoordinateBounds alloc] initWithCoordinate:marker.position coordinate:mapView_.myLocation.coordinate];
+        GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bound
+                                                 withPadding:80.0f];
+        [mapView_ moveCamera:update];
+    }
+    else{
+        GMSCoordinateBounds* bound = [[GMSCoordinateBounds alloc] initWithCoordinate:marker.position coordinate:marker.position];
+        GMSCameraUpdate *update = [GMSCameraUpdate fitBounds:bound
+                                                 withPadding:80.0f];
+        [mapView_ moveCamera:update];
+    }
+    
 }
 
 
