@@ -212,14 +212,14 @@
         }
         self.arrayHairColors = [NSMutableArray array];
         
-//        for (id d in boje) {
-//            
-//            if ([d isKindOfClass:[NSDictionary class]]) {
-//                DMHairColorManufacturer* hairC = [[DMHairColorManufacturer alloc] initWithDictionary:d];
-//                [self.arrayHairColors addObject:hairC];
-//            }
-//            
-//        }
+        for (id d in boje) {
+            
+            if ([d isKindOfClass:[NSDictionary class]]) {
+                DMHairColorManufacturer* hairC = [[DMHairColorManufacturer alloc] initWithDictionary:d];
+                [self.arrayHairColors addObject:hairC];
+            }
+            
+        }
         
         
         self.finalDict = @{@"aktuelnosti": arrAktuelnosti,
