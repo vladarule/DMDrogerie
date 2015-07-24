@@ -157,7 +157,7 @@
                     NSArray* strComps = [location.workingHours componentsSeparatedByString:@"-"];
                     NSString* startHour = [[strComps objectAtIndex:0] substringToIndex:2];
                     NSString* endHour = [[strComps objectAtIndex:1] substringToIndex:2];
-                    int hour = [comps hour];
+                    NSInteger hour = [comps hour];
                     if (hour > (startHour.intValue - 1) && hour < endHour.intValue) {
                         [arr addObject:location];
                     }

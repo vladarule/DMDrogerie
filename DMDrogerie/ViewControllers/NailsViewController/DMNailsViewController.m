@@ -34,6 +34,7 @@
 
 @property (nonatomic, assign)BOOL showingFavoriteColors;
 @property (weak, nonatomic) IBOutlet UILabel *lblFavs;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddToFavs;
 
 @end
 
@@ -83,6 +84,10 @@
     UIBarButtonItem* btnFavs = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nail_show_favs.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showFavorites)];
     
     [self.navigationItem setRightBarButtonItems:@[btnFavs, btnShare] animated:YES];
+    
+    if (!self.nailColor) {
+        [self.btnAddToFavs setHidden:YES];
+    }
     
 }
 
@@ -207,9 +212,13 @@
 }
 
 - (void)btnShareClicked:(UIBarButtonItem *)sender{
-    DMNailImgShareViewController* mailShareVC = [[DMNailImgShareViewController alloc] initWithNibName:@"DMNailImgShareViewController" bundle:[NSBundle mainBundle] image:[self snapshot:self.imgViewHand] andColorDict:@{@"manufacturerName": self.nailColor.manufacturerName, @"manufacturerLogo": self.nailColor.manufacturerLogo, @"colorDict": self.selectedColor}];
     
-    [self presentViewController:mailShareVC animated:YES completion:nil];
+    if (self.nailColor) {
+        DMNailImgShareViewController* mailShareVC = [[DMNailImgShareViewController alloc] initWithNibName:@"DMNailImgShareViewController" bundle:[NSBundle mainBundle] image:[self snapshot:self.imgViewHand] andColorDict:@{@"manufacturerName": self.nailColor.manufacturerName, @"manufacturerLogo": self.nailColor.manufacturerLogo, @"colorDict": self.selectedColor}];
+        
+        [self presentViewController:mailShareVC animated:YES completion:nil];
+    }
+    
 }
 
 - (UIImage *)snapshot:(UIView *)view
