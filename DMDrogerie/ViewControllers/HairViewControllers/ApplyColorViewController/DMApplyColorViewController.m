@@ -40,6 +40,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnManufacturer;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewManufacturer;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *btnClose;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UIView *viewFavs;
+
 
 
 @end
@@ -148,19 +153,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnCloseClicked:(id)sender {
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [self.viewFavs setHidden:YES];
+    [self.scrollView setUserInteractionEnabled:YES];
+    
+}
+
 - (IBAction)btnManufacturerClicked:(id)sender {
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    if ([DMRequestManager sharedManager].arrayHairColors.count > 1) {
+        
+        
+        [self.tableView reloadData];
+        
+        
+        [self.lblTitle setText:@"Izaberite proizvodjača"];
+        [self.viewFavs setHidden:NO];
+        [self.scrollView setUserInteractionEnabled:NO];
+        [self.view bringSubviewToFront:self.viewFavs];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    else{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        
+        // Configure for text only and offset down
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"";
+        hud.detailsLabelText = @"Trenutno nema ponuda drugih proizvođača farbi za kosu.";
+        hud.margin = 10.f;
+        hud.yOffset = 130.f;
+        hud.removeFromSuperViewOnHide = YES;
+        
+        [hud hide:YES afterDelay:3];
+    }
     
-    // Configure for text only and offset down
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = @"";
-    hud.detailsLabelText = @"Trenutno nema ponuda drugih proizvođača farbi za kosu.";
-    hud.margin = 10.f;
-    hud.yOffset = 130.f;
-    hud.removeFromSuperViewOnHide = YES;
-    
-    [hud hide:YES afterDelay:3];
 }
 
 
@@ -524,5 +553,266 @@
     
     return image;
 }
+
+- (void)firstBtnClicked:(UIButton *)sender{
+    UITableViewCell* cell;
+    
+    id temp = [[sender superview] superview];
+    
+    if ([temp isKindOfClass:[UITableViewCell class]]) {
+        cell = temp;
+    }
+    else {
+        cell = (UITableViewCell *)[[[sender superview] superview] superview];
+    }
+    
+    NSIndexPath* path = [self.tableView indexPathForCell:cell];
+    
+    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:path.row * 2];
+    self.dataSource = [NSArray arrayWithArray:self.manufacturer.blondColors];
+    
+    [self.imgViewManufacturer setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, self.manufacturer.imgUrl]]];
+    
+    [self setupScrollView];
+    
+    
+    
+    //    NSArray* arr = [NSArray arrayWithArray:[self getRGBAsFromImage:selectedPartImg atX:0 andY:0 count:selectedPartImg.size.width * selectedPartImg.size.height]];
+    NSArray* arr = [NSArray arrayWithArray:[self getPixelArray:self.clippedImage xCoordinate:0 yCoordinate:0]];
+    
+    
+    
+    
+    int brojObradjenihPiksela = 0;
+    long double brightnessUkupno = 0;
+    for (UIColor* color in arr) {
+        long double br = [self getBrOfPixel:color];
+        brojObradjenihPiksela++;
+        brightnessUkupno = brightnessUkupno + br;
+    }
+    
+    self.bri = (int)(brightnessUkupno/brojObradjenihPiksela);
+    
+    
+    DMHairColor* c = [self.dataSource firstObject];
+    self.hairColor = c;
+    
+    //    [self.imgViewMask setImage:[self coloredImage:self.selectedMaskImage withColor:c.color]];
+    
+    UIImage* finalImg = [self blendImage:[self convertToGrayscaleImage:self.clippedImage] withImage:[self coloredImage:self.selectedMaskImage withColor:c.color]];
+    [self.imgViewMask setImage:finalImg];
+    
+    float colorBrigtnes = [self getBrOfPixel:c.color];
+    float vrednostOsvetljaja = - 1.05769f * self.bri + 138.0f;
+    
+    float granicaPotamni = -30.0;
+    float granicaProsvetli = 30;
+    
+    float m = (granicaProsvetli - granicaPotamni) / 255.0;
+    float vrednostOsvetljajaDodatni = m * colorBrigtnes + granicaPotamni;
+    
+    
+    
+    [self btnCloseClicked:nil];
+    
+
+    
+}
+
+- (void)secondBtnClicked:(UIButton *)sender{
+    UITableViewCell* cell;
+    
+    id temp = [[sender superview] superview];
+    
+    if ([temp isKindOfClass:[UITableViewCell class]]) {
+        cell = temp;
+    }
+    else {
+        cell = (UITableViewCell *)[[[sender superview] superview] superview];
+    }
+    
+    NSIndexPath* path = [self.tableView indexPathForCell:cell];
+    
+    
+    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:path.row * 2 + 1];
+    self.dataSource = [NSArray arrayWithArray:self.manufacturer.blondColors];
+    
+    [self.imgViewManufacturer setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, self.manufacturer.imgUrl]]];
+    
+    [self setupScrollView];
+    
+    
+    
+    //    NSArray* arr = [NSArray arrayWithArray:[self getRGBAsFromImage:selectedPartImg atX:0 andY:0 count:selectedPartImg.size.width * selectedPartImg.size.height]];
+    NSArray* arr = [NSArray arrayWithArray:[self getPixelArray:self.clippedImage xCoordinate:0 yCoordinate:0]];
+    
+    
+    
+    
+    int brojObradjenihPiksela = 0;
+    long double brightnessUkupno = 0;
+    for (UIColor* color in arr) {
+        long double br = [self getBrOfPixel:color];
+        brojObradjenihPiksela++;
+        brightnessUkupno = brightnessUkupno + br;
+    }
+    
+    self.bri = (int)(brightnessUkupno/brojObradjenihPiksela);
+    
+    
+    DMHairColor* c = [self.dataSource firstObject];
+    self.hairColor = c;
+    
+    //    [self.imgViewMask setImage:[self coloredImage:self.selectedMaskImage withColor:c.color]];
+    
+    UIImage* finalImg = [self blendImage:[self convertToGrayscaleImage:self.clippedImage] withImage:[self coloredImage:self.selectedMaskImage withColor:c.color]];
+    [self.imgViewMask setImage:finalImg];
+    
+    float colorBrigtnes = [self getBrOfPixel:c.color];
+    float vrednostOsvetljaja = - 1.05769f * self.bri + 138.0f;
+    
+    float granicaPotamni = -30.0;
+    float granicaProsvetli = 30;
+    
+    float m = (granicaProsvetli - granicaPotamni) / 255.0;
+    float vrednostOsvetljajaDodatni = m * colorBrigtnes + granicaPotamni;
+    
+    
+    
+    [self btnCloseClicked:nil];
+}
+
+#pragma mark - UITabeleViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return ceil(((float)[DMRequestManager sharedManager].arrayHairColors.count) / 2.0);
+
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *CellIdentifier = [Helper getStringFromStr:@"NailsCellIdentifier"];
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        
+        UIImageView* imgViewType = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
+        [imgViewType setTag:1];
+        imgViewType.clipsToBounds = YES;
+        imgViewType.layer.cornerRadius = 5;
+        
+        UIImageView* imgViewColor = [[UIImageView alloc] initWithFrame:CGRectMake(60, 10, 40, 40)];
+        [imgViewColor setTag:2];
+        imgViewColor.layer.cornerRadius = 5;
+        
+        UILabel* colorName = [[UILabel alloc] initWithFrame:CGRectMake(110, 10, 110, 40)];
+        [colorName setTextColor:[UIColor blueColor]];
+        [colorName setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.0]]];
+        [colorName setTag:3];
+        
+        
+        
+        UIButton* btn1 = [[UIButton alloc] initWithFrame:CGRectMake(30, 10, 100, 100)];
+        [btn1 addTarget:self action:@selector(firstBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [btn1 setTag:11];
+        
+        UIImageView* imgView1 = [[UIImageView alloc] initWithFrame:btn1.frame];
+        [imgView1 setTag:21];
+        
+        
+        UIButton* btn2 = [[UIButton alloc] initWithFrame:CGRectMake(150, 10, 100, 100)];
+        [btn2 addTarget:self action:@selector(secondBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [btn2 setTag:12];
+        
+        UIImageView* imgView2 = [[UIImageView alloc] initWithFrame:btn2.frame];
+        [imgView2 setTag:22];
+        
+        
+        [cell addSubview:imgViewType];
+        [cell addSubview:imgViewColor];
+        [cell addSubview:colorName];
+        
+        [cell addSubview:btn1];
+        [cell addSubview:btn2];
+        [cell addSubview:imgView1];
+        [cell addSubview:imgView2];
+        
+    }
+    
+    
+    UIImageView* imgViewType = (UIImageView *)[cell viewWithTag:1];
+    UIImageView* imgViewColor = (UIImageView *)[cell viewWithTag:2];
+    UILabel* colorName = (UILabel *)[cell viewWithTag:3];
+    
+    UIButton* btn1 = (UIButton *)[cell viewWithTag:11];
+    
+    UIButton* btn2 = (UIButton *)[cell viewWithTag:12];
+    UIImageView* imgView1 = (UIImageView *)[cell viewWithTag:21];
+    UIImageView* imgView2 = (UIImageView *)[cell viewWithTag:22];
+    
+        [imgViewType setHidden:YES];
+        [imgViewColor setHidden:YES];
+        [colorName setHidden:YES];
+
+        
+        
+        
+        if (indexPath.row * 2 < [DMRequestManager sharedManager].arrayHairColors.count) {
+            
+            [btn1 setHidden:NO];
+            [btn1 setEnabled:YES];
+            [imgView1 setHidden:NO];
+            
+            DMHairColorManufacturer* first = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:indexPath.row * 2];
+            [imgView1 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, first.imgUrl]]];
+            
+        }
+        else{
+            [btn1 setHidden:YES];
+            [btn1 setEnabled:NO];
+            [imgView1 setHidden:YES];
+        }
+        
+        if (indexPath.row * 2 + 1 < [DMRequestManager sharedManager].arrayHairColors.count) {
+            [btn2 setHidden:NO];
+            [btn2 setEnabled:YES];
+            [imgView2 setHidden:NO];
+            
+            DMHairColorManufacturer* second = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:indexPath.row * 2 + 1];
+            [imgView2 setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBaseURL, second.imgUrl]]];
+        }
+        else{
+            [btn2 setHidden:YES];
+            [btn2 setEnabled:NO];
+            [imgView2 setHidden:YES];
+        }
+        
+    
+    
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+            return 120.0;
+        }
+        else{
+            return 160.0;
+        }
+    
+    
+}
+
+
 
 @end

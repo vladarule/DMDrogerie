@@ -11,6 +11,8 @@
 #import "DMStoreDetailsViewController.h"
 #import "DMWebViewController.h"
 
+#import "DMRequestManager.h"
+
 #import "MBProgressHUD.h"
 #import "UITableViewController+CustomCells.h"
 
@@ -75,8 +77,12 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
-    UIBarButtonItem* pdfBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pdfAction)];
-    [self.navigationItem setRightBarButtonItem:pdfBtn];
+    
+    if ([[DMRequestManager sharedManager].pdfDict objectForKey:@"link"]) {
+        UIBarButtonItem* pdfBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pdfAction)];
+        [self.navigationItem setRightBarButtonItem:pdfBtn];
+    }
+    
     
     
     [self setupTitles];

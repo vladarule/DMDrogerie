@@ -115,7 +115,7 @@
     
     
     
-    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[@"DM BIH", URL] applicationActivities:nil];
+    UIActivityViewController* activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Novo u DM-u %@", self.selectedOffer.title], URL] applicationActivities:nil];
     [activityVC setValue:NSLocalizedString(@"DM BiH", @"") forKey:@"subject"];
     
     [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {

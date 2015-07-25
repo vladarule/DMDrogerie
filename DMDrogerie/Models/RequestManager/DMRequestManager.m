@@ -73,7 +73,7 @@
         
         if (tempBannerDict) {
             NSMutableDictionary* tempDict = [NSMutableDictionary dictionaryWithDictionary:tempBannerDict];
-            if ([[bannerHelper objectForKey:@"id"] isEqualToString:[tempBannerDict objectForKey:@"id"]]) {
+            if ([[bannerHelper objectForKey:@"id"] isEqualToString:[tempBannerDict objectForKey:@"id"]] || ![tempBannerDict objectForKey:@"id"]) {
                 
                 [tempDict setObject:[NSNumber numberWithBool:NO] forKey:@"shouldShow"];
             }

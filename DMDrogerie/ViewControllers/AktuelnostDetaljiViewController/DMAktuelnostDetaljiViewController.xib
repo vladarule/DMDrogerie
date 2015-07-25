@@ -63,7 +63,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zlt-kH-muj">
                     <rect key="frame" x="98" y="408" width="124" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <state key="normal" title="Saznajte vise" backgroundImage="saznaj_vise_btn.png">
+                    <state key="normal" title="Saznajte vise" backgroundImage="more_news_btn">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -79,7 +79,7 @@
         <image name="akcija-head.png" width="320" height="36"/>
         <image name="akcija-okvir-txt.png" width="295" height="162"/>
         <image name="footer_talasi.png" width="320" height="63"/>
-        <image name="saznaj_vise_btn.png" width="124" height="34"/>
+        <image name="more_news_btn" width="145" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

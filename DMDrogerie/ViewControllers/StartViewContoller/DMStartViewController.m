@@ -32,6 +32,9 @@
 @property (nonatomic, strong)NSArray* tabNormalImages;
 @property (nonatomic, strong)NSArray* tabSelectedImages;
 
+@property (nonatomic, strong)UIImageView* arrowLeft;
+@property (nonatomic, strong)UIImageView* arrowRight;
+
 @end
 
 @implementation DMStartViewController
@@ -101,7 +104,22 @@
             }
             
             [self.scrollView setContentSize:CGSizeMake(tabNames.count * 64, 49)];
+            
+            self.arrowLeft = [[UIImageView alloc] initWithFrame:CGRectMake(2, self.view.frame.size.height - 49, 7, 49)];
+            [self.arrowLeft setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin];
+            [self.arrowLeft setContentMode:UIViewContentModeScaleAspectFit];
+            [self.arrowLeft setImage:[UIImage imageNamed:@"menu_arrow_left"]];
+            [self.arrowLeft setHidden:YES];
+            
+            self.arrowRight = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 9, self.view.frame.size.height - 49, 7, 49)];
+            [self.arrowRight setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin];
+            [self.arrowRight setContentMode:UIViewContentModeScaleAspectFit];
+            [self.arrowRight setImage:[UIImage imageNamed:@"menu_arrow_right"]];
+            
+            
             [self.view addSubview:self.scrollView];
+            [self.view addSubview:self.arrowLeft];
+            [self.view addSubview:self.arrowRight];
             [self createPageViewController];
         }
         else{
@@ -136,6 +154,20 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@"Did scroll");
+    if (scrollView.contentOffset.x < 20) {
+        [self.arrowLeft setHidden:YES];
+    }
+    else{
+        [self.arrowLeft setHidden:NO];
+    }
+    
+    if (scrollView.contentOffset.x > self.scrollView.contentSize.width - self.view.bounds.size.width - 20) {
+        [self.arrowRight setHidden:YES];
+    }
+    else{
+        [self.arrowRight setHidden:NO];
+    }
+    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -243,6 +275,8 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.view bringSubviewToFront:self.scrollView];
+    [self.view bringSubviewToFront:self.arrowLeft];
+    [self.view bringSubviewToFront:self.arrowRight];
     
     // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
     CGRect pageViewRect = self.view.bounds;

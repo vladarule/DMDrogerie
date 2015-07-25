@@ -25,7 +25,7 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footer_talasi.png" translatesAutoresizingMaskIntoConstraints="NO" id="zTc-6O-w9E">
-                    <rect key="frame" x="0.0" y="402" width="320" height="53"/>
+                    <rect key="frame" x="0.0" y="404" width="320" height="53"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="53" id="lOc-Jk-MYs"/>
                     </constraints>
@@ -66,7 +66,7 @@
             <constraints>
                 <constraint firstItem="hPJ-no-WJu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="76V-OJ-fRH"/>
                 <constraint firstAttribute="trailing" secondItem="hPJ-no-WJu" secondAttribute="trailing" id="Jdo-Hy-lTf"/>
-                <constraint firstAttribute="bottom" secondItem="zTc-6O-w9E" secondAttribute="bottom" constant="49" id="eJD-Dl-yuD"/>
+                <constraint firstAttribute="bottom" secondItem="zTc-6O-w9E" secondAttribute="bottom" constant="47" id="eJD-Dl-yuD"/>
                 <constraint firstItem="Bn0-ZO-tOR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gLZ-NC-ofG"/>
                 <constraint firstItem="hPJ-no-WJu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="goN-X4-QLM"/>
                 <constraint firstAttribute="trailing" secondItem="zTc-6O-w9E" secondAttribute="trailing" id="lq3-ac-dSj"/>

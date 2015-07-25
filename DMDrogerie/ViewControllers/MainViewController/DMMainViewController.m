@@ -86,6 +86,8 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
+    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    
     [self.lblPromoTitle setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:14.0]]];
     [self.lblPromoTitle setTextColor:[UIColor colorWithRed:248.0/255 green:0.0/255 blue:0.0/255 alpha:1.0]];
     [self.lblPromoTitle setNumberOfLines:2];
@@ -95,7 +97,7 @@
     [self.lblPromoDesc setNumberOfLines:5];
     
     
-    if (![DMRequestManager sharedManager].promoDict) {
+    if ([DMRequestManager sharedManager].promoDict.allKeys.count == 0) {
         [self.topNewsView setHidden:YES];
         CGRect fr = self.tableView.frame;
         fr.size.height = fr.size.height + fr.origin.y;

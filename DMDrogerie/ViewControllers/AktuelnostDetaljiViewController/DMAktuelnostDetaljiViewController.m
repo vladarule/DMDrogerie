@@ -95,6 +95,8 @@
     [self.btnLink.titleLabel setFont:[UIFont systemFontOfSize:[Helper getFontSizeFromSz:12.5]]];
     [self.btnLink setTitleColor:[UIColor colorWithRed:53.0/255 green:49.0/255 blue:113.0/255 alpha:1.0] forState:UIControlStateNormal];
     
+//    [self.btnLink setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     [self.btnLink setTitleEdgeInsets:UIEdgeInsetsMake(0, [Helper getFontSizeFromSz:18], 0, 0)];
     [self.btnLink setTitle:@"Saznajte više" forState:UIControlStateNormal];
     
