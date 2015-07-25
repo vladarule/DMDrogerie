@@ -67,7 +67,7 @@
 }
 
 - (void)btnHelpClicked{
-    DMHairHelpViewController* hairHelpVC = [[DMHairHelpViewController alloc] initWithNibName:@"DMHairHelpViewController" bundle:[NSBundle mainBundle]];
+    DMHairHelpViewController* hairHelpVC = [[DMHairHelpViewController alloc] initWithNibName:@"DMHairHelpViewController" bundle:[NSBundle mainBundle] andIndex:0];
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:hairHelpVC];
     
     [self presentViewController:navCon animated:YES completion:nil];

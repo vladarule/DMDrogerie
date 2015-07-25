@@ -132,8 +132,25 @@
 
 #pragma mark - UITabeleViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (self.dataSource.count > 0) {
+        
+        self.tableView.backgroundView = nil;
+        return 1;
+        
+    } else {
+        
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        messageLabel.text = @"Nema aktivnih promocija";
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont systemFontOfSize:17.0];
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        return 0;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

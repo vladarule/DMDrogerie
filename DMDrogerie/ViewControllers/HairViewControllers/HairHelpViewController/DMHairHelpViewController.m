@@ -11,11 +11,22 @@
 @interface DMHairHelpViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
+@property (nonatomic, assign)NSInteger index;
 
 @end
 
 @implementation DMHairHelpViewController
+
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andIndex:(NSInteger)ind{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        self.index = ind;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +55,9 @@
     }
     
     [self.scrollView setContentSize:CGSizeMake(4 * self.view.bounds.size.width, self.scrollView.frame.size.height)];
+    
+    
+    [self.scrollView setContentOffset:CGPointMake(self.index * self.view.bounds.size.width, 0)];
 }
 
 - (void)didReceiveMemoryWarning {

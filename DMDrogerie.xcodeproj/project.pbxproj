@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE156F451B1462C7008B1B68 /* DMHairImgShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */; };
 		CE156F461B1462C7008B1B68 /* DMHairImgShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */; };
+		CE185EF71B639CEB001E6F02 /* slider_help.png in Resources */ = {isa = PBXBuildFile; fileRef = CE185EF61B639CEB001E6F02 /* slider_help.png */; };
 		CE1A00F11AB4668300790462 /* DMPromotionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1A00EF1AB4668300790462 /* DMPromotionDetailsViewController.m */; };
 		CE1A00F21AB4668300790462 /* DMPromotionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1A00F01AB4668300790462 /* DMPromotionDetailsViewController.xib */; };
 		CE1EDD361A9FBBE40038CFA4 /* DMRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EDD351A9FBBE40038CFA4 /* DMRequestManager.m */; };
@@ -305,6 +306,7 @@
 		CE156F421B1462C7008B1B68 /* DMHairImgShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairImgShareViewController.h; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.h; sourceTree = "<group>"; };
 		CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairImgShareViewController.m; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.m; sourceTree = "<group>"; };
 		CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMHairImgShareViewController.xib; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.xib; sourceTree = "<group>"; };
+		CE185EF61B639CEB001E6F02 /* slider_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider_help.png; sourceTree = "<group>"; };
 		CE1A00EE1AB4668300790462 /* DMPromotionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMPromotionDetailsViewController.h; path = PromotionDetailsViewController/DMPromotionDetailsViewController.h; sourceTree = "<group>"; };
 		CE1A00EF1AB4668300790462 /* DMPromotionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMPromotionDetailsViewController.m; path = PromotionDetailsViewController/DMPromotionDetailsViewController.m; sourceTree = "<group>"; };
 		CE1A00F01AB4668300790462 /* DMPromotionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMPromotionDetailsViewController.xib; path = PromotionDetailsViewController/DMPromotionDetailsViewController.xib; sourceTree = "<group>"; };
@@ -1138,6 +1140,7 @@
 		CEBE04AC18D761E300378F88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE185EF61B639CEB001E6F02 /* slider_help.png */,
 				CEBE537918E4E427009D9B5C /* zastavica.png */,
 				CEBE537718E4E41D009D9B5C /* zastavica@2x.png */,
 				CED71DD01AE5686E0084EC8B /* arrow_right.png */,
@@ -1695,6 +1698,7 @@
 				CE9D007D18E1FF970094A6F4 /* btn_korpa@2x.png in Resources */,
 				CEC1349418E54CD3005FB230 /* radno_vreme_bkg_iPad.png in Resources */,
 				CEBAAE6018D8D9A600232E50 /* akcija-head@2x.png in Resources */,
+				CE185EF71B639CEB001E6F02 /* slider_help.png in Resources */,
 				CEBE04D218D7642100378F88 /* map-normal.png in Resources */,
 				CE9D008118E1FF970094A6F4 /* btn_ubaci@2x.png in Resources */,
 				CEBAAE5018D8D0B100232E50 /* novo-crveni@2x.png in Resources */,

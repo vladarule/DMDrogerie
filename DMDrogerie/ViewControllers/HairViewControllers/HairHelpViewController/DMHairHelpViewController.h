@@ -10,4 +10,9 @@
 
 @interface DMHairHelpViewController : UIViewController
 
+
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andIndex:(NSInteger)ind;
+
+
 @end

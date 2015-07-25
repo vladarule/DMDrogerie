@@ -194,7 +194,7 @@
 
 
 - (void)btnHelpClicked{
-    DMHairHelpViewController* hairHelpVC = [[DMHairHelpViewController alloc] initWithNibName:@"DMHairHelpViewController" bundle:[NSBundle mainBundle]];
+    DMHairHelpViewController* hairHelpVC = [[DMHairHelpViewController alloc] initWithNibName:@"DMHairHelpViewController" bundle:[NSBundle mainBundle] andIndex:2];
     UINavigationController* navCon = [[UINavigationController alloc] initWithRootViewController:hairHelpVC];
     
     [self presentViewController:navCon animated:YES completion:nil];
@@ -456,14 +456,14 @@
 }
 
 - (IBAction)btnBlondColorsClicked:(id)sender {
-    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
+//    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
     self.dataSource = [NSArray arrayWithArray:self.manufacturer.blondColors];
     
     [self setupScrollView];
 }
 
 - (IBAction)btnRedColorsClicked:(id)sender {
-    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
+//    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
     self.dataSource = [NSArray arrayWithArray:self.manufacturer.redColors];
     
     [self setupScrollView];
@@ -471,14 +471,14 @@
 }
 
 - (IBAction)btnBrownColorsClicked:(id)sender {
-    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
+//    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
     self.dataSource = [NSArray arrayWithArray:self.manufacturer.brownColors];
     
     [self setupScrollView];
 }
 
 - (IBAction)btnDarkColorsClicked:(id)sender {
-    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
+//    self.manufacturer = [[DMRequestManager sharedManager].arrayHairColors objectAtIndex:0];
     self.dataSource = [NSArray arrayWithArray:self.manufacturer.darkColors];
     
     [self setupScrollView];
