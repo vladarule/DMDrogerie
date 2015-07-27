@@ -69,12 +69,12 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
-    [self.lblBefore setBackgroundColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0]];
+//    [self.lblBefore setBackgroundColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0]];
     [self.lblBefore setFont:[UIFont boldSystemFontOfSize:16.0]];
     [self.lblBefore setTextColor:[UIColor whiteColor]];
     
     
-    [self.lblAfter setBackgroundColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0]];
+//    [self.lblAfter setBackgroundColor:[UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0]];
     [self.lblAfter setFont:[UIFont boldSystemFontOfSize:16.0]];
     [self.lblAfter setTextColor:[UIColor whiteColor]];
     

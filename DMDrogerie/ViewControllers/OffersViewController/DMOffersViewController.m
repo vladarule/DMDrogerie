@@ -76,6 +76,8 @@
     [btn setEnabled:NO];
     [self.navigationItem setTitleView:btn];
     
+    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    
     [self.tableView reloadData];
     
 }
@@ -95,7 +97,24 @@
 #pragma mark - UITabeleViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 1;
+    if (self.dataSource.count > 0) {
+        
+        self.tableView.backgroundView = nil;
+        return 1;
+        
+    } else {
+        
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        messageLabel.text = @"Trenutno nema novih proizvoda";
+        messageLabel.textColor = [UIColor colorWithRed:58.0/255.0 green:38.0/255.0 blue:136.0/255.0 alpha:1.0];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont systemFontOfSize:17.0];
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        return 0;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

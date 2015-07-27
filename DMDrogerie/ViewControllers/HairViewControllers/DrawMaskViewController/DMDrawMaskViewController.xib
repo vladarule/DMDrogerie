@@ -141,14 +141,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.090196078431372548" green="0.18823529411764706" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20784313725490194" green="0.18823529411764706" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="xQh-lI-y3Z">
-                    <rect key="frame" x="0.0" y="394" width="320" height="60"/>
+                    <rect key="frame" x="-3" y="395" width="325" height="60"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promotions_wave_bottom" id="tuU-5T-6q2">
-                            <rect key="frame" x="0.0" y="-3" width="320" height="63"/>
+                            <rect key="frame" x="0.0" y="-3" width="325" height="63"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="paD-ZM-WOC">
