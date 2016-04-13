@@ -303,6 +303,7 @@
 		9432D0E836D487842B97BAAA /* libPods-DMDrogerie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMDrogerie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A211580743FFFEF8687964 /* Pods-DMDrogerie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMDrogerie.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMDrogerie/Pods-DMDrogerie.release.xcconfig"; sourceTree = "<group>"; };
 		C3DAC004B8E2E28F67961E18 /* Pods-DMDrogerie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMDrogerie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMDrogerie/Pods-DMDrogerie.debug.xcconfig"; sourceTree = "<group>"; };
+		CE13DF5E1B6B5CA10022A3EA /* DMDrogerie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DMDrogerie.entitlements; sourceTree = "<group>"; };
 		CE156F421B1462C7008B1B68 /* DMHairImgShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMHairImgShareViewController.h; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.h; sourceTree = "<group>"; };
 		CE156F431B1462C7008B1B68 /* DMHairImgShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMHairImgShareViewController.m; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.m; sourceTree = "<group>"; };
 		CE156F441B1462C7008B1B68 /* DMHairImgShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMHairImgShareViewController.xib; path = HairViewControllers/HairImgShareViewController/DMHairImgShareViewController.xib; sourceTree = "<group>"; };
@@ -937,6 +938,7 @@
 		CEBD58EB18A67AF50072E091 /* DMDrogerie */ = {
 			isa = PBXGroup;
 			children = (
+				CE13DF5E1B6B5CA10022A3EA /* DMDrogerie.entitlements */,
 				CEB89F8C18E23B29000B6F88 /* Helper */,
 				CEBD58F418A67AF50072E091 /* DMAppDelegate.h */,
 				CEBD58F518A67AF50072E091 /* DMAppDelegate.m */,
@@ -1514,7 +1516,21 @@
 				ORGANIZATIONNAME = Vlada;
 				TargetAttributes = {
 					CEBD58E118A67AF50072E091 = {
-						DevelopmentTeam = R9RD7A9N3Z;
+						DevelopmentTeam = 4B2DBT2SM6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					CEBD590218A67AF50072E091 = {
 						TestTargetID = CEBD58E118A67AF50072E091;
@@ -1979,6 +1995,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DMDrogerie/DMDrogerie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 3;
@@ -2004,8 +2021,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DMDrogerie/DMDrogerie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2105,8 +2123,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DMDrogerie/DMDrogerie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
